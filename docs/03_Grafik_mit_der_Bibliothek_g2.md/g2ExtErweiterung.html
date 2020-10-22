@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="g2ext-erweiterung">g2.ext Erweiterung</h4>
+<p>g2.ext Erweitert g2 um einige Funktionalitäten.
+Insbesondere werden diese Funktionalitäten durch weitere Erweiterungen für g2 genutzt, sodass es eine Bedingung für die Nutzung anderer Erweiterungen darstellt.</p>
+<p>g2.ext liefert außerdem eigene Funktionen.</p>
+<p>.spline()
+<em><code>spline({pts,closed,x,y,w}) pts: array, closed: boolean, x, y, w: number</code></em>
+Zeichnet einen Spline über ein Array von Punkten in der selben Form wie .ply().
+Ressourcen um mehr darüber zu Erfahren wie Splines gezeichent werden, sollte man sich
+<a href="https://de.wikipedia.org/wiki/Kubisch_Hermitescher_Spline">Kubisch Hermetischen Splines</a> und <a href="https://de.wikipedia.org/wiki/B%C3%A9zierkurve">Bézierkurven</a> ansehen.</p>
+<p>.label()
+<em><code>label({str, [loc], [off]})   str: string, [loc]: float oder string, [off]: float</code></em>
+Diese Methode erzeugt eine Beschriftung str deren Position sich auf das Element bezieht, das vor ihr in der Befehlskette liegt. Für eine korrekte Ausrichtung der Labels ist die Nutzung von <code>cartesian()</code> obligatorisch. Die Parameter <code>[loc]</code> und <code>[off]</code> sind abhängig vom Elementtyp auf den <code>label()</code> angewendet wird. Eine Verschiebung des Labels nach rechts oder links geschieht über justierung der <code>off</code> Eigenschaft.</p>
+<p>.mark()
+<em><code>mark({mrk,[loc]}) mrk: str, [loc]: number, string || loc[]</code></em>
+mark() funktioniert wie label() jedoch hat man die Wahl zwischen dot und tick für das mrk.</p>
+<p>Für loc hat man die Option die Parameter als Array zu übergeben.</p>
+<iframe width=100% height=300 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_mark.html'></iframe>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>

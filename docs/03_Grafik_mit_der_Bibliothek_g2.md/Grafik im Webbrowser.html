@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="grafik-im-webbrowser">Grafik im Webbrowser</h4>
+<p>Es ist häufig schwierig, sich das Verhalten von kinematischen Systemen während ihrer Bewegung genauer vorstellen zu können. Um diesem Problem entgegenzuwirken, kann man sich den entsprechenden Mechanismus mit ein wenig Programmierkenntnissen im Browser darstellen lassen. Dazu werden Koordinaten von Punkten dieser Systeme mit JavaScript berechnet und diese anschließend im Browser gezeichnet. Doch bevor wir uns mit bewegten Mechanismen beschäftigen, fangen wir erst einmal mit statischen Grafiken an. Man kann Grafiken in einem HTML-Dokument natürlich ganz einfach mit dem <img> Tag einbinden. Diese sind dann jedoch weder manipulierbar noch, worauf wir später hinauswollen, animierbar. In HTML 5 wurde dazu das <canvas> Element eingeführt. Canvas (deutsch: Leinwand) stellt im Browser einen festgelegten Zeichenbereich zur Verfügung in dem man mittels JavaScript Befehlen &quot;live&quot; zeichnen kann. Das Ganze schaut man sich am besten an ein paar Beispielen an.</p>
+<h5 id="canvas"><strong>Canvas</strong></h5>
+<p>Als erstes benötigt man ein HTML-Dokument mit Wurzelstruktur. Wer Visual Studio Code benutzt, tippt einfach in eine leere HTML-Datei ! ein und drückt die Tabulator Taste. Alternativ kann man auch folgendes Template runterladen.</p>
+<pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</div></code></pre>
+<p>Wir erstellen nun im Körper ein Canvas Element durch die Syntax</p>
+<p><canvas id="c" width="200" height="200" style="border-width:1px;border-style:solid"></canvas></p>
+<p>Der Styling Parameter ist optional und kann auch weggelassen werden oder alternativ im Dokumentenkopf bzw. extern stehen.
+width und height geben die Breite und die Höhe des Zeichenbereiches in Pixel an. Die Id wird benötigt um das Element in JavaScript sauber anzusprechen.</p>
+<p>Dazu erstellt man nun im Körper ein Script-Tag und legt eine globale Variable an, an die das Canvas-Element gebunden wird:</p>
+<p>`let cnv = document.getElementById('c');'</p>
+<p>Um zeichnen zu können benötigt man jedoch nicht das Canvas Element, sondern dessen Render-Context. Canvas stellt hier zwei verschiedene zur Verfügung. 'webgl' für räumliche und '2d' für ebene Grafiken. Wir beschränken uns hier auf den 2d-Context, der nun wie folgt verknüpft wird:</p>
+<p><code>let ctx = cnv.getContext('2d');</code></p>
+<p>Man kann Canvas und Context natürlich auch zusammen auf eine Variable legen, manchmal ist es jedoch praktisch, wenn man über cnv auf die Attribute des Canvas zugreifen kann.</p>
+<p>Die HTML-Datei sieht nun so aus:</p>
+<pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"200"</span> height=<span class="hljs-string">"200"</span> style=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;&lt;/canvas&gt;
+    &lt;script&gt;
+ 
+let cnv = document.getElementById('c'),  
+    ctx = cnv.getContext('<span class="hljs-number">2</span>d');
+ 
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</div></code></pre>
+<p>Zeichenbefehle kommen nun unter die globalen Variablen in das Script. Man muss dafür für jeden Befehl den Context des Canvas ansprechen, also z.B.
+<code>ctx.&lt;Zeichenbefehl&gt;;</code></p>
+<p>Für die meisten Geometrien muss man bei Canvas Pfade bemühen. Der Ursprung befindet sich, im Gegensatz zu kartesischen Koordinatensystemen, immer oben links in der Zeichenfläche, mit der x-Achse nach rechts und der y-Achse nach unten zeigend. Möchte man nun eine einfache Linie mittels eines Pfades zeichnen, geschieht dies durch eine Reihe von Befehlen die sich analog zur Handbewegung beim Zeichnen auf Papier verhalten. Zuerst führt seinen Stift an die Position an der die Linie beginnen soll, dann setzt man Spitze auf das Papier, zieht die Linie zum Endpunkt und hebt den Stift ab. Bei Canvas kommt lediglich noch ein Befehl zum Ausführen des ganzen hinzu. Folgende Befehle werden für eine Linie benötigt:</p>
+<pre><code class="code-line language-JSON"><div>ctx.beginPath();  // Start im Koordinatenursprung
+ctx.moveTo({x:<span class="hljs-number">50</span>, y:<span class="hljs-number">50</span>});  // fuehre Zeichenstift zum Anfangspunkt
+ctx.lineTo({x:<span class="hljs-number">150</span>, y:<span class="hljs-number">150</span>});  // definiere Linie von letzter Position zu diesem Punkt
+ctx.closePath();  // beende den Pfad
+ctx.stroke();  // zeichne den eben erstellten Pfad
+</div></code></pre>
+<p>editierbare Livedemo:</p>
+<p><code>&lt;iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_cnv-line.html'&gt;&lt;/iframe&gt;</code></p>
+<blockquote>
+<p>Wer sich tiefer mit purem Canvas befassen möchte, dem seien folgende Quellen empfohlen:</p>
+</blockquote>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">MDN Canvas Tutorial</a></li>
+<li><a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html">Canvas Cheat Sheet</a></li>
+<li><a href="https://wiki.selfhtml.org/wiki/JavaScript/Canvas">selfhtml Canvas</a></li>
+<li><a href="https://www.w3.org/TR/2dcontext/">World Wide Web Consortium - 2d-canvas</a>.</li>
+</ul>
+<h5 id="g2"><strong>g2</strong></h5>
+<p>Wie man sich nun vielleicht vorstellen kann, wird auf diese Weise selbst für ein so einfaches Objekt wie zum Beispiel ein Festlagersymbol recht viel Code benötigt. Daher wurde die <a href="https://github.com/goessner/g2">g2 Bibliothek</a>
+mit ihrer Erweiterung g2.mec geschaffen. Diese JavaScript Bibliotheken legen sich über Canvas, bündeln Befehle und stellen eine API bereit, die wesentlich benutzerfreundlicher ist, ohne dabei große Performanceeinbußen zu erzeugen.</p>
+<p><a href="https://github.com/goessner/g2">g2</a>
+In der g2 Bibliothek findet man viele Befehle die es für die Manipulation von HTML-Canvas gibt, sowie einige Makros wie zum Beispiel ein Raster für den Hintergrund.</p>
+<p><a href="https://github.com/goessner/g2/wiki">g2.ext</a>
+g2.ext stellt Funktionserweiterung von g2 dar. Zurzeit findet man hier Funktionen, die auf bestehenden g2 Objekte ausgeführt werden können. Zudem gibt es eine hier Methode für Splines.</p>
+<p><a href="https://github.com/goessner/g2/wiki">g2.mec</a>
+Bei g2.mec handelt es sich um eine Erweiterung von g2 die besonders interessant für Maschinenbauer und Physiker ist. Hier finden sich Befehle, die speziell für die Erstellung von Mechanismen implementiert wurden. So findet man in dieser Bibliothek beispielsweise einfache Befehle zur Darstellung von Lagern und Balken.</p>
+<p><a href="https://github.com/goessner/g2/wiki">g2.chart</a>
+g2.chart ist eine Erweiterung zum Darstellen von Diagrammen auf einem Canvas mittels g2.</p>
+<p>Ein Script wird entweder im Kopf oder am Ende des Körpers des HTML Dokumentes importiert. Wir werden sie immer am Ende des Körpers einfügen, da die Seite so schneller geladen wird. Bei kleinen Bibliotheken wie den hier benutzten macht sich diese Vorgehensweise zwar kaum bemerkbar, gilt aber heutzutage allgemein als Konvention und guter Stil.
+Um g2 zu nutzen muss man die Bibliothek extern in seine HTML-Datei einbinden. Das geht entweder von einer lokalen Quelle, wie einer HDD, oder über ein CDN (Content Distribution Network). Werden Scripte lokal eingebunden, laden sie wesentlich schneller, müssen allerdings immer mitgegeben werden, wenn man z.B. die HTML-Datei verschickt. Bei Einbindung über ein CDN muss hingegen immer eine Internetverbindung bestehen da der Browser die JS-Dateien beim Öffnen der HTML Datei aus dem Internet in den Cache lädt.</p>
+<p>Wir werden hier die CDN Variante nutzen. Folgender Link (zu finden hier: g2) liefert immer die aktuelle, vollständige Version von g2, in der alle Erweiterungen bereits integriert sind.
+Der Einfachheit halber empfiehlt es sich folgendes HTML-Template zu nutzen und bei Bedarf zu erweitern:</p>
+<pre><code class="code-line language-JSON"><div>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset='utf<span class="hljs-number">-8</span>'&gt;
+    &lt;title&gt;Titel&lt;/title&gt;      
+&lt;/head&gt;
+ 
+&lt;body&gt;
+    &lt;h<span class="hljs-number">2</span>&gt;Titel&lt;/h<span class="hljs-number">2</span>&gt;             
+    &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"300"</span> height=<span class="hljs-string">"300"</span> style=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;&lt;/canvas&gt;
+ 
+   &lt;script src=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;&lt;/script&gt;  
+ 
+    &lt;script&gt;
+ 
+ 
+ 
+    &lt;/script&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</div></code></pre>
+<p>Mit g2 lassen sich auch, wie mit puren Canvas-Methoden, Pfade nutzen. Der folgende Code erzeugt die selbe Linie wie weiter oben:</p>
+<pre><code class="code-line language-JSON"><div>g<span class="hljs-number">2</span>().p()        // ctx.beginPath();
+    .m({x:<span class="hljs-number">50</span>,y:<span class="hljs-number">50</span>})   // ctx.moveTo();
+    .l({x:<span class="hljs-number">150</span>,y:<span class="hljs-number">150</span>}) // ctx.lineTo();
+    .z()        // ctx.closePath();
+    .stroke()   // ctx.stroke();
+    .exe(ctx);
+    ````
+Wie man sieht braucht man mit g<span class="hljs-number">2</span> sogar einen Befehl mehr als vorher. Das liegt an daran, dass g<span class="hljs-number">2</span> erst alle Befehle sammelt, bevor sie dann mit der Methode `exe(&lt;Canvascontext&gt;)` in den Context gerendert werden. Man brauch außerdem auch nicht bei jedem Befehl auf den Context verweisen, sondern kann durch den Punktoperator Befehl an Befehl aneinanderreihen und die Kette dann mit einem Semikolon schließen. Es ist also eine einzelne Anweisung wogegen die pure Canvasvariante aus fünf Anweisungen besteht.
+
+Dazu kommt, dass g<span class="hljs-number">2</span> einen Linienbefehl zur Verfügung stellt und bei Nutzung von diesem reduziert sich der obige Code auf
+
+```JSON
+g<span class="hljs-number">2</span>().lin({x1:<span class="hljs-number">50</span>,y1:<span class="hljs-number">50</span>,x2:<span class="hljs-number">150</span>,y2:<span class="hljs-number">150</span>})
+    .exe(ctx);
+</div></code></pre>
+<p>editierbare Livedemo:</p>
+<iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-line.html'></iframe>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>
