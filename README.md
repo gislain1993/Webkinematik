@@ -4,4 +4,4 @@ Dieses Repository beinhaltet Musterlösungen für die Aufgaben aus dem Buch Mech
 
 Im Projekt findet sich eine Auflistung des Fortschritts des [Projektes](https://github.com/goessner/Mechanismentechnik/projects/1) und der entsprechenden Aufgaben.
 
-![Cover](./img/cover.jpg)
+![Cover](./docs/img/cover.png)
