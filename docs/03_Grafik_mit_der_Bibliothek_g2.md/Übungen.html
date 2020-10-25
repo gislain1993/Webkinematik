@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="c3bcbungen">Übungen</h4>
+<p>g2</p>
+<p><strong>Aufgabe 3.1</strong></p>
+<p>Stellen Sie folgende Mechanismen aus dem Lehrbuch &quot;Mechanismentechnik&quot; grafisch im Browser dar:</p>
+<ul>
+<li>Seite 27, Aufgabe 2.3 &quot;Musgrave Mechanismus&quot;</li>
+<li>Seite 28, Aufgabe 2.7 &quot;Freiheitsgrade von Mechanismen&quot;, Mechanismus (5)</li>
+<li>Seite 112, Aufgabe 6.3 &quot;Aufstellen von Schleifengleichungen&quot;</li>
+<li>Seite 255, Aufgabe 12.3 &quot;Seilmechanismus&quot; und Aufgabe 12.4 &quot;Differentialflaschenzug (2)&quot;</li>
+</ul>
+<p>g2-chart</p>
+<p><strong>Aufgabe 3.2</strong></p>
+<p>Sie haben in der Übungsaufgabe 2.2 im Kapitel 2 &quot;Webtechnologien&quot; als Lösung einen Datensatz in Form eines Arrays erhalten, der die x-/y-Koordinaten einer Ellipse enthält.
+Erstellen Sie nun eine HTML-Datei in die Sie die g2 (inkl. g2.chart) Bibliothek einbinden. Kopieren Sie nun Ihr vollständiges Script der Aufgabe 2.2 in ein Script-Tag dieser HTML Datei. Stellen Sie anschließend Ihren Datensatz mit g2 und g2-chart auf einem Canvas grafisch dar.</p>
+<figure>
+<img src="./Bilder/bild 20.png">
+</figure>
+<p><strong>Aufgabe 3.3</strong></p>
+<p>Wir betrachten Aufgabe 10.8 &quot;Doppelschieber&quot; auf Seite 191 des Lehrbuches &quot;Mechanismentechnik&quot;.
+Die bereinigte erste Ableitung der Potentialfunktion des Doppelschiebers lautet:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mi>φ</mi><mo stretchy="false">(</mo><mn>1</mn><mtext>−</mtext><mn>2</mn><mi>c</mi><mi>o</mi><mi>s</mi><mi>φ</mi><mo stretchy="false">)</mo><mtext> </mtext><mo>=</mo><mtext> </mtext><mn>0</mn></mrow><annotation encoding="application/x-tex">sin \varphi (1−2cos\varphi)~=~0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">φ</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">−</span><span class="mord">2</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">s</span><span class="mord mathnormal">φ</span><span class="mclose">)</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></span></eqn></section><p>In der Lösung sind 0° und 60° als Gleichgewichtslagen angegeben.
+Überpüfen Sie dies grafisch indem Sie die Funktion mit g2-chart plotten und anschließend die Nullstellen ablesen.</p>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>

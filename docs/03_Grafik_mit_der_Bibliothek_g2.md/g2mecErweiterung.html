@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="g2mec-erweiterung">g2.mec Erweiterung</h4>
+<p>Die Bibliothek g2.mec ist eine Erweiterung für g2.
+g2.mec erweitert g2 um in der Mechanik häufig verwendete Symbole und Muster.
+Zusätzlich zur folgenden Übersicht wird sei Ihnen nahegelegt einen Blick in die <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.mec.md">API-Dokumentation</a> und den ensprechenden <a href="https://github.com/goessner/g2/wiki">Wiki Eintrag</a> zu werfen.
+g2.mec ist wie alle anderen Erweiterungen bereits in g2 integriert falls Sie die Vollversion</p>
+<script src="https://gitcdn.xlt;rscript>r/g2/master/src/g2.js"></script>
+<p>benutzen. Die Nutzung von g2.mec als Einzelskript <a href="https://gitcdn.xyz/repo/goessner/g2/master/src/g2.core.js">(https://gitcdn.xyz/repo/goessner/g2/master/src/g2.mec.js)</a> hingegen fordert die vorherige Einbindung von g2.core <a href="https://gitcdn.xyz/repo/goessner/g2/master/src/g2.core.js">(https://gitcdn.xyz/repo/goessner/g2/master/src/g2.core.js)</a> und g2.ext <a href="https://gitcdn.xyz/repo/goessner/g2/master/src/g2.ext.js">(https://gitcdn.xyz/repo/goessner/g2/master/src/g2.ext.js)</a>.</p>
+<p>Die folgende Livedemo zeigt die in g2.mec zur Verfügung stehenden Symbole.</p>
+<iframe width=100% height=390 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_symbols.html'></iframe>
+<p>vec()</p>
+<p><code>vec({x1,y1,x2,y2}) x1,y1,x2,y2: number</code></p>
+<p><code>vec()</code> ist genau so zu nutzen wie lin(), allerdings wird hier ein Vektor gezeichnet, statt einer einfachen Linie.</p>
+<iframe width=100% height=280 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_vec.html'></iframe>
+<p>slider()</p>
+<p>`slider({x,y,b,h,w})   x,y,b,h,w: number``</p>
+<p>Diese Methode zeichnet einen Schieber mit dem Mittelpunkt x,y, der um w [rad] gedreht ist, mit den zusätzlichen Parametern <code>b</code> und <code>h</code> für die Breite und Höhe des Schiebers. Standardmäßig steht der Füllstil auf dem g2-State <code>linkfill (=&quot;rgba(200,200,200,0.5)&quot;</code>). Der <a href="https://wiki.selfhtml.org/wiki/CSS/Wertetypen/Farbangaben#rgba">Alphakanal</a> (Transparenz) hat den Wert 0.5, sodass der Schieber leicht transparent ist. Wer dies nicht mag, setzt entweder global <code>linkfill</code> auf einen anderen Wert oder fügt jedem Slider ein Styling-Objekt mit geändertem fs Property hinzu. Die globale Änderung erfolgt bei Initialisierung durch</p>
+<p>g2.State.linkfill = &quot;<neuer rgba-Wert>&quot;;  <a href="https://developer.mozilla.org/de/docs/Web/CSS/CSS_Colors/farbauswahl_werkzeug">CSS-Farbselektor</a></p>
+<iframe width=100% height=220 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_slider.html'></iframe>
+<blockquote>
+<p><code>linkfill</code> ist einer der vordefinierten Stile, die g2.mec zur Verfügung stellt und die sich als String mit <code>@</code> als Präfix referenzieren lassen. Weitere finden Sie <a href="https://github.com/goessner/g2/wiki#mechanical-styles">hier</a>.</p>
+</blockquote>
+<p>spring() und damper()</p>
+<p>`spring({x1,y1,x2,y2,h})    x1,y1,x2,y2: number
+damper({x1,y1,x2,y2,h})    x1,y1,x2,y2:number``</p>
+<p>Diese beiden Methoden funktionieren wie <code>lin()</code>, zeichnen jedoch ein Feder- bzw. Dämpfer Symbol. <code>x1,y1</code> ist das Startpunktobjekt, <code>x2,y2</code> der Endpunkt. Der optionale Parameter <code>h</code> ändert die Höhe des Feder- bzw. Dämpfersymbols.</p>
+<iframe width=100% height=230 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_spring-damper.html'></iframe>
+<p>ground()</p>
+<p>`ground({pts, [closed], [h], [pos]})   pts: array, [closed]: boolean``</p>
+<p>Zeichnet einen symbolischen Boden über ein Array aus Punkten <code>pts</code>. Wenn <code>closed = true</code> wird das Bodenpolygon geschlossen. <code>args</code> kann die Properties <code>h (number)</code> für die Höhe des Bodens und <code>pos (string, &quot;right&quot;</code> oder <code>&quot;left&quot;</code>) für die Ausrichtung des Bodens entlang der Zeichenrichtung enthalten.</p>
+<iframe width=100% height=220 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_ground.html'></iframe>
+<p>bar() und bar2()</p>
+<p>`bar({x1,y1,x2,y2)   x1,y1,x2,y2:number
+bar2({x1,y1,x2,y2)   x1,y1,x2,y2:number``</p>
+<p>Diese Methoden funktionieren wie <code>lin()</code> und zeichnen gestylte Glieder von Startpunkt <code>x1,y1</code> zum Endpunkt <code>x2,y2</code>.</p>
+<p>link() und link2()</p>
+<p>`link({pts, [closed]})   pts: array, [closed]: boolean
+link2({pts, [closed]})   pts: array, [closed]: boolean``</p>
+<p>Zeichnen gestylte Polylinien, die für Glieder benutzt werden können, über ein Array. <code>link2()</code> nimmt im Gegensatz zu <code>link()</code> kein Styling-Objekt auf. Soll die gefüllte Fläche bei <code>closed = true</code> transparent sein, muss hier global der Wert <code>g2.State.linkfill</code> auf <code>&quot;transparent&quot;</code> gesetzt werden.</p>
+<iframe width=100% height=280 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_links.html'></iframe>
+<p>beam() und beam2()</p>
+<p>`beam(pts)     pts: array
+beam2(pts)   pts: array``</p>
+<p>Diese beiden Methoden zeichnen gestylte Balken über ein Array von Punkten.</p>
+<p>pulley() und pulley2()</p>
+<p>`pulley({x,y,r,w})   x,y,r,w: number
+pulley2({x,y,r,w})   x,y,r,w: number``</p>
+<p>Diese Methoden stellen Riemenscheiben bzw. Seilrollen dar. <code>pulley()</code> bekommt  <code>x,y</code> als Mittelpunkt und einen Radius <code>r</code>, analog zur bekannten <code>cir()</code> Methode. Die Property <code>w</code> stellt den Drehwinkel dar. Eine Livedemo dieser Elemente folgt nach der nächsten Methode.</p>
+<p>rope()</p>
+<p><code>rope({[p1], [r1], [p2], [r2]})   [p1],[p2]: object, [r1],[r2]: number</code>
+Diese Methode verbindet zwei Scheiben durch ein Seil miteinander. <code>[p1]</code> bzw. <code>[p2]</code> enthalten die Mittelpunkte der entsprechenden Scheiben als Objekte, und <code>[r1]</code> bzw. <code>[r2]</code> die dazu passenden Radien.
+Ist <code>[r1]</code> ein positiver Wert, verlässt das Seil die erste Scheibe entgegen des Uhrzeigersinns, ist <code>[r1]</code> negativ, im Uhrzeigersinn. Bei der zweiten Scheibe dreht sich diese Logik um. Ist <code>[r2]</code> ein positiver Wert, verlässt das Seil die zweite Scheibe im Uhrzeigersinn, ist <code>[r1]</code> negativ, entgegen des Uhrzeigersinns. Durch geschickte Kombination lassen sich so Seile über Kreuz verlegen.</p>
+<iframe width=100% height=300 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_pulleys-rope.html'></iframe>
+<p>load()</p>
+<p>`load({pts, spacing, w})   pts: array, spacing: number, w: number``</p>
+<p>Durch diese Methode lässt sich eine Streckenlast darstellen. <code>pts</code> ist ein Array von Punkten, in dem der erste und letzte Punkt die unteren Ecken der Streckenlast sind. Die Kraftpfeile stehen orthogonal auf der Verbindungslinie dieser beiden Punkte.
+<code>spacing</code> steht für den absoluten Abstand der Vektoren in Pixeln. Also bei einem <code>spacing</code> von 25 erscheint alle 25px ein Kraftpfeil.
+Die Property <code>w</code> gibt an in welchem Winkel die Pfeile gezeichnet werden sollen. Standardmäßig ist <code>w</code> auf <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>−</mtext><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">−\frac{\pi}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></eq>
+gesetzt, was einer nach unten gerichteten Flächenlast entspricht.</p>
+<iframe width=100% height=230 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_load.html'></iframe>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>

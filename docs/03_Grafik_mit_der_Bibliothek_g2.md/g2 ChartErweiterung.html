@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="g2-chart-erweiterung">g2-chart Erweiterung</h4>
+<p>Die Bibliothek g2-chart erweitert g2 um die Möglichkeit Liniendiagramme auf einfache und intuitive Weise in ein Canvaselement zu rendern.
+Auch diese Erweiterung ist bereits in der Vollversion von g2 integriert.</p>
+<script src="https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"></script>
+<p>Es folgt nun eine Einführung in die Grundlagen im Umgang mit g2-chart. Als weiterführende Lektüre wird empfohlen sich mit der vollständigen <a href="https://github.com/goessner/g2/wiki">Dokumentation auf GitHub</a> zu beschäftigen.</p>
+<p>Die Funktionsweise von g2-chart wird am besten durch eine minimalistische Livedemo klar:</p>
+<iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_minimalistic.html'></iframe>
+<p>Die Methode <code>chart()</code> erwartet ein Objekt mit mindestens vier Properties, welche die rechteckige Grundfläche des Diagramms definieren.
+Analog zur g2-Methode <code>rec()</code> gibt man die linke untere Ecke (<code>x|y</code>), die Breite <code>b</code> sowie die Höhe <code>h</code> des Diagramms an. Außerdem ist es sinnvoll das <code>funcs</code> Property mit mindestens einem Element anzugeben, da man ohne Daten oder Funktionen lediglich ein graues Rechteck sieht.</p>
+<p>Die Skala der Achsen wird automatisch erstellt. <code>chart()</code>, bzw. sein Property <code>funcs</code> kann sowohl Datensätze in Form von Arrays (siehe oben), als auch algebraische Funktionen interpretieren.</p>
+<iframe width=100% height=380 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_multi-functions.html'></iframe>
+<p><a name="titleobject"></a>Wie man im obigen Beispiel sieht, kann das Diagramm beschriftet mit einem Titel beschriftet werden. Dieser kann entweder ein einfacher String sein (z.B. <code>title:&quot;sin &amp; tan&quot;</code>) oder aber ein Objekt. Dieses title-Objekt kennt zusätzliche Properties:</p>
+<ul>
+<li><code>text:string</code> - Der Text der Beschriftung</li>
+<li><code>offset:number</code> - vertikaler Versatz zum Diagramm</li>
+<li><code>style:object</code> - Styling für den Titel, mögliche Properties z.B.:
+<ul>
+<li><code>foz:number</code> - Schriftgröße</li>
+<li><code>foc:string</code> - Schriftfarbe</li>
+</ul>
+</li>
+</ul>
+<p>Zudem ist es möglich die Bereiche der Achsen für das Diagramm einzuschränken, indem die Properties <code>xmin,xmax,ymin,ymax:number</code> gesetzt werden.
+Vor allem sieht man hier aber, dass sich mehrere Funktionen in einem Diagramm darstellen lassen, indem <code>funcs</code> einfach mehrere Objekte bekommt. Das Array <code>funcs</code> enthält immer Objekte als Elemente. Diese Objekte können jedoch unterschiedliche Properties besitzen. Schauen wir uns nun die Struktur und die Properties einmal genauer an:</p>
+<ul>
+<li><code>funcs: array</code> - Enthält Objekte mit Datensätzen oder Funktionen
+<ul>
+<li><code>funcs[item]: object</code> - Enthält Datensatz oder Array</li>
+<li><code>funcs[item].data</code>: array - mögliche Formen sind Flatarray (<code>[x,y,..]</code>), Array von Arrays ([<code>[x,y],..]</code>) und Array von Objekten ([<code>{x,y},..</code>]).</li>
+<li><code>funcs[item].fn: function</code> - Eine Funktion <code>y = f(x)</code> die ein x Parameter annimmt und ein y zurückgibt. Bsp.: <code>Math.sin</code></li>
+<li><code>funcs[item].dx: number</code> - Nutzt man fn muss zwingend ein Inkrement dx angegeben werden, mit dem die Funktion zum rendern evaluiert wird.</li>
+<li><code>funcs[item].fill: boolean</code> - Gibt an ob die Fläche zwischen Graph und x-Achse gefüllt werden soll.</li>
+<li><code>funcs[item].dots: boolean</code> - Markiert die Punkte von Datensätzen (sollte bei Nutzung von <code>fn</code> gemieden werden)</li>
+</ul>
+</li>
+</ul>
+<p>Des Weiteren besitzt <code>chart()</code> die Fähigkeit, via den Properties xaxis und yaxis, einiges an den Diagrammachsen einzustellen.</p>
+<iframe width=100% height=570 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_axis-props.html'></iframe>
+<p>Einige mögliche <code>xaxis</code>- und <code>yaxis</code>-Properties lauten:</p>
+<ul>
+<li>
+<p><code>title: string or object</code> - siehe <a href="#titleobject">title-Objekt</a>, Unterschied: Achsenbezogen</p>
+</li>
+<li>
+<p><code>line: boolean</code> - wenn <code>false</code> wird die Skalenlinie der jeweiligen Achse nicht angezeigt</p>
+</li>
+<li>
+<p><code>origin: boolean</code> - wenn <code>true</code> wird eine Linie durch den Ursprung der jeweiligen Achse gezeichnet</p>
+</li>
+<li>
+<p><code>ticks: object</code> or <code>boolean</code> - wenn <code>true</code>, werden keine Skalenmarkierungen gezeigt. Falls ein Objekt verwendet wird gibt es das Property len: number um die Länge dieser Markierungen einzustellen.</p>
+</li>
+<li>
+<p><code>grid: object</code> or <code>boolean</code> - <code>true</code> verlängert die Skalenmarkierungen der jeweiligen Achse, sodass sie das gesamte Diagramm durchziehen. Alternativ kann ein Style-Objekt angegeben werden.</p>
+</li>
+<li>
+<p><code>labels: object</code> or <code>boolean</code> - <code>false</code> schaltet die Beschriftung der Skalenmarkierungen aus. Alternatives kann ein Objekt mit den Properties <code>loc:&quot;auto&quot;</code> (dieses Property ist momentan noch ohne Funktion) , <code>offset: number</code> (Versatz der Beschriftung) und wiederum einem Style-Objekt angegeben werden.</p>
+</li>
+</ul>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>
