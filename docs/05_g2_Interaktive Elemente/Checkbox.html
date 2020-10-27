@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="checkbox">Checkbox</h4>
+<p>Das nächste Element um das wir uns kümmern ist <code>&lt;input&gt;</code>. Input-Elemente sind sehr vielseitig und ändern Ihre Gestalt, je nachdem als welcher Typ sie deklariert werden. Da wir in diesem Kurs nicht alle möglichen Typen abdecken können, beschränken uns hier auf <code>checkbox</code> und <code>range</code>. Zur Übersicht über die restlichen Typen sei jedem z.B. ein Blick ins <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element/Input">MDN</a> oder ein Besuch von <a href="https://wiki.selfhtml.org/wiki/HTML/Formulare/input">selfHTML</a> empfohlen.
+Es soll nun eine Möglichkeit hinzugefügt werden, die Drehrichtung der Kurbel durch eine Checkbox umzukehren.</p>
+<iframe width=100% height=520 frameborder='no' src='https://goessner.github.io/webkinematik/Interaktivitaet/3 Kurbel - checkbox.html'></iframe>
+<p>Wir fügen im HTML-Teil den Input, mit einem zugehörigen Label, direkt unter dem Output für die Periodendauer hinzu:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"direction"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"direction"</span>&gt;</span> Drehrichtung umkehren<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+</div></code></pre>
+<p>Checkboxen haben zwei spezielle optionale Attribute, <code>checked</code> und <code>value</code>. <code>checked</code> ist von Typ <code>boolean</code> und standardmäßig (auch wenn nicht explizit deklariert) <code>false</code>. Wie der Name schon sagt, gibt es an ob die Box aktiviert (abgehakt) ist oder nicht. Durch <code>value</code> kann die Checkbox einen Wert übertragen, standardmäßig ist dieser <code>&quot;on&quot;</code>.
+Um nun die Drehrichtung umzukehren brauchen eigentlich nicht einmal eine Variable deklarieren. Dennoch legen wir zur Übersichtlichkeit wieder die gewohnte Abkürzung zum HTML-Element an:</p>
+<p><code>Drehrichtung = document.getElementById('direction')</code></p>
+<p>Wir prüfen dann in der <code>position()</code> Funktion welchen Wert das <code>checked</code> Attribut der Checkbox hat. Falls die Checkbox abgehakt ist soll die Kurbel mathematisch negativ, also im Uhrzeigersinn, laufen. <code>checked</code> ist dann <code>true</code> und das Inkrement wird durch Subtraktion von diesem zu einem Dekrement. Ist <code>checked = false</code> bleibt alles wie gehabt.</p>
+<p>Die neue <code>position()</code> Funktion sollte so aussehen:</p>
+<pre><code class="code-line language-HTML"><div>function position() {
+    // baut dynamische Kurbel auf
+    Kurbel.del()
+          .lin(0, 0, mec.A.x, mec.A.y, {lw:3})
+          .use("nod", mec.A);
+ 
+    // inkrementiert phi 
+    if (run) {
+        if (Drehrichtung.checked) {
+            phi -= speedmod*pi/180;
+        } else {
+            phi += speedmod*pi/180; 
+        }
+    }
+}
+</div></code></pre>
+<p><strong>Ergebnis:</strong></p>
+<p>Das HTML-Dokument sollte nun folgendermaßen aussehen:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ 
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"b"</span>&gt;</span>Start/Stop<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"speed"</span>&gt;</span>Geschwindigkeit:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"speed"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0.5"</span>&gt;</span>0,5x<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">selected</span>&gt;</span>1x<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>2x<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"4"</span>&gt;</span>4x<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Periodendauer"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"speed"</span>&gt;</span>T: 6s<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"direction"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"direction"</span>&gt;</span> Drehrichtung umkehren<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+ 
+<span class="hljs-keyword">const</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
+    ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
+    b = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'b'</span>),
+    speed = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'speed'</span>),
+    Periodendauer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'Periodendauer'</span>),
+    Drehrichtung = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'direction'</span>),
+ 
+    pi = <span class="hljs-built_in">Math</span>.PI,
+    l = <span class="hljs-number">100</span>,  <span class="hljs-comment">// Laenge der Kurbel</span>
+ 
+    mec = {
+        <span class="hljs-keyword">get</span> ephi() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:<span class="hljs-built_in">Math</span>.cos(phi), <span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sin(phi)}; },
+        <span class="hljs-keyword">get</span> A() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:l*mec.ephi.x, <span class="hljs-attr">y</span>:l*mec.ephi.y}; }
+    },
+ 
+    Kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
+ 
+    <span class="hljs-comment">// baut und initialisiert statische Umgebung</span>
+    world = g2().clr()
+                .view({<span class="hljs-attr">cartesian</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>})
+                .use({<span class="hljs-attr">grp</span>:Kurbel})
+                .nodfix({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>});
+ 
+<span class="hljs-keyword">let</span> phi = <span class="hljs-number">0</span>, <span class="hljs-comment">// Laufvariable</span>
+    speedmod = <span class="hljs-number">1</span>,  <span class="hljs-comment">// Faktor der die Geschwindigkeit modifiziert</span>
+ 
+    run = <span class="hljs-literal">true</span>;  <span class="hljs-comment">// Boolean als Schalter um zu pruefen ob Animation laeuft</span>
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// baut dynamische Kurbel auf</span>
+    Kurbel.del()
+          .lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">x2</span>:mec.A.x, <span class="hljs-attr">y2</span>:mec.A.y, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>})
+          .nod({...mec.A});
+ 
+ 
+    <span class="hljs-comment">// inkrementiert phi</span>
+    <span class="hljs-keyword">if</span> (run) {
+        <span class="hljs-keyword">if</span> (Drehrichtung.checked) {
+            phi -= speedmod*pi/<span class="hljs-number">180</span>;
+        } <span class="hljs-keyword">else</span> {
+            phi += speedmod*pi/<span class="hljs-number">180</span>;
+        }
+    }
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    position();  <span class="hljs-comment">// aktualisiere Position</span>
+    world.exe(ctx);  <span class="hljs-comment">// rendert world in den Context</span>
+    requestAnimationFrame(render);  <span class="hljs-comment">// asynchroner callback von render(), keine Rekursion!</span>
+}
+ 
+<span class="hljs-comment">// wechselt Status der Lauferlaubnis</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startstop</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (run) {
+        run = <span class="hljs-literal">false</span>;
+    } <span class="hljs-keyword">else</span> {
+        run = <span class="hljs-literal">true</span>;
+    }
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeSpeed</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// weist dem speedmodifier den Wert der ausgewaehlten Option zu</span>
+    speedmod = speed.options[speed.selectedIndex].value;
+    <span class="hljs-comment">// aktualisiert den Output</span>
+    Periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
+}
+ 
+ 
+<span class="hljs-comment">/*
+ *  Initialisierung
+ */</span>
+ 
+<span class="hljs-comment">// Eventlistener hinzufuegen</span>
+b.addEventListener(<span class="hljs-string">"click"</span>,startstop);
+speed.addEventListener(<span class="hljs-string">"change"</span>,changeSpeed);
+ 
+<span class="hljs-comment">// Animation starten</span>
+render();
+ 
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>

@@ -45,7 +45,7 @@ Hinweise:
 
 * Den Drehwinkel können Sie bestimmen, indem Sie sich das Geschwindigkeitsprofil des Rades anschauen, welches sich aus Führungs- und Relativgeschwindigkeit zusammensetzt, und beachten, dass am Kontaktpunkt zum Boden Haftung gilt! Die Tangentialgeschwindigkeit in allgemeiner Form lautet $v_t~=~r \cdot\dot \varphi$
  
-* Wenn Sie einen Blick in die API-Dokumentation von [g2.mec]{https://github.com/goessner/g2-mec/tree/master/api} werfen, was auch für g2 ausdrücklich empfohlen ist, werden Sie feststellen, dass `ground()` ein Array von Punkten als ersten Parameter erwartet. Sie benötigen also ein Array in der Form [x1,y1,x2,y2,...,xn,yn] (Flat Array genannt), das die Punkte eines Halbkreises enthält. Erstellen Sie eine Funktion, die diese Punkte in einer Schleife unabhängig berechnet und an ein Array weitergibt. Rufen Sie diese Funktion auf, bevor `world` initialisiert wird, da `ground()` ansonsten über ein leeres Array gerendert wird!
+* Wenn Sie einen Blick in die API-Dokumentation von [g2.mec](https://github.com/goessner/g2-mec/tree/master/api) werfen, was auch für g2 ausdrücklich empfohlen ist, werden Sie feststellen, dass `ground()` ein Array von Punkten als ersten Parameter erwartet. Sie benötigen also ein Array in der Form [x1,y1,x2,y2,...,xn,yn] (Flat Array genannt), das die Punkte eines Halbkreises enthält. Erstellen Sie eine Funktion, die diese Punkte in einer Schleife unabhängig berechnet und an ein Array weitergibt. Rufen Sie diese Funktion auf, bevor `world` initialisiert wird, da `ground()` ansonsten über ein leeres Array gerendert wird!
 
 > Zur Erinnerung - An Arrays hängt man Elemente mittels folgender Syntax an:
 

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+
+<meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
+<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
+<title>Dokumentation von Webkinematik</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
+<link rel="stylesheet" href="../theme/style.css">
+</head>
+<body id="top">
+<main>
+  <nav>
+<p><a href="../index.html"><img src="../img/cover.png"></img></a></p>
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="1">
+    <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
+        <ol>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Bressesche Kreise.html">Bresse'sche Kreise</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Ball'scher Punkt.html">Ball'scher Punkt</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Momentanpol.html">Momentanpol</a></li> 
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Wendepol.html">Wendepol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Tangentialpol.html">Tangentialpol</a></li>
+        <li><a href="../01_Mechanismentechnik_Wiederholung.md/Beschleunigungpol.html">Beschleunigungspol</a></li>  
+        </ol>
+    </details></li>
+</ol>
+<ol start="2">
+    <li><details><summary markdown="span">Webtechnologien</summary>
+    <ol>
+        <li><a href="../02_Webtechnologie.md/Grundlagen.html">Grundlagen</a></li>
+        <li><a href="../02_Webtechnologie.md/Uebungen.html">Übungen</a></li> 
+    </ol>
+    </details></li>
+</ol>
+<ol start="3">
+    <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
+    <ol>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+    </ol>
+    </details></li>
+</ol>
+</nav>
+
+<article>
+
+<header>
+<h1>Dokumentation von Webkinematik</h1>
+
+
+
+<h5>Oktober 2020</h5>
+<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+</header>
+<h4 id="slider22">Slider2/2</h4>
+<p>Auch wenn wir unser Animationsbeispiel bereits um einige Steuerelemente erweitert haben bleit es doch eine Animation. Um vollständige Interaktivität zu erreichen koppeln wir nun <code>phi</code> mit einem Slider.</p>
+<iframe width=100% height=450 frameborder='no' src='https://goessner.github.io/webkinematik/Interaktivitaet/5 Kurbel - 2 slider.html'></iframe>
+<p>Zuerst entfernen wir, bis auf den Slider für <code>l</code>, alles wieder was wir in diesem Kapitel hinzugefügt haben (oder laden die folgende Vorlage runter).</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>      
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ 
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>             
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lslider"</span>&gt;</span>l:
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lslider"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:240px;vertical-align:middle;padding:0"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"100"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lout"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lslider"</span> &gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>mm
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>    
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+ 
+<span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
+    ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
+    lslider = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lslider'</span>),
+    lout = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lout'</span>),    
+ 
+    pi = <span class="hljs-built_in">Math</span>.PI,
+    l = <span class="hljs-number">100</span>,  <span class="hljs-comment">// Laenge der Kurbel</span>
+ 
+ 
+    phi = <span class="hljs-number">0</span>, <span class="hljs-comment">// Laufvariable</span>
+ 
+    mec = {
+        <span class="hljs-keyword">get</span> ephi() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:<span class="hljs-built_in">Math</span>.cos(phi), <span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sin(phi)}; },
+        <span class="hljs-keyword">get</span> A() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:l*mec.ephi.x, <span class="hljs-attr">y</span>:l*mec.ephi.y}; }
+    },  
+ 
+    Kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
+ 
+    <span class="hljs-comment">// baut und initialisiert statische Umgebung</span>
+    world = g2().clr().view({<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">cartesian</span>:<span class="hljs-literal">true</span>})
+                .use({<span class="hljs-attr">grp</span>:Kurbel})
+                .nodfix()
+    ;
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// baut dynamische Kurbel auf</span>
+    Kurbel.del()
+          .lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">x2</span>:mec.A.x, <span class="hljs-attr">y2</span>:mec.A.y, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>})
+          .nod(mec.A);
+}        
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    position();  <span class="hljs-comment">// aktualisiere Position</span>
+    world.exe(ctx);  <span class="hljs-comment">// rendert world in den Context</span>
+    requestAnimationFrame(render);  <span class="hljs-comment">// asynchroner callback von render(), keine Rekursion!</span>
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setl</span>(<span class="hljs-params"></span>) </span>{
+    l = lslider.value;
+    lout.innerHTML = lslider.value;
+}
+ 
+<span class="hljs-comment">/*
+ *  Initialisierung
+ */</span>
+ 
+<span class="hljs-comment">// Eventlistener hinzufuegen</span>
+lslider.addEventListener(<span class="hljs-string">"input"</span>,setl);  <span class="hljs-comment">// bei hohem Rechenaufwand ist "change" sinnvoller</span>
+ 
+ 
+<span class="hljs-comment">// Animation starten</span>
+render();
+ 
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Wir fügen im HTML-Teil einen In- und Output für <code>phi</code> von 0 bis 360° hinzu</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"phislider"</span>&gt;</span>&amp; phi;:
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"phislider"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:240px;vertical-align:middle;padding:0"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"360"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"phiout"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"phislider"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>°
+<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>In Zeile 3 des obigen Code-Schnipsels steht &amp; phi;. Das Leerzeichen zwischen &amp; und phi muss entfernt werden um φ zu erhalten und ist nur da, weil die Code Funktion des Ilias Systems die Eingabe sonst nicht anzeigt. Es handelt sich hierbei um Unicode bzw. den entsprechenden HTML Namen. Weitere nützliche Unicode Zeichen findet man z.B. <a href="https://unicode-table.com/de/">hier</a>.</p>
+</blockquote>
+<p>Nachdem wieder Abkürzungen für in- und Output</p>
+<p><code>phislider = document.getElementById('phislider'), phiout = document.getElementById('phiout'),</code></p>
+<p>angelegt, ein Eventlistener hinzugefügt</p>
+<p><code>phislider.addEventListener(&quot;input&quot;,setPhi);</code></p>
+<p>und die Listener-Funktion erstellt wurde,</p>
+<pre><code class="code-line language-HTML"><div>function setPhi() {
+    phi = phislider.value*pi/180;
+    phiout.innerHTML = phislider.value;
+}
+</div></code></pre>
+<p>ist das Beispiel im Grunde fertig und funktioniert.</p>
+<p><strong>dirty flags</strong>
+Dennoch soll an dieser Stelle das Konzept sogenannter &quot;dirty flags&quot; eingeführt werden.</p>
+<p>Wenn man interaktive Webkinematik betreibt nutz man dazu meistens <code>requestAnimationFrame(callback)</code>. Da der Callback bei modernen Systemen ununterbrochen mindestens alle 16,67ms erfolgt, werden auch alle Berechnungen innerhalb der Callback-Funktion jedes Mal erneut ausgeführt.
+Wenn nun aber wie bei uns ein statischer Mechanismus vorliegt solang man den entsprechenden Slider nicht bewegt, wird unnötigerweise immer wieder dasselbe berechnet. Somit wäre es aus Performancegründen sicherlich wünschenswert, wenn Berechnungen nur stattfinden nachdem Änderungen eingetreten sind.</p>
+<p>Zudem können auch viele Inputs oder tief verschachtelte Getter sehr an der Performance zehren. Man möchte nicht immer sofort alles aktualisieren, wenn man nur eine Kleinigkeit ändert. Dazu kann man sein mechanisches System oder auch sein Canvas in mehrere Bereiche/Schichten einteilen und mittels Booleans nur den Bereich aktualisieren der eine Änderung erfahren hat.
+Dazu fügen nun zuerst in den Script Variablen mit</p>
+<p><code>dirty = true</code></p>
+<p>den erwähnten Boolean hinzu. Wenn dieser <code>true</code> ist, gibt es eine Abweichung von Soll Zustand und es muss etwas aktualisiert werden. Da das beim initialen Laden der Seite auf jeden Fall so ist, initialisieren wir <code>dirty</code> entsprechend.</p>
+<p>Anschließend ändern wir jede unsere Listener-Funktionen dahingehend, dass in ihnen <code>dirty</code> auf <code>true</code> gesetzt wird, denn hier finden ja die Änderungen statt, die Aktualisierungen erforderlich machen.</p>
+<p><code>setPhi()</code> sieht nun folgendermaßen aus:</p>
+<pre><code class="code-line language-HTML"><div>function setPhi() {
+    if (phislider.value != phiout.value) {
+        phi = phislider.value*pi/180;
+        phiout.innerHTML = phislider.value;
+        dirty = true;
+    }
+}
+</div></code></pre>
+<p>und <code>setl()</code> dementsprechend so:</p>
+<pre><code class="code-line language-HTML"><div>function setl() {
+    if (lslider.value != lout.value) {
+        l = lslider.value;
+        lout.innerHTML = lslider.value;
+        dirty = true;
+    }
+}
+</div></code></pre>
+<blockquote>
+<p>Stellt man <code>dirty</code> in <code>setl()</code> auf <code>false</code>, wird die Kurbellänge, trotz Input-Event, erst aktualisiert sobald man den φ-Slider bewegt.</p>
+</blockquote>
+<p>In beiden Funktionen wird am Anfang geprüft ob es eine Abweichung zwischen Input und Output gibt. Wenn das so ist wird die Änderung der Werte vorgenommen und anschließend <code>dirty</code> auf <code>true</code> gesetzt.</p>
+<p>Die Abfrage von <code>dirty</code> geschieht dann in der <code>render()</code> Funktion die jetzt so aussieht:</p>
+<pre><code class="code-line language-HTML"><div>function render() {
+    if (dirty) {
+        position();  // aktualisiere Position
+        world.exe(ctx);  // rendert world in den Context
+        dirty = false;
+    }
+    requestAnimationFrame(render);  // asynchroner callback von render(), keine Rekursion!
+}
+</div></code></pre>
+<p>Wenn <code>dirty</code> hier <code>true</code> ist, gibt es etwas zu aktualisieren. Es werden die entsprechenden Funktionen aufgerufen und anschließend mit der Zuweisung <code>dirty = false</code> vermerkt, dass im nächsten Durchgang nichts aktualisiert werden muss (d.h. so lange es keine erneuten Änderungen gibt). <code>requestAnimationFrame(render)</code> steht außerhalb der Bedingung da diese Zeile ja die &quot;Animation&quot; bzw. App am Laufen hält.</p>
+<p><strong>Ergebnis:</strong></p>
+<p>Das fertige HTML-Dokument sollte nun folgendermaßen aussehen:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ 
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Kurbel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"phislider"</span>&gt;</span>&amp;phi;:
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"phislider"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:240px;vertical-align:middle;padding:0"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"360"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"phiout"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"phislider"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>°
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lslider"</span>&gt;</span>l:
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lslider"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:240px;vertical-align:middle;padding:0"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"100"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lout"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lslider"</span>&gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>mm
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ 
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+ 
+<span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
+    ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
+    phislider = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'phislider'</span>),
+    phiout = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'phiout'</span>),
+    lslider = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lslider'</span>),
+    lout = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lout'</span>),
+ 
+    pi = <span class="hljs-built_in">Math</span>.PI,
+    l = <span class="hljs-number">100</span>,  <span class="hljs-comment">// Laenge der Kurbel</span>
+ 
+ 
+    phi = <span class="hljs-number">0</span>, <span class="hljs-comment">// Laufvariable</span>
+ 
+    mec = {
+        <span class="hljs-keyword">get</span> ephi() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:<span class="hljs-built_in">Math</span>.cos(phi), <span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sin(phi)}; },
+        <span class="hljs-keyword">get</span> A() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:l*mec.ephi.x, <span class="hljs-attr">y</span>:l*mec.ephi.y}; }
+    },
+ 
+    Kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
+ 
+    <span class="hljs-comment">// baut und initialisiert statische Umgebung</span>
+    world = g2().clr().view({<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">cartesian</span>:<span class="hljs-literal">true</span>})
+                .use({<span class="hljs-attr">grp</span>:Kurbel})
+                .nodfix(),
+ 
+    dirty = <span class="hljs-literal">true</span>  <span class="hljs-comment">// wenn true gibt es was zu aktualisieren</span>
+    ;
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// baut dynamische Kurbel auf</span>
+    Kurbel.del()
+          .lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">x2</span>:mec.A.x, <span class="hljs-attr">y2</span>:mec.A.y, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>})
+          .nod(mec.A);
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (dirty) {
+        position();  <span class="hljs-comment">// aktualisiere Position</span>
+        world.exe(ctx);  <span class="hljs-comment">// rendert world in den Context</span>
+        dirty = <span class="hljs-literal">false</span>;
+    }
+    requestAnimationFrame(render);  <span class="hljs-comment">// asynchroner callback von render(), keine Rekursion!</span>
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setPhi</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (phislider.value != phiout.value) {
+        phi = phislider.value*pi/<span class="hljs-number">180</span>;
+        phiout.innerHTML = phislider.value;
+        dirty = <span class="hljs-literal">true</span>;
+    }
+}
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setl</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (lslider.value != lout.value) {
+        l = lslider.value;
+        lout.innerHTML = lslider.value;
+        dirty = <span class="hljs-literal">true</span>;
+    }
+}
+ 
+<span class="hljs-comment">/*
+ *  Initialisierung
+ */</span>
+ 
+<span class="hljs-comment">// Eventlistener hinzufuegen</span>
+phislider.addEventListener(<span class="hljs-string">"input"</span>,setPhi);
+lslider.addEventListener(<span class="hljs-string">"input"</span>,setl);  <span class="hljs-comment">// bei hohem Rechenaufwand ist "change" sinnvoller</span>
+ 
+ 
+<span class="hljs-comment">// Animation starten</span>
+render();
+ 
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+
+</article>
+</main>
+<script src="../js/g2.html.js"></script>
+<script src="../js/mec2.html.js"></script>
+</body>
+</html>
