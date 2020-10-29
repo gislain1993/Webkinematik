@@ -101,65 +101,47 @@
 <h5>Oktober 2020</h5>
 <h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
 </header>
-<h4 id="g2-chart-erweiterung">g2-chart Erweiterung</h4>
-<p>Die Bibliothek g2-chart erweitert g2 um die Möglichkeit Liniendiagramme auf einfache und intuitive Weise in ein Canvaselement zu rendern.
-Auch diese Erweiterung ist bereits in der Vollversion von g2 integriert.</p>
-<script src="https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"></script>
-<p>Es folgt nun eine Einführung in die Grundlagen im Umgang mit g2-chart. Als weiterführende Lektüre wird empfohlen sich mit der vollständigen <a href="https://github.com/goessner/g2/wiki">Dokumentation auf GitHub</a> zu beschäftigen.</p>
-<p>Die Funktionsweise von g2-chart wird am besten durch eine minimalistische Livedemo klar:</p>
-<iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_minimalistic.html'></iframe>
-<p>Die Methode <code>chart()</code> erwartet ein Objekt mit mindestens vier Properties, welche die rechteckige Grundfläche des Diagramms definieren.
-Analog zur g2-Methode <code>rec()</code> gibt man die linke untere Ecke (<code>x|y</code>), die Breite <code>b</code> sowie die Höhe <code>h</code> des Diagramms an. Außerdem ist es sinnvoll das <code>funcs</code> Property mit mindestens einem Element anzugeben, da man ohne Daten oder Funktionen lediglich ein graues Rechteck sieht.</p>
-<p>Die Skala der Achsen wird automatisch erstellt. <code>chart()</code>, bzw. sein Property <code>funcs</code> kann sowohl Datensätze in Form von Arrays (siehe oben), als auch algebraische Funktionen interpretieren.</p>
-<iframe width=100% height=380 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_multi-functions.html'></iframe>
-<p><a name="titleobject"></a>Wie man im obigen Beispiel sieht, kann das Diagramm beschriftet mit einem Titel beschriftet werden. Dieser kann entweder ein einfacher String sein (z.B. <code>title:&quot;sin &amp; tan&quot;</code>) oder aber ein Objekt. Dieses title-Objekt kennt zusätzliche Properties:</p>
-<ul>
-<li><code>text:string</code> - Der Text der Beschriftung</li>
-<li><code>offset:number</code> - vertikaler Versatz zum Diagramm</li>
-<li><code>style:object</code> - Styling für den Titel, mögliche Properties z.B.:
-<ul>
-<li><code>foz:number</code> - Schriftgröße</li>
-<li><code>foc:string</code> - Schriftfarbe</li>
-</ul>
-</li>
-</ul>
-<p>Zudem ist es möglich die Bereiche der Achsen für das Diagramm einzuschränken, indem die Properties <code>xmin,xmax,ymin,ymax:number</code> gesetzt werden.
-Vor allem sieht man hier aber, dass sich mehrere Funktionen in einem Diagramm darstellen lassen, indem <code>funcs</code> einfach mehrere Objekte bekommt. Das Array <code>funcs</code> enthält immer Objekte als Elemente. Diese Objekte können jedoch unterschiedliche Properties besitzen. Schauen wir uns nun die Struktur und die Properties einmal genauer an:</p>
-<ul>
-<li><code>funcs: array</code> - Enthält Objekte mit Datensätzen oder Funktionen
-<ul>
-<li><code>funcs[item]: object</code> - Enthält Datensatz oder Array</li>
-<li><code>funcs[item].data</code>: array - mögliche Formen sind Flatarray (<code>[x,y,..]</code>), Array von Arrays ([<code>[x,y],..]</code>) und Array von Objekten ([<code>{x,y},..</code>]).</li>
-<li><code>funcs[item].fn: function</code> - Eine Funktion <code>y = f(x)</code> die ein x Parameter annimmt und ein y zurückgibt. Bsp.: <code>Math.sin</code></li>
-<li><code>funcs[item].dx: number</code> - Nutzt man fn muss zwingend ein Inkrement dx angegeben werden, mit dem die Funktion zum rendern evaluiert wird.</li>
-<li><code>funcs[item].fill: boolean</code> - Gibt an ob die Fläche zwischen Graph und x-Achse gefüllt werden soll.</li>
-<li><code>funcs[item].dots: boolean</code> - Markiert die Punkte von Datensätzen (sollte bei Nutzung von <code>fn</code> gemieden werden)</li>
-</ul>
-</li>
-</ul>
-<p>Des Weiteren besitzt <code>chart()</code> die Fähigkeit, via den Properties xaxis und yaxis, einiges an den Diagrammachsen einzustellen.</p>
-<iframe width=100% height=570 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_chart_axis-props.html'></iframe>
-<p>Einige mögliche <code>xaxis</code>- und <code>yaxis</code>-Properties lauten:</p>
+<h4 id="%C3%BCbung-pendelrolle">Übung-Pendelrolle</h4>
+<p>Bilden Sie die Animation mit g2 nach.</p>
+<img src="https://goessner.github.io/webkinematik/Animation/Pendelrolle.gif" alt="Datei nicht gefunden" sizes="(max-height: 550px)">
+<p>HTML-Template:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Pendelrolle<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>      
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ 
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Pendel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>             
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"600"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+ 
+ 
+ 
+    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Hinweise:</p>
 <ul>
 <li>
-<p><code>title: string or object</code> - siehe <a href="#titleobject">title-Objekt</a>, Unterschied: Achsenbezogen</p>
+<p>Definieren Sie für den Punkt, an dem das Rad gezeichnet wird, ein zusätzliches Property für den Drehwinkel. <code>{x:..., y:..., w:...}</code></p>
 </li>
 <li>
-<p><code>line: boolean</code> - wenn <code>false</code> wird die Skalenlinie der jeweiligen Achse nicht angezeigt</p>
+<p>Den Drehwinkel können Sie bestimmen, indem Sie sich das Geschwindigkeitsprofil des Rades anschauen, welches sich aus Führungs- und Relativgeschwindigkeit zusammensetzt, und beachten, dass am Kontaktpunkt zum Boden Haftung gilt! Die Tangentialgeschwindigkeit in allgemeiner Form lautet <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub><mtext> </mtext><mo>=</mo><mtext> </mtext><mi>r</mi><mo>⋅</mo><mover accent="true"><mi>φ</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">v_t~=~r \cdot\dot \varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.59445em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8623000000000001em;vertical-align:-0.19444em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.66786em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">φ</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.055550000000000016em;"><span class="mord">˙</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span></span></eq></p>
 </li>
 <li>
-<p><code>origin: boolean</code> - wenn <code>true</code> wird eine Linie durch den Ursprung der jeweiligen Achse gezeichnet</p>
-</li>
-<li>
-<p><code>ticks: object</code> or <code>boolean</code> - wenn <code>true</code>, werden keine Skalenmarkierungen gezeigt. Falls ein Objekt verwendet wird gibt es das Property len: number um die Länge dieser Markierungen einzustellen.</p>
-</li>
-<li>
-<p><code>grid: object</code> or <code>boolean</code> - <code>true</code> verlängert die Skalenmarkierungen der jeweiligen Achse, sodass sie das gesamte Diagramm durchziehen. Alternativ kann ein Style-Objekt angegeben werden.</p>
-</li>
-<li>
-<p><code>labels: object</code> or <code>boolean</code> - <code>false</code> schaltet die Beschriftung der Skalenmarkierungen aus. Alternatives kann ein Objekt mit den Properties <code>loc:&quot;auto&quot;</code> (dieses Property ist momentan noch ohne Funktion) , <code>offset: number</code> (Versatz der Beschriftung) und wiederum einem Style-Objekt angegeben werden.</p>
+<p>Wenn Sie einen Blick in die API-Dokumentation von <a href="https://github.com/goessner/g2-mec/tree/master/api">g2.mec</a> werfen, was auch für g2 ausdrücklich empfohlen ist, werden Sie feststellen, dass <code>ground()</code> ein Array von Punkten als ersten Parameter erwartet. Sie benötigen also ein Array in der Form [x1,y1,x2,y2,...,xn,yn] (Flat Array genannt), das die Punkte eines Halbkreises enthält. Erstellen Sie eine Funktion, die diese Punkte in einer Schleife unabhängig berechnet und an ein Array weitergibt. Rufen Sie diese Funktion auf, bevor <code>world</code> initialisiert wird, da <code>ground()</code> ansonsten über ein leeres Array gerendert wird!</p>
 </li>
 </ul>
+<blockquote>
+<p>Zur Erinnerung - An Arrays hängt man Elemente mittels folgender Syntax an:</p>
+</blockquote>
+<p><code>Arrayname.push(Element1, ..., ElementN)</code></p>
 
 </article>
 </main>
