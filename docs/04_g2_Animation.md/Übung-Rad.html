@@ -101,9 +101,64 @@
 <h5>Oktober 2020</h5>
 <h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
 </header>
-<h3 id="bressesche-kreise">Bresse'sche Kreise</h3>
-<p>Zur Bestimmung von Bewegungszuständen allgemein bewegter Ebenen wird vor allem die Krümmung von Bahnkurven betrachtet. Um ein gewünschtes Verhalten der Gliedmaße von Getrieben zu erreichen, können verschiedene Modelle konstruiert werden. Im Folgenden wird die Darstellung mittels Bresse'scher Kreise betrachtet.
-Bresse'sche Kreise, benannt nach dem französischen Professor der Mechanik Jacques Antoine Charles Bresse (1822-1883), ist die gemeinsame Bezeichnung für Wendekreis und Tangentialkreis. Diese Bresse'schen Kreise „schneiden sich stets im Momentanpol und Beschleunigungspol. Ihre Mittelpunkte liegen vom Pol aus betrachtet in orthogonaler Ausrichtung auf der Polbahnnormalen und der Polbahntangenten“ (Gössner, S.: Getriebelehre. Berlin: Logos Verlag, 2012, S. 115).</p>
+<h4 id="%C3%BCbung-rad">Übung-Rad</h4>
+<p>Bilden Sie die Animation mit g2 nach
+<img src="https://goessner.github.io/webkinematik/Animation/Rad.gif" alt="Datei nicht gefunden" sizes="(max-height: 250px)"></p>
+<p>indem Sie den Quelltext vervollständigen</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Rad<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>      
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ 
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Rad<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>             
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"900"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+ 
+<span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
+    ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
+ 
+    pi = <span class="hljs-built_in">Math</span>.PI
+ 
+    a = <span class="hljs-number">0.5</span>,    <span class="hljs-comment">// Beschleunigung [m/s^2]</span>
+    <span class="hljs-comment">// ...</span>
+ 
+    ;
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params">t</span>) </span>{
+<span class="hljs-comment">// ...</span>
+}        
+ 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
+    <span class="hljs-keyword">if</span> (!t0 <span class="hljs-comment">/* ... */</span>)  
+        t0 = time;
+ 
+    <span class="hljs-comment">// ...</span>
+}
+ 
+<span class="hljs-comment">// ...</span>
+ 
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p><strong>Hinweise:</strong></p>
+<ul>
+<li>
+<p>Gehen Sie wie bei der zeitabhängigen Kurbel vor und nutzen Sie das Weg-Zeit-Gesetz.</p>
+</li>
+<li>
+<p>Achten Sie darauf die Einheiten anzugleichen!</p>
+</li>
+<li>
+<p>Die Animation startet neu, sobald <code>t0 = time</code> zugewiesen wird. Dies soll geschehen wenn das Rad aus dem Canvas herausgerollt ist. Die Breite des Canvas können Sie entweder als Zahl eingeben oder allgemein über <code>document.getElementById('*CanvasID*').width</code> auslesen.</p>
+</li>
+</ul>
 
 </article>
 </main>
