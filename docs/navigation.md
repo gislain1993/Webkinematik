@@ -10,7 +10,7 @@
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageanalyse des Viergelenks</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
-        <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
+        <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Koppelkurven.html">Koppelkurven</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Beschleunigung.html">Beschleunigung</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Relativbewegung.html">Relativbewegung</a></li>
