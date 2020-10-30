@@ -8,8 +8,7 @@
     <li><details><summary markdown="span">Mechanismentechnik Wiederholung</summary>
         <ol>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Getriebekinematik.html">Getriebekinematik</a></li> 
-        <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Maschengleichung.html">Maschengleichung</a></li>
-        <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageranalyse des Viergelenks</a></li>
+        <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Lageanalyse des Viergelenks.html">Lageanalyse des Viergelenks</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Übertragungsgleichung.html">Übertragungsgleichung und Übertragungsfunktion</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Koppelkurve.html">Koppelkurven</a></li>
         <li><a href="{base}/01_Mechanismentechnik_Wiederholung.md/Geschwindigkeit.html">Geschwindigkeit</a></li>
