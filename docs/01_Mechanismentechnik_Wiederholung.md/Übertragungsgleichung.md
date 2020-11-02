@@ -55,6 +55,6 @@ mit
 > $$\begin{aligned}
 \theta'' = \frac{a}{b}\frac{(\bm e_\theta \bm{\tilde e}_\psi)^2(\bm e _\varphi\bm e_\psi)+\frac{a}{b}(\bm e_\varphi\bm{\tilde e}_\psi)^2(\bm e_\theta\bm e_\psi)-\frac{a}{c}(\bm e_\varphi\bm{\tilde e}_\theta)^2}{(\bm{\tilde e}_\theta\bm e_\psi)^3}\\\\
 \psi'' = \frac{a}{c}\frac{(\bm e_\theta \bm{\tilde e}_\psi)^2(\bm e _\varphi\bm e_\psi)+\frac{a}{b}(\bm e_\varphi\bm{\tilde e}_\psi)^2-\frac{a}{c}(\bm e_\varphi\bm{\tilde e}_\theta)^2(\bm e_\theta\bm e_\psi)}{(\bm{\tilde e}_\theta\bm e_\psi)^3}
-\end{aligned}$$(1.11)
+\end{aligned}$$(1.17)
 
 Gleichungen (1.14) und (1.17) bilden nunmehr die Übertragungsfunktionen der 1. und 2. Ordnung.
