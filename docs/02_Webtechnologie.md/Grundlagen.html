@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Grundlagen des Web">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Grundlagen,JavaScript,Programmierung,g2">
+<title>Webtechnologie Grundlagen</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -88,20 +88,22 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>Webtechnologie Grundlagen</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Grundlagen, JavaScript, Programmierung, g2</h5>
 </header>
-<h3 id="grundlagen">Grundlagen</h3>
-<h4 id="was-sollten-sie-bereits-wissen">Was sollten Sie bereits wissen?</h4>
-<p>Für diese Einführung sollten Sie die folgenden Grundkenntnisse besitzen:
-Ein allgemeines Verständnis von Internet und World Wide Web.
-Gute praktische Kenntnisse der HyperText Markup Language.
-Etwas Programmiererfahrung. Falls Sie erst mit dem Programmieren beginnen, folgen Sie einer der Anleitungen, die auf der Hauptseite zu JavaScript verlinkt sind.</p>
-<h4 id="wo-finden-sie-informationen-zu-javascript">Wo finden Sie Informationen zu JavaScript ?</h4>
+<h2 id="21-was-sollten-sie-bereits-wissen">2.1 Was sollten Sie bereits wissen?</h2>
+<p>Für diese Einführung sollten Sie die folgenden Grundkenntnisse besitzen:</p>
+<ul>
+<li>Ein allgemeines Verständnis von Internet und World Wide Web.</li>
+<li>Gute praktische Kenntnisse der HyperText Markup Language.</li>
+<li>Etwas Programmiererfahrung.</li>
+</ul>
+<p>Falls Sie erst mit dem Programmieren beginnen, folgen Sie einer der Anleitungen, die auf der Hauptseite zu JavaScript verlinkt sind.</p>
+<h2 id="22-wo-finden-sie-informationen-zu-javascript">2.2 Wo finden Sie Informationen zu JavaScript ?</h2>
 <p>Die Dokumentation zu JavaScript im MDN umfasst Folgendes:</p>
 <ul>
 <li>
@@ -114,9 +116,8 @@ Etwas Programmiererfahrung. Falls Sie erst mit dem Programmieren beginnen, folge
 <p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference">JavaScript Referenz</a> enthält ausführliche Informationen zu den einzelnen Methoden und Objekten, die in JavaScript verwendet werden.</p>
 </li>
 </ul>
-<p>Falls Sie sich das erste Mal mit JavaScript befassen, beginnen Sie am besten damit sich dieses <a href="https://www.lynda.com/de/Frameworks-Skriptsprachen-tutorials/JavaScript-Crashkurs/195067-2.html">JavaScript Videotutorial</a> (Sie müssen bei <a href="http://lynda.com">lynda.com</a> eingeloggt sein damit der Link funktioniert) anzusehen. Dazu müssen Sie sich auf der Plattform <a href="http://lynda.com">lynda.com</a> als Angehöriger der FH Dortmund über das entsprechende Portal und mit Ihrem FH-Account einloggen. Die genaue Vorgehensweise ist <a href="https://www.fh-dortmund.de/lynda">hier</a> beschrieben.
-Sobald Sie mit den ersten Grundlagen vertraut sind, können Sie die JavaScript Referenz nutzen, um noch mehr über die einzelnen Methoden, Funktionen und Objekte von JavaScript zu erfahren.</p>
-<h4 id="was-ist-javascript">Was ist JavaScript?</h4>
+<p>Falls Sie sich das erste Mal mit JavaScript befassen, beginnen Sie am besten damit sich dieses <a href="https://www.lynda.com/de/Frameworks-Skriptsprachen-tutorials/JavaScript-Crashkurs/195067-2.html">JavaScript Videotutorial</a> (Sie müssen bei <a href="http://lynda.com">lynda.com</a> eingeloggt sein damit der Link funktioniert) anzusehen. Dazu müssen Sie sich auf der Plattform <a href="http://lynda.com">lynda.com</a> als Angehöriger der FH Dortmund über das entsprechende Portal und mit Ihrem FH-Account einloggen. Die genaue Vorgehensweise ist <a href="https://www.fh-dortmund.de/lynda">hier</a> beschrieben. Sobald Sie mit den ersten Grundlagen vertraut sind, können Sie die JavaScript Referenz nutzen, um noch mehr über die einzelnen Methoden, Funktionen und Objekte von JavaScript zu erfahren.</p>
+<h2 id="23-was-ist-javascript">2.3 Was ist JavaScript?</h2>
 <p>JavaScript ist eine plattformübergreifende, objektorientierte Skriptsprache. Es ist eine kompakte und ressourcenschonende Sprache. Innerhalb einer Host-Umgebung kann JavaScript mit den Objekten seiner Umgebung verknüpft werden, um diese programmatisch zu steuern.</p>
 <p>JavaScript beinhaltet eine Standardbibliothek von Objekten wie Array, Date, und Math, sowie einen Kern an Sprachelementen wie Operatoren, Kontrollstrukturen und Anweisungen.. Core JavaScript kann für eine Vielzahl von Anwendungsfällen erweitert werden, indem man es durch zusätzliche Objekte ergänzt. Beispiele:</p>
 <ul>
@@ -127,218 +128,215 @@ Sobald Sie mit den ersten Grundlagen vertraut sind, können Sie die JavaScript R
 <p>Serverseitiges JavaScript erweitert die Kernsprache durch Bereitstellung von Objekten, die für die Ausführung von JavaScript auf einem Server von Bedeutung sind. Zum Beispiel ermöglichen es serverseitige Erweiterungen einer Applikation, mit einer Datenbank zu kommunizieren, Information von einem Aufruf der Applikation zum nächsten zu erhalten oder Änderungen an Dateien auf einem Server vorzunehmen.</p>
 </li>
 </ul>
-<h4 id="javascript-und-die-ecmascript-spezifikation">JavaScript und die ECMAScript-Spezifikation</h4>
+<h4 id="231-javascript-und-die-ecmascript-spezifikation">2.3.1 JavaScript und die ECMAScript-Spezifikation</h4>
 <p>Die Spezifikation von ECMAScript besteht aus einem Satz von Anforderungen an eine Implementierung von ECMAScript; sie ist zweckdienlich, falls Sie standardkonforme Spracheigenschaften in Ihrer ECMAScript-Implementierung oder ihrer Laufzeitumgebung ( wie SpiderMonkey in Firefox oder v8 in Chrome ) realisieren wollen.</p>
 <p>Das ECMAScript-Dokument soll nicht den Scriptprogrammierer unterstützen; nutzen Sie für Informationen zum Erstellen von Scripten die JavaScript-Dokumentation.</p>
 <p>Die ECMAScript-Spezifikation verwendet Terminologie und Syntax, mit der JavaScript-Programmierer möglicherweise nicht vertraut sind. Obwohl sich die Beschreibung der Sprache in ECMAScript unterscheiden kann, bleibt die Sprache selbst die gleiche. JavaScript unterstützt jede Funktionalität, die in der ECMAScript-Spezifikation genannt wird.</p>
 <p>Die JavaScript-Dokumentation beschreibt Aspekte der Sprache in für JavaScript-Programmierer passender Form.</p>
-<h4 id="erste-schritte-mit-javascript">Erste Schritte mit JavaScript</h4>
+<h3 id="232-erste-schritte-mit-javascript">2.3.2 Erste Schritte mit JavaScript</h3>
 <p>Der ersten Schritte mit JavaScript bedarf es weniger Hilfsmittel. Als Texteditor empfiehlt sich die Nutzung von z.B. <a href="https://code.visualstudio.com">Visual Studio Code</a> oder <a href="https://notepad-plus-plus.org">Notepad++</a>. Beide Programme sind Open Source und somit kostenfrei. Zudem wird ein Webbrowser zur Wiedergabe von HTML-Dokumenten benötigt. <a href="https://www.mozilla.org/de/firefox/new/">Mozilla Firefox</a> weißt dabei für unsere Zwecke momentan die beste Performance auf. Es funktioniert aber grundsätzlich (<a href="http://kangax.github.io/compat-table/es6/">bis inkl. ES6</a>) jeder moderne Browser.</p>
 <p>Es gibt Grundsätzlich, ohne etwaige IDEs zu beachten, zwei Möglichkeiten JavaScript auszuführen. Im Browser und in der Kommandozeile des Betriebssystems via NodeJS. Die zweite Möglichkeit ist deutlich komfortabler wenn man mit längeren Quelltexten arbeitet.</p>
-<h4 id="javascript-im-browser">JavaScript im Browser</h4>
+<h3 id="233-javascript-im-browser">2.3.3 JavaScript im Browser</h3>
 <p>Die Web-Konsole zeigt Ihnen Informationen zur aktuell geladenen Webseite an und beinhaltet zudem eine Kommandozeile, die Sie nutzen können, um JavaScript-Ausdrücke im Kontext der aktuellen Seite auszuführen.</p>
-<p>Um die Web-Konsole zu öffnen, wählen Sie in Mozilla Firefox &quot;Einstellungen&quot; -&gt; &quot;Entwickler-Werkzeuge&quot; -&gt; &quot;Web-Konsole&quot; oder drücken Sie einfach F12 und wählen den Tab &quot;Konsole&quot; falls dieser nicht ohnehin schon gewählt ist (Strg+Shift+K öffnet die Konsole immer direkt). Die Konsole wird am unteren Rand des Browserfensters angezeigt. Entlang des unteren Rands der Konsole befindet sich eine Kommandozeile, in der Sie JavaScript-Befehle eingeben können; die zugehörige Ausgabe erscheint im darüber liegenden Fensterbereich:</p>
+<p>Um die Web-Konsole zu öffnen, wählen Sie in Mozilla Firefox &quot;Einstellungen&quot; -&gt; &quot;Entwickler-Werkzeuge&quot; -&gt; &quot;Web-Konsole&quot; oder drücken Sie einfach <kbd>F12</kbd> und wählen den Tab &quot;Konsole&quot; falls dieser nicht ohnehin schon gewählt ist (<kbd>Strg</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd> öffnet die Konsole immer direkt). Die Konsole wird am unteren Rand des Browserfensters angezeigt. Entlang des unteren Rands der Konsole befindet sich eine Kommandozeile, in der Sie JavaScript-Befehle eingeben können; die zugehörige Ausgabe erscheint im darüber liegenden Fensterbereich:</p>
 <figure>
-<img src="./Bilder/bild 15.png">
+<img src="../Bilder/bild 15.png">
 </figure>
 <p>Die <a href="https://developer.mozilla.org/de/docs/Tools/Web_Konsole">Web-Konsole</a> eignet sich hervorragend zur Ausführung einzelner Zeilen JavaScript, aber wollen Sie mehrere Zeilen ausführen können, ist das nicht besonders komfortabel, und Ihren Beispielcode speichern können Sie mit der Web-Konsole auch nicht. Daher ist für komplexere Beispiele die <a href="https://developer.mozilla.org/de/docs/Tools/Scratchpad">JavaScript-Umgebung</a> (engl. Scratchpad) die bessere Wahl.</p>
 <p>Um die JavaScript-Umgebung zu öffnen, wählen Sie &quot;JavaScript-Umgebung&quot; aus dem Menü &quot;Entwickler-Werkzeuge&quot;, das Sie im Hauptmenü von Firefox finden. Die JavaScript-Umgebung öffnet sich in einem eigenen Fenster als Editor, mit dem Sie JavaScript schreiben und im aktiven Tab des Browsers ausführen können. Sie können auch Skripte auf der Festplatte speichern bzw. davon laden.</p>
 <p>Wählen Sie &quot;Ausführen&quot;, wird der Code in der JavaScript-Umgebung ausgeführt. Das Ergebnis wird per &quot;Anzeigen&quot; in Form eines Kommentars zurück in die JavaScript-Umgebung geschrieben:</p>
 <figure>
-<img src="./Bilder/bild 16.png">
+<img src="../Bilder/bild 16.png">
 </figure>
-<h4 id="javascript-au%C3%9Ferhalb-des-browsers">JavaScript außerhalb des Browsers</h4>
-<p>Die Runtime Node.js, die in Googles V8 JS Engine ausgeführt wird, wurde entwickelt, um JavaScript, welches normalerweise clientseitig ausgeführt wird, auf Servern nutzen zu können. Nach der Installation von Node.js auf seinem Rechner, kann man jedoch JavaScript auch in der Eingabeaufforderung des Betriebssystems (in Windows 10 unter &quot;Start&quot; -&gt; &quot;Windows-System&quot; -&gt; &quot;Eingabeaufforderung&quot;, in Windows 7 unter &quot;Start&quot; -&gt; &quot;Zubehör&quot; -&gt; &quot;Eingabeaufforderung&quot;) - ohne Browser - ausführen. In späteren Kapiteln dieses Lernmoduls erfolgt noch eine tiefere Einführung in Node, es empfiehlt sich aber bereits jetzt die <a href="https://nodejs.org/en/download/current/">Installation</a>, da es den Workflow bei den Übungen erheblich verbessert. Ist Node.js installiert, öffnen Sie die Eingabeaufforderung und tippen <code>node</code> ein und bestätigen mit der Entertaste. Der Ordnerpfad verschwindet und es wird <code>&gt;</code> als Führungszeichen angezeigt. Nun können Sie JavaScript in der Kommandozeile programmieren. Um Node zu beenden Drücken Sie zweimal Strg + c.
-Möchten sie, vorher mit einem Texteditor erstellte JavaScript-Dateien ausführen, geht das folgendermaßen: Öffnen Sie die Eingabeaufforderung, navigieren Sie an den Speicherort an dem Ihre *.js Datei liegt, und tippen Sie <code>node Dateiname.js</code> ein, also z.B.: <code>C:\Webkinematik\Uebungen&gt;node U1.js</code>.</p>
-<p>Wer sich dazu entschieden hat <a href="https://code.visualstudio.com">Visual Studio Code</a> als Texteditor zu nutzen, macht sich nun das Leben noch ein wenig leichter. Man öffne in VS Code den Extension-Manager über &quot;Anzeigen&quot; -&gt; &quot;Extensions&quot; oder die Sidebar, suche nach &quot;Node Exec&quot; (<a href="https://marketplace.visualstudio.com/items?itemName=miramac.vscode-exec-node">Extension im Web</a>) und installiere die Erweiterung. Nun kann man, wenn Node.js auf dem PC installiert und eine JavaScript-Datei in VS Code geöffnet ist, diese ganz einfach mit der Taste &quot;F8&quot; im integrierten Terminal von VS Code ausführen lassen. Beenden, falls erforderlich, erfolgt mit &quot;F9&quot;.</p>
+<h3 id="234-javascript-au%C3%9Ferhalb-des-browsers">2.3.4 JavaScript außerhalb des Browsers</h3>
+<p>Die Runtime Node.js, die in Googles V8 JS Engine ausgeführt wird, wurde entwickelt, um JavaScript, welches normalerweise clientseitig ausgeführt wird, auf Servern nutzen zu können. Nach der Installation von Node.js auf seinem Rechner, kann man jedoch JavaScript auch in der Eingabeaufforderung des Betriebssystems (in Windows 10 unter &quot;Start&quot; -&gt; &quot;Windows-System&quot; -&gt; &quot;Eingabeaufforderung&quot;, in Windows 7 unter &quot;Start&quot; -&gt; &quot;Zubehör&quot; -&gt; &quot;Eingabeaufforderung&quot;) - ohne Browser - ausführen. In späteren Kapiteln dieses Lernmoduls erfolgt noch eine tiefere Einführung in Node, es empfiehlt sich aber bereits jetzt die <a href="https://nodejs.org/en/download/current/">Installation</a>, da es den Workflow bei den Übungen erheblich verbessert. Ist Node.js installiert, öffnen Sie die Eingabeaufforderung und tippen <code>node</code> ein und bestätigen mit der Entertaste. Der Ordnerpfad verschwindet und es wird <code>&gt;</code> als Führungszeichen angezeigt. Nun können Sie JavaScript in der Kommandozeile programmieren. Um Node zu beenden Drücken Sie zweimal <kbd>Strg</kbd> + <kbd>c</kbd>.</p>
+<p>Möchten sie, vorher mit einem Texteditor erstellte JavaScript-Dateien ausführen, geht das folgendermaßen: Öffnen Sie die Eingabeaufforderung, navigieren Sie an den Speicherort an dem Ihre *.js Datei liegt, und tippen Sie <code>node Dateiname.js</code> ein, also z.B.: <code>C:\Webkinematik\Uebungen&gt;node U1.js</code>.</p>
+<p>Wer sich dazu entschieden hat <a href="https://code.visualstudio.com">Visual Studio Code</a> als Texteditor zu nutzen, macht sich nun das Leben noch ein wenig leichter. Man öffne in VS Code den Extension-Manager über &quot;Anzeigen&quot; -&gt; &quot;Extensions&quot; oder die Sidebar, suche nach &quot;Node Exec&quot; (<a href="https://marketplace.visualstudio.com/items?itemName=miramac.vscode-exec-node">Extension im Web</a>) und installiere die Erweiterung. Nun kann man, wenn Node.js auf dem PC installiert und eine JavaScript-Datei in VS Code geöffnet ist, diese ganz einfach mit der Taste <kbd>F8</kbd> im integrierten Terminal von VS Code ausführen lassen. Beenden, falls erforderlich, erfolgt mit <kbd>F9</kbd>.</p>
 <blockquote>
-<p><strong>Tipp - Navigation in der Eingabeaufforderung:</strong>
-Sie können einfach mit gedrückter Umschalttaste in dem Ordner einen Rechtsklick machen, dessen Pfad in der Eingabeaufforderung stehen soll, dann erscheint ein zusätzlicher Kontextmenüeintrag &quot;Eingabeaufforderung hier öffnen&quot;. Alternativ schauen Sie hier nach.</p>
+<h4 id="tipp---navigation-in-der-eingabeaufforderung"><strong>Tipp - Navigation in der Eingabeaufforderung:</strong></h4>
+<p>Sie können einfach mit gedrückter Umschalttaste in dem Ordner einen Rechtsklick machen, dessen Pfad in der Eingabeaufforderung stehen soll, dann erscheint ein zusätzlicher Kontextmenüeintrag &quot;Eingabeaufforderung hier öffnen&quot;. Alternativ schauen Sie hier nach.</p>
 </blockquote>
-<h4 id="javascript-kurz%C3%BCberblick">JavaScript Kurzüberblick</h4>
+<h2 id="24-javascript-kurz%C3%BCberblick">2.4 JavaScript Kurzüberblick</h2>
 <p>Variablen deklariert man in JavaScript mit dem Schlüsselwort <code>var</code>, also z.B. <code>var x = 42</code>; oder var <code>x = &quot;foo&quot;</code>;. Wie man sieht braucht man den Datentyp der Variable nicht mit angeben, da JavaScript dynamisch typisiert ist. In ES6 wurden zudem die Schlüsselwörter <code>let</code> und <code>const</code> eingeführt, durch die Variablen einen anderen Gültigkeitsbereich besitzen, bzw. unveränderlich werden. In Googles V8 Engine war var jedoch zum Zeitpunkt der Erstellung dieses Kurses (Oktober 2016) noch performanter und daher wird hier in den meisten Bespielen <code>var</code> genutzt. Dies hat sich inzwischen jedoch geändert, sodass ohne Bedenken <code>let</code> und <code>const</code> verwendet werden können und sollten.
 <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Grammatik_und_Typen#Deklarationen">Mehr zu Variablen</a>.</p>
-<h4 id="datentypen">Datentypen</h4>
+<h3 id="241-datentypen">2.4.1 Datentypen</h3>
 <p>ECMAScript6 definiert sieben Datentypen:</p>
-<p>1.<code>boolean</code>: true und false</p>
-<p>2.<code>null</code>: Ein spezielles Schlüsselwort, welches einen null-Wert kennzeichnet.</p>
-<p>3.<code>undefined</code>: Eine Eigenschaft, deren Wert undefined ist.</p>
-<p>4.<code>number</code>: integer und float werden nicht unterschieden</p>
-<p>5.<code>string</code>: Eine Zeichenkette</p>
-<p>6.<code>symbol</code>: Ein Datentyp, bei dem Instanzen einzigartig und unveränderlich sind.</p>
-<p>7.<code>object</code>: z.B. <a href="https://www.json.org/json-en.html">JSON</a>-Objekte aber auch Arrays</p>
+<ol>
+<li><code>boolean</code>: true und false</li>
+<li><code>null</code>: Ein spezielles Schlüsselwort, welches einen null-Wert kennzeichnet.</li>
+<li><code>undefined</code>: Eine Eigenschaft, deren Wert undefined ist.</li>
+<li><code>number</code>: integer und float werden nicht unterschieden</li>
+<li><code>string</code>: Eine Zeichenkette</li>
+<li><code>symbol</code>: Ein Datentyp, bei dem Instanzen einzigartig und unveränderlich sind.</li>
+<li><code>object</code>: z.B. <a href="https://www.json.org/json-en.html">JSON</a>-Objekte aber auch Arrays</li>
+</ol>
 <p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Grammatik_und_Typen#Datenstrukturen_und_-typen">Mehr zu Datentypen.</a></p>
-<h4 id="array-literale">Array Literale</h4>
-<p>Die einfachste Weise in JavaScript ein Array zu erstellen, ist mittels der Initialisierungsnotation;
-Durch <code>var jsLibraries = [&quot;g2&quot;, &quot;g2.mec&quot;, &quot;v2&quot;, &quot;jQuery&quot;]</code>; wird ein Array (<code>jsLibraries</code>) erstellt, das vier Strings enthält.
-Das erste Element hat den Index <code>0</code>, das letzte <code>Arrayname.length</code>. Bestimmte Elemente eines Array ruft man folgendermaßen auf:
-<code>&lt;Arrayname&gt;[&lt;Index&gt;]</code>, also <code>jsLibraries[2] // v2</code>.
-Möchte man ein weiteres Element hinzufügen, geht das am besten mit der Methode <code>.push(&lt;Element&gt;)</code>.
-Durch <code>jsLibraries.push(&quot;g2-chart&quot;)</code>; wird <code>jsLibraries</code> zu <code>[&quot;g2&quot;,&quot;g2.mec&quot;,&quot;v2&quot;,&quot;jQuery&quot;,&quot;g2-chart&quot;]</code>.</p>
+<h3 id="242-array-literale">2.4.2 Array Literale</h3>
+<p>Die einfachste Weise in JavaScript ein Array zu erstellen, ist mittels der Initialisierungsnotation;  Durch <code>var jsLibraries = [&quot;g2&quot;, &quot;g2.mec&quot;, &quot;v2&quot;, &quot;jQuery&quot;]</code>; wird ein Array (<code>jsLibraries</code>) erstellt, das vier Strings enthält.
+Das erste Element hat den Index <code>0</code>, das letzte <code>Arrayname.length</code>. Bestimmte Elemente eines Array ruft man folgendermaßen auf:</p>
+<p><code>&lt;Arrayname&gt;[&lt;Index&gt;]</code>, also <code>jsLibraries[2] // v2</code>.
+Möchte man ein weiteres Element hinzufügen, geht das am besten mit der Methode <code>.push(&lt;Element&gt;)</code>. Durch <code>jsLibraries.push(&quot;g2-chart&quot;)</code>; wird <code>jsLibraries</code> zu <code>[&quot;g2&quot;,&quot;g2.mec&quot;,&quot;v2&quot;,&quot;jQuery&quot;,&quot;g2-chart&quot;]</code>.</p>
 <p>Man kann mit der Initialisierungsnotation natürlich auch leere Array erstellen
 <code>var myArray = []</code>;</p>
-<p>Benutzt man zudem die selbe Syntax bei einem bestehenden Array, ohne das Schlüsselwort var, wird das Array geleert - der Variable wird ein leeres Array neu zugewiesen.</p>
+<p>Benutzt man zudem die selbe Syntax bei einem bestehenden Array, ohne das Schlüsselwort <code>var</code>, wird das Array geleert - der Variable wird ein leeres Array neu zugewiesen.</p>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Mehr zu Arrays.</a></li>
 </ul>
-<h4 id="objekt-literale">Objekt Literale</h4>
+<h3 id="243-objekt-literale">2.4.3 Objekt Literale</h3>
 <p>Objekt Literale eignen sich hervorragend als Container für andere Variablen und Methoden. Auch für Objekte bietet sich die Initialisierungsnotation an, nur hier mit geschweiften Klammern:</p>
-<pre><code class="code-line language-JSON"><div>var obj = {  property_1: Wert_1,    // property_# kann ein Identifier...
-                      2: Wert_2,    // oder vom Typ number...
-           // ...,
-           <span class="hljs-attr">"property n"</span>: Wert_n };  // oder ein string sein
-
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">var</span> obj = {  
+  <span class="hljs-attr">property_1</span>: Wert_1, <span class="hljs-comment">// property_# kann ein Identifier...</span>
+  <span class="hljs-number">2</span>: Wert_2, <span class="hljs-comment">// oder vom Typ number...    </span>
+  <span class="hljs-string">"property n"</span>: Wert_n <span class="hljs-comment">// oder ein string sein</span>
+  }
 </div></code></pre>
-<p>Das obige Array als Objekt-Literal definiert man folgendermaßen:</p>
-<pre><code class="code-line language-JSON"><div>var jsLibraries = {
-    1:<span class="hljs-string">"g2"</span>,
-    element_2:<span class="hljs-string">"g2.mec"</span>,
-    <span class="hljs-attr">"element_3"</span>:<span class="hljs-string">"v2"</span>,
-    bloated:function() {return <span class="hljs-attr">"jQuery"</span>}
+<p>Das vorherige Array als Objekt-Literal wird folgendermaßen definiert:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">var</span> jsLibraries = {
+    <span class="hljs-number">1</span>:<span class="hljs-string">"g2"</span>,
+    <span class="hljs-attr">element_2</span>:<span class="hljs-string">"g2.mec"</span>,
+    <span class="hljs-string">"element_3"</span>:<span class="hljs-string">"v2"</span>,
+    <span class="hljs-attr">bloated</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-keyword">return</span> <span class="hljs-string">"jQuery"</span>}
 }
 </div></code></pre>
-<p>Es wird empfohlen Identifier zu nutzen, da der Zugriff auf Properties dann mittels Punktoperator . erfolgen kann:
-<code>jsLibraries.element_2 // g2.mec</code></p>
-<p>Nutzt man Strings oder Numbers er folgt der Zugriff wie bei einem Array:
-<code>jsLibraries[1] // g2</code>, bzw. <code>jsLibraries[&quot;element_3&quot;] // v2</code></p>
-<p>Wie man sieht können Objekt Properties selbst Funktionen sein:
-<code>jsLibraries.bloated(); // jQuery</code></p>
+<p>Es wird empfohlen Identifier zu nutzen, da der Zugriff auf Properties dann mittels Punktoperator <code>.</code> erfolgen kann: <code>jsLibraries.element_2 // g2.mec</code></p>
+<p>Nutzt man Strings oder Numbers er folgt der Zugriff wie bei einem Array: <code>jsLibraries[1] // g2</code>, bzw. <code>jsLibraries[&quot;element_3&quot;] // v2</code></p>
+<p>Wie man sieht können Objekt Properties selbst Funktionen sein: <code>jsLibraries.bloated(); // jQuery</code></p>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Using_object_initializers">Mehr zu Objekten</a>.</li>
 <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object">Noch mehr zu Objekten</a>.</li>
 </ul>
-<p>Standard Objekte</p>
+<h3 id="244-standard-objekte">2.4.4 Standard Objekte</h3>
 <p>JavaScript stellt einige vordefinierte Objekte mit nützlichen Properties und Methoden zur Verfügung, auf die bei Bedarf zugegriffen werden kann.</p>
-<p>Das, für uns Ingenieure, wichtigste Objekt ist dabei zweifellos das <code>Math</code> Objekt. In ihm finden wir Konstanten wie z.B. π
-Math.PI oder die Eulersche Zahl e
-<code>Math.E</code>, aber auch Funktionen um z.B. den Betrag einer Zahl zu erhalten <code>Math.abs(x)</code> oder <code>Math.round(x)</code> um x ganzzahlig zu runden. Auch trigonometrische Funktionen wie <code>Math.sin(x)</code>, <code>Math.cos(x)</code> etc. und der Arkustangens mit zwei Argumenten <code>Math.atan2(y,x)</code> sind hier enthalten.</p>
+<p>Das, für uns Ingenieure, wichtigste Objekt ist dabei zweifellos das <code>Math</code> Objekt. In ihm finden wir Konstanten wie z.B. <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span></eq> (<code>Math.PI</code>) oder die Eulersche Zahl <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">e</span></span></span></span></eq> (<code>Math.E</code>), aber auch Funktionen um z.B. den Betrag einer Zahl zu erhalten <code>Math.abs(x)</code> oder <code>Math.round(x)</code> um <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span></eq> ganzzahlig zu runden. Auch trigonometrische Funktionen wie <code>Math.sin(x)</code>, <code>Math.cos(x)</code> etc. und der Arkustangens mit zwei Argumenten <code>Math.atan2(y,x)</code> sind hier enthalten.</p>
 <p>Eine vollständige Übersicht zum Math-Objekt gibt es entweder <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math">hier</a>, oder öffnen Sie mit F12 die Webkonsole und tippen Sie <code>Math</code> ein und bestätigen mit Enter. Die Ausgabe lässt sich für einen schnellen Überblick expandieren.</p>
-<p>Ein weiteres wichtiges Standardobjekt ist <code>Number</code>. Dieses Objekt enthält beispielsweise eine mit <code>.toFixed(&lt;# Stellen&gt;)</code> Methode um Zahlen auf eine bestimmte Anzahl von Nachkommastellen zu runden. Die Zahlen werden jedoch zu einem String gewandelt und so sollte man vor den Ausdruck noch ein <code>+</code> schreiben, damit daraus wieder eine Zahl wird. Diese Methode ist eine Prototyp-Eigenschaft und wird daher an die zu rundende Zahl angehangen:
-<code>+65.48464684.toFixed(2) // 65.48</code>
-Mehr zum Number-Objekt können Sie <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number">hier</a> nachlesen.</p>
+<p>Ein weiteres wichtiges Standardobjekt ist <code>Number</code>. Dieses Objekt enthält beispielsweise eine mit <code>.toFixed(&lt;# Stellen&gt;)</code> Methode um Zahlen auf eine bestimmte Anzahl von Nachkommastellen zu runden. Die Zahlen werden jedoch zu einem String gewandelt und so sollte man vor den Ausdruck noch ein <code>+</code> schreiben, damit daraus wieder eine Zahl wird. Diese Methode ist eine Prototyp-Eigenschaft und wird daher an die zu rundende Zahl angehangen: <code>+65.48464684.toFixed(2) // 65.48</code></p>
+<p>Mehr zum Number-Objekt können Sie <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number">hier</a> nachlesen.</p>
 <p>Es gibt noch viele weitere nützliche Standardobjekte, so gehört z.B. das Property length aus dem Abschnitt &quot;Array Literale&quot; zum Array-Objekt.
-Eine gute Dokumentation der Standardobjekte findet man wie immer im MDN.
-<br>
-Funktionen</p>
-<p>Funktionen werden in JavaScript mit dem Schlüsselwort function definiert, genauer via:
-<code>function &lt;Identifier&gt;([param1],[param2],...) {   // Anweisungen                                }</code><br>
-Als Anweisungen kann man Berechnungen, Schleifen etc. laufen lassen. Funktionen können haben ein optionales Return Statement. Schreibt man das Schlüsselwort <code>return</code> in den Funktionskörper, gibt die Funktion das nachfolgende zurück und wird verlassen. Fehlt <code>return</code>, wird <code>undefined</code> nach Abarbeitung aller Anweisungen zurückgegeben. Innerhalb von Funktionen können weiterhin Variablen deklariert werden. Diese sind dann Privat, existieren also nur im Gültigkeitsbereich (Scope) dieser Funktion.
+Eine gute Dokumentation der Standardobjekte findet man wie immer im MDN.</p>
+<h3 id="245-funktionen">2.4.5 Funktionen</h3>
+<p>Funktionen werden in JavaScript mit dem Schlüsselwort function definiert, genauer via:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> &lt;<span class="hljs-title">Identifier</span>&gt;(<span class="hljs-params">[param1],[param2],...</span>) </span>{
+  <span class="hljs-comment">// Anweisungen                               </span>
+}
+</div></code></pre>
+<p>Als Anweisungen kann man Berechnungen, Schleifen etc. laufen lassen. Funktionen können haben ein optionales Return Statement. Schreibt man das Schlüsselwort <code>return</code> in den Funktionskörper, gibt die Funktion das nachfolgende zurück und wird verlassen. Fehlt <code>return</code>, wird <code>undefined</code> nach Abarbeitung aller Anweisungen zurückgegeben. Innerhalb von Funktionen können weiterhin Variablen deklariert werden. Diese sind dann Privat, existieren also nur im Gültigkeitsbereich (Scope) dieser Funktion.
 Dabei ist allerdings zu beachten, das Schlüsselwort <code>var</code> zu verwenden. Tut man dies nicht wird eine globale Variable erstellt!
-Also:
-<code>function myFunction() {   var private = true;      // Anweisungen         }</code><br>
-Erstellt eine nur im Scope von <code>myFunction</code> gültige Variable <code>private</code>, während</p>
-<pre><code class="code-line language-JSON"><div>function myFunction() {
-  global = true;       
-  // Anweisungen        
+Also:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> private = <span class="hljs-literal">true</span>;   
+  <span class="hljs-comment">// Anweisungen        </span>
+}
+</div></code></pre>
+<p>Erstellt eine nur im Scope von <code>myFunction</code> gültige Variable <code>private</code>, während</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunction</span>(<span class="hljs-params"></span>) </span>{
+  global = <span class="hljs-literal">true</span>;       
+  <span class="hljs-comment">// Anweisungen        </span>
 }
 </div></code></pre>
 <p>eine globale Variable global anlegt.</p>
 <p>Als weiteres Beispiel schauen Sie sich folgende Funktion an, die eine Zahl annimmt und einen berechneten Wert zurückgibt:</p>
-<pre><code class="code-line language-JSON"><div>function toRad(x) {
-    return x*Math.PI/180
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toRad</span>(<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-keyword">return</span> x*<span class="hljs-built_in">Math</span>.PI/<span class="hljs-number">180</span>
 }
-var degree<span class="hljs-number">9</span><span class="hljs-number">0</span> = <span class="hljs-number">90</span>;
-var radian<span class="hljs-number">9</span><span class="hljs-number">0</span> = toRad(degree<span class="hljs-number">9</span><span class="hljs-number">0</span>); // <span class="hljs-number">1.5707963267948966</span>
-var radian<span class="hljs-number">3</span><span class="hljs-number">0</span> = toRad(<span class="hljs-number">30</span>); // <span class="hljs-number">0.5235987755982988</span>
+<span class="hljs-keyword">var</span> degree90 = <span class="hljs-number">90</span>;
+<span class="hljs-keyword">var</span> radian90 = toRad(degree90); <span class="hljs-comment">// 1.5707963267948966</span>
+<span class="hljs-keyword">var</span> radian30 = toRad(<span class="hljs-number">30</span>); <span class="hljs-comment">// 0.5235987755982988</span>
 </div></code></pre>
 <blockquote>
 <p>Die Trigonometrie-Methoden des Math-Objektes rechnen in Radiant. Daher ist es wichtig darauf zu achten, Eingaben in Grad immer vorher umzurechnen.
 Funktionsparametern kann ein Standardwert zugewiesen werden. Dadurch lassen sich optionale Parameter realisieren.</p>
 </blockquote>
-<p>Beispiel:
-<code><pre>
-function add(x,y) {
-var a = x || 0;  // weise x zu (falls es existiert) ODER 0
-var b = y || 0;  // weise y zu (falls es existiert) ODER 0
-return a + b
-}</p>
-<p>add(2,3); // 5
-add(2); // 2
-</pre></code></p>
-<p>Wenn in der Funktion nicht || 0 stände, würde add(2); NaN wiedergeben.</p>
+<p>Beispiel:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x,y</span>) </span>{
+   <span class="hljs-keyword">var</span> a = x || <span class="hljs-number">0</span>;  <span class="hljs-comment">// weise x zu (falls es existiert) ODER 0</span>
+   <span class="hljs-keyword">var</span> b = y || <span class="hljs-number">0</span>;  <span class="hljs-comment">// weise y zu (falls es existiert) ODER 0</span>
+   <span class="hljs-keyword">return</span> a + b
+}
+
+add(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// 5</span>
+add(<span class="hljs-number">2</span>); <span class="hljs-comment">// 2</span>
+</div></code></pre>
+<p>Wenn in der Funktion nicht || 0 stände, würde <code>add(2)</code>; NaN wiedergeben.</p>
 <ul>
-<li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen">Mehr zu Funktionen</a>.
-<br>
-Schleifen</li>
+<li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen">Mehr zu Funktionen</a>.</li>
 </ul>
+<h3 id="246-schleifen">2.4.6 Schleifen</h3>
 <p>In JavaScript gibt es mehrere Arten von Schleifen die alle Aktionen für eine bestimmte Anzahl an Wiederholungen ausführen. Eine dieser Varianten ist die for-Schleife:</p>
-<pre><code class="code-line language-JSON"><div>for ([initialerAusruck]; [Bedingung]; [erhöhenderAusdruck]) {
-  // Anweisungen                          
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">for</span> ([initialerAusruck]; [Bedingung]; [erhöhenderAusdruck]) {
+  <span class="hljs-comment">// Anweisungen                          </span>
 } 
 </div></code></pre>
-<p>Die Schleife läuft so lange bis die Bedingung false liefert. Der initiale Ausdruck kann eine schleifenexterne Variable sein, kann aber auch nur für das Scope der Schleife deklariert werden.</p>
-<p>Bedingungen bestehen oft aus relativen Vergleichen von Werten für die man entsprechende Operatoren, wie z.B &lt; (kleiner) benötigt. Diese stellt JavaScript natürlich ebenso zur Verfügung, wie logische Operatoren, die dazu verwendet werden Bedingungen zu verknüpfen.
-Eine Übersicht über Operatoren gibt es <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">hier</a>.</p>
+<p>Die Schleife läuft so lange bis die Bedingung <code>false</code> liefert. Der initiale Ausdruck kann eine schleifenexterne Variable sein, kann aber auch nur für das Scope der Schleife deklariert werden.</p>
+<p>Bedingungen bestehen oft aus relativen Vergleichen von Werten für die man entsprechende Operatoren, wie z.B <code>&lt;</code> (kleiner) benötigt. Diese stellt JavaScript natürlich ebenso zur Verfügung, wie logische Operatoren, die dazu verwendet werden Bedingungen zu verknüpfen. Eine Übersicht über Operatoren gibt es <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators">hier</a>.</p>
 <p>Beispiel:</p>
-<pre><code class="code-line language-JSON"><div>function gauss(n) {
-    return n*(n+1)/2;
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gauss</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">return</span> n*(n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;
 }
  
-function sum(n) {
-    var res = 0;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">var</span> res = <span class="hljs-number">0</span>;
  
-    for (var i = 0; i &lt; n+1; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; n+<span class="hljs-number">1</span>; i++) {
         res += i;
     }
  
-    return res;
+    <span class="hljs-keyword">return</span> res;
 }
  
-gauss(<span class="hljs-number">15</span>); // <span class="hljs-number">120</span>
-sum(<span class="hljs-number">15</span>);   // <span class="hljs-number">120</span>
+gauss(<span class="hljs-number">15</span>); <span class="hljs-comment">// 120</span>
+sum(<span class="hljs-number">15</span>);   <span class="hljs-comment">// 120</span>
 </div></code></pre>
-<p>Beide Funktionen berechnen die Summer der ersten n natürlichen Zahlen. Die Funktion mit der for-Schleife ermöglicht es jedoch z.B. Zwischenwerte zu weiterzuverwenden sofern man dies denn möchte:</p>
-<pre><code class="code-line language-JSON"><div>function sum(n) {
-    var res = 0;
+<p>Beide Funktionen berechnen die Summer der ersten n natürlichen Zahlen. Die Funktion mit der <code>for</code>-Schleife ermöglicht es jedoch z.B. Zwischenwerte zu weiterzuverwenden sofern man dies denn möchte:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">n</span>) </span>{
+    <span class="hljs-keyword">var</span> res = <span class="hljs-number">0</span>;
  
-    for (var i = 0; i &lt; n+1; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; n+<span class="hljs-number">1</span>; i++) {
         res += i;
         myArray.push(res);
     }
  
-    return res;
+    <span class="hljs-keyword">return</span> res;
 }
  
-var myArray = [];
+<span class="hljs-keyword">var</span> myArray = [];
 sum(<span class="hljs-number">5</span>);
-console.log(...myArray); // <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span> <span class="hljs-number">6</span> <span class="hljs-number">10</span> <span class="hljs-number">15</span>
+<span class="hljs-built_in">console</span>.log(...myArray); <span class="hljs-comment">// 0 1 3 6 10 15</span>
 </div></code></pre>
-<p>Eine weitere Schleifenart ist die while-Schleife (kopfgesteuerte Schleife)</p>
-<pre><code class="code-line language-JSON"><div>while (&lt;Bedingung&gt;) {
+<p>Eine weitere Schleifenart ist die <code>while</code>-Schleife (kopfgesteuerte Schleife)</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">while</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Bedingung</span>&gt;</span>) {
   // Anweisungen      
   // Inkrementierung  
 }                     
-</div></code></pre>
-<p>die auch als do-while Variante (fußgesteuerte Schleife) existiert und so die Anweisungen mindestens einmal ausführt</p>
-<pre><code class="code-line language-JSON"><div>do {                   
-  // Anweisungen       
-  // Inkrementierung   
-} while (&lt;Bedingung&gt;)
-</div></code></pre>
+</span></div></code></pre>
+<p>die auch als <code>do-while</code> Variante (fußgesteuerte Schleife) existiert und so die Anweisungen mindestens einmal ausführt</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">do</span> {                   
+  <span class="hljs-comment">// Anweisungen       </span>
+  <span class="hljs-comment">// Inkrementierung   </span>
+} <span class="hljs-keyword">while</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Bedingung</span>&gt;</span>)
+</span></div></code></pre>
 <ul>
 <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/schleifen_und_iterationen">Mehr zu Schleifen und Iterationen.</a></li>
 </ul>
-<p>if-else</p>
-<p>Natürlich gibt es in JavaScript auch Verzeigungsanweisungen.
-Die einfachste Art diese einzusetzen ist</p>
-<pre><code class="code-line language-JSON"><div>if (&lt;Bedingung&gt;) &lt;Anweisung&gt;;
+<h3 id="247-if-else">2.4.7 if-else</h3>
+<p>Natürlich gibt es in JavaScript auch Verzweigungsanweisungen. Die einfachste Art diese einzusetzen ist</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">if</span> (&lt;Bedingung&gt;) &lt;Anweisung&gt;;
 </div></code></pre>
 <p>Möchte man mehrere Anweisungen tätigen, muss man diese zu einem Block zusammenfassen</p>
-<pre><code class="code-line language-JSON"><div>if (&lt;Bedingung&gt;) {       
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">if</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Bedingung</span>&gt;</span>) {       
  // Anweisungen         
 }      
-</div></code></pre>
+</span></div></code></pre>
 <p>Optional kann auf die Anweisungen auch ein else-Statement folgen</p>
-<pre><code class="code-line language-JSON"><div>if (&lt;Bedingung&gt;) {      
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">if</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Bedingung</span>&gt;</span>) {      
   // Anweisung1          
 } else {                 
   // Anweisung2          
 }                        
-</div></code></pre>
+</span></div></code></pre>
 <p>und das Ganze lässt sich auch verketten</p>
-<pre><code class="code-line language-JSON"><div>if (&lt;Bedingung<span class="hljs-number">1</span>&gt;) {              
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">if</span> (&lt;Bedingung1&gt;) {              
   // Anweisung1                  
-} else if (&lt;Bedingung<span class="hljs-number">2</span>&gt;) {       
+} else if (&lt;Bedingung2&gt;) {       
   // Anweisung2                  
 } else {                         
   // Anweisung3                  
