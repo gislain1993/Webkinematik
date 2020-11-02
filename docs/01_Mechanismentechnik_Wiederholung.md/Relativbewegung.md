@@ -1,49 +1,60 @@
 ---
 "layout": "page",
 "lang": "de",
-"title": "Dokumentation von Webkinematik",
+"title": "Mechanismentechnik Wiederholung",
+"subtitle": "Beschleunigung",
 "uses": [ { "uri": "navigation.md" } ],
 "date": "Oktober 2020",
-"description": "Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik",
-"tags": ["mechanismentechnik","Bewegungs- und Kraftübertragung","g2"],
+"description": "Wiederholung der Lehrinhalte des Wahlpflichtmoduls Mechanismentechnik",
+"tags": ["Mechanismentechnik","Bewegungs- und Kraftübertragung","Getriebekinematik","Schleifengleichung","Viergelenk","Lageanalyse","Übertragungsfunktion","Koppelkurven","Geschwindigkeit","Beschleunigung","Relativbewegung","g2","mec2"],
 "math": true
 ---
 
-### Relativbewegung
+## 1.8 Relativbewegung
 
-Wenn Drehgelenke angetrieben werden, ist die Drehzahl des angetriebenen Glieds anhand des vorliegenden Winkelgeschwindigkeitsverlaufs zu jedem Zeitpunkt bekannt. Ist nun das andere -am Gelenk beteiligte- Glied seinerseits beweglich, sind die Gestzmäßigkeiten der Relativbewegung nach Abschnitt 5.8 anzuwenden. Dies gilt grundsätzlich für gesuchte Winkelgößen und deren zeitliche Ableitungen aus Sicht beweglicher Glieder. Insbesondere kann hierbei sie *3-Ebenen Gleichung (5.24)* vorteilhaft eingesetzt werden.
+Wenn Drehgelenke angetrieben werden, ist die Drehzahl des angetriebenen Glieds anhand des vorliegenden Winkelgeschwindigkeitsverlaufs zu jedem Zeitpunkt bekannt. Ist nun das andere &ndash; am Gelenk beteiligte &ndash; Glied seinerseits beweglich, sind die Gesetzmäßigkeiten der Relativbewegung anzuwenden. Dies gilt grundsätzlich für gesuchte Winkelgrößen und deren zeitliche Ableitungen aus Sicht beweglicher Glieder. Insbesondere kann hierbei sie *3-Ebenen Gleichung* vorteilhaft eingesetzt werden [(vgl. Gössner 2017, S.81 f.)](#goessner2017).
 
 <figure>
+<img src="../Bilder/Planetenradstufe.png">
 
-<img src="./Bilder/bild 9.png">
+#### Abb. 1.8: Planetenradstufe
 
 </figure>
 
-Die Vorgehensweise wird am Beispiel einer Planetenradstufe (9) näher erläutert. Das Sonnenrad *1* und das Planetenrad *2* stehen mitaneinder im Eingriff. Ihre Wälzkreise berühren sich im Punkt *C* und Steg *3* verbindet deren Mittelpunkte drehgelenkig. Das Hohlrad *0* ist gestellfest und hat im Punkt *D* den gemeinsamen Wälzpunkt mit Rad *2*. Die Gschwindigkeit des Punkts *B* lautet nach Euler
+Die Vorgehensweise wird am Beispiel einer Planetenradstufe (Abb. 1.8) näher erläutert. Das Sonnenrad *1* und das Planetenrad *2* stehen miteinander im Eingriff. Ihre Wälzkreise berühren sich im Punkt $C$ und Steg *3* verbindet deren Mittelpunkte drehgelenkig. Das Hohlrad *0* ist gestellfest und hat im Punkt $D$ den gemeinsamen Wälzpunkt mit Rad *2*. Die Geschwindigkeit des Punkts $B$ lautet nach Euler
 
-$$\bold v_{B}~=~w_{30}(r_{1}+r_{2})\tilde \bold e_{AB}$$
+$$\bm v_B = \omega_{30}(r_1+r_2)\bm{\tilde e}_{AB}$$
 
-Im punkt *C* gilt die Gleichheit der Gescwindigkeiten von Glied *1* und *2*.
+Im punkt $C$ gilt die Gleichheit der Geschwindigkeiten von Glied *1* und *2*.
 
-$$w_{10}r_{1} \tilde \bold e_{AB}~=~ \bold v_{B}-w_{20}\bold r_{2} \tilde\bold e_{AB}$$
+$$\omega_{10}r_1\bm{\tilde e}_{AB} = \bm v_B-\omega_{20}\bold r_2\bm{\tilde e}_{AB}$$
 
-Die Geschwindigkeit im Punkt D muss wegen der Wälzbedingung verschwinden.
+Die Geschwindigkeit im Punkt $D$ muss wegen der Wälzbedingung verschwinden.
 
-$$0~=~ \bold v_{B}-w_{20} r_{2} \tilde\bold e_{AB}$$
- Aus diesen letzten Gleichungen läßt sich $\bold v_B$ entfernen und wegen der gleichen Richtung aller Vektoren in skalarer Form schreiben
+$$\bm 0 = \bm v_B+\omega_{20} r_2 \bm{\tilde e}_{AB}$$
 
- $$w_{20}~=~ -2w_{10} \frac{r_{2}}{r_{1}}$$
+Aus diesen letzten Gleichungen lässt sich $\bm v_B$ entfernen und wegen der gleichen Richtung aller Vektoren in skalarer Form schreiben
 
- Die erste Gleichung liefert damit
+$$\omega_{20} = -2\omega_{10}\frac{r_2}{r_1}.$$
 
- $$w_{30}~=~ -2w_{10} \frac{r_{2}}{r_{1}+r_{2}}$$
- Aus den nun gegebenen absoluten Winkelgeschwindigkeiten kann beispielerweise die relative Winkelgeschwindigkeit $w_{23}$ mit der 3-Ebenen Gleichung gefunden werden. Aus
- $$w_{02}+w_{23}+w_{30}~=~0$$
- erhalten wir
+Die erste Gleichung liefert damit
 
- $$w_{23}~=~w_{20}-w_{30}~=~...~=~2w_{10}\frac{r_2^2}{r_1(r_1+r_2)}$$
+$$\omega_{30} = -2\omega_{10}\frac{r_2}{r_1+r_2}.$$
+ 
+Aus den nun gegebenen absoluten Winkelgeschwindigkeiten kann beispielsweise die relative Winkelgeschwindigkeit $\omega_{23}$ mit der 3-Ebenen Gleichung gefunden werden. Aus
+ 
+$$\omega_{02}+\omega_{23}+\omega_{30} = 0$$
+ 
+erhalten wir
 
-Die sog. *Standübersetzung s* des Umlaufrädergetriebes bezieht die Winkelgeschwindigkeiten von Sonnen- und Hohlrad auf den rehend angenommenen Steg
+$$\omega_{23} = \omega_{20}-\omega_{30} = ... = 2\omega_{10}\frac{r_2^2}{r_1(r_1+r_2)}$$
 
-$$s~=~\frac{w_{23}}{w_{03}}~=~-\frac{r_2}{r_1}$$
+Die sog. *Standübersetzung* $s$ des Umlaufrädergetriebes bezieht die Winkelgeschwindigkeiten von Sonnen- und Hohlrad auf den ruhend angenommenen Steg
+
+$$s = \frac{\omega_{23}}{\omega_{03}} = -\frac{r_2}{r_1}$$
+
 Die Relativkinematik lässt sich genauso gut zur Analyse ungleichförmiger Getriebe anwenden.
+
+## References
+
+<span id="goessner2017">Gössner, S., 2017. Mechanismentechnik: Vektorielle Analyse ebener Mechanismen. Berlin: Logos

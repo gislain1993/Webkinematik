@@ -29,7 +29,7 @@ Koppelkurven sind die Bahnen von Gliedpunkten[<sup>2</sup>](#2). Solche Punktbah
     { "c": "beam", "a": { "pts":[30,100,100,180,170,150], "fs":"silver", "label":{"str":"b", "off": 5 }}},
     { "c": "bar", "a": { "x1":0, "y1":0, "x2":30, "y2":100, "label":{"str":"a", "off": -5 }}},
     { "c": "bar", "a": { "x1":30, "y1":100, "x2":170, "y2":150, "label":{"str":"b", "off": -5 }}},
-    { "c": "bar", "a": { "x1":150, "y1":0, "x2":170, "y2":150, "label":{"str":"b", "off": 5 }}},
+    { "c": "bar", "a": { "x1":150, "y1":0, "x2":170, "y2":150, "label":{"str":"c", "off": 5 }}},
     { "c": "nodfix", "a": { "x":0, "y":0, "label":{"str":"A0", "loc": "sw", "off": 15 } } },
     { "c": "nodfix", "a": { "x":150, "y":0, "label":{"str":"B0", "loc": "se", "off": 15 } } },
     { "c": "nod", "a": { "x":170, "y":150, "label":{"str":"B", "loc": "ne", "off": 5 } } },
@@ -47,7 +47,7 @@ Koppelkurven sind die Bahnen von Gliedpunkten[<sup>2</sup>](#2). Solche Punktbah
 
 Mit dem aus Gleichung (1.10) bekannten Winkel $\theta$ kann die Lage eines Koppelpunkts $C$ eines Viergelenkgetriebes in Abhängigkeit vom Winkelparameter $\varphi$ bestimmt werden.
 
-> $$\bm r_c = a\,\bm e_\varphi + b\,(\lambda \bm e_\theta + v\bm{\tilde e}_\theta)$$(6.18)
+> $$\bm r_c = a\,\bm e_\varphi + b\,(\lambda \bm e_\theta + v\bm{\tilde e}_\theta)$$(1.18)
 
 Dabei legen die Parameter $\lambda$ und $v$ die relative Lage des Koppelpunkts zur Koppelgeraden $b$ fest. Beziehung (1.18) ist somit die Gleichung der Koppelkurve des Punktes $C$.
 
