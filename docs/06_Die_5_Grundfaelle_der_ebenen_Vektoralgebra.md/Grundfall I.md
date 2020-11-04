@@ -9,10 +9,6 @@
 "math": true
 ---
 
-## Grundfall I
-
-### Aufgabenstellung
-
 <aside>
 <g-2 width="300" height="300" x0="55" y0="50" cartesian>
 { 
@@ -35,13 +31,50 @@
 }
 </g-2>
 
-#### Abb. 1: Gegebener Mechanismus
+#### Abb. 6.1: Gegebener Mechanismus
 
 </aside>
+
+## Grundfall I
+
+### Aufgabenstellung
 
 Analysieren Sie den dargestellten Mechanismus und stellen Sie diesen anschließend interaktiv mit der g2-Bibliothek im Browser dar.
 
 **Geg.:** $h = 150\ mm$, $l = 280\ mm$, $s=\left\{\begin{array}{ll} > -\ 220\ mm\\ < \quad 200\ mm \end{array}\right.$ 
+
+<br><br>
+
+### Kinematisches Modell
+
+<figure>
+<mec-2 width="500" height="350" x0="240" y0="50" cartesian nodelabels constraintinfo="vel">
+{
+  "gravity":true,
+  "nodes": [
+    { "id":"A","x":0,"y":0 },
+    { "id":"A0","x":-220,"y":0,"base":true },
+    { "id":"B","x":0,"y":150,"base":true,"idloc":"e" },
+    { "id":"C","x":0,"y":280,"idloc":"ne" }
+  ],
+  "constraints": [
+    { "id":"b","p1":"B","p2":"A","len":{"type":"free"},"ori":{ "type":"drive","Dt":5,"Dw": -0.9732,"bounce":true,"func": "seq", "args": [
+            { "func": "linear", "dt": 2, "dz": 1 },
+            { "func": "const", "dt": 1 },
+            { "func": "linear", "dt": 2, "dz": 1 }] } },
+    { "id":"c","p1":"A","p2":"C","len":{"type":"const"},"ori":{ "type":"const","ref":"b" } },
+    { "id":"a","p1":"A0","p2":"A","len":{"type":"free"},"ori":{ "type":"const" },"lw":1, "ls":"black","ld":[20,4,2,4] }
+  ],
+  "shapes": [
+    { "type":"fix","p":"B" },
+    { "type":"flt","p":"A" },
+    { "type":"bar","p1":"A","p2":"C" },
+    { "type":"slider","p":"B","wref":"c"}
+  ]
+}
+</mec-2>
+<h4>Modell 1: Kinematisches Modell</h4>
+</figure>
 
 ### Lösung
 
@@ -228,31 +261,4 @@ render();
 </html>
 ```
 
-<figure>
-<mec-2 width="500" height="350" x0="240" y0="50" cartesian nodelabels constraintinfo="vel">
-{
-  "gravity":true,
-  "nodes": [
-    { "id":"A","x":0,"y":0 },
-    { "id":"A0","x":-220,"y":0,"base":true },
-    { "id":"B","x":0,"y":150,"base":true,"idloc":"e" },
-    { "id":"C","x":0,"y":280,"idloc":"ne" }
-  ],
-  "constraints": [
-    { "id":"b","p1":"B","p2":"A","len":{"type":"free"},"ori":{ "type":"drive","Dt":5,"Dw": -0.9732,"bounce":true,"func": "seq", "args": [
-            { "func": "linear", "dt": 2, "dz": 1 },
-            { "func": "const", "dt": 1 },
-            { "func": "linear", "dt": 2, "dz": 1 }] } },
-    { "id":"c","p1":"A","p2":"C","len":{"type":"const"},"ori":{ "type":"const","ref":"b" } },
-    { "id":"a","p1":"A0","p2":"A","len":{"type":"free"},"ori":{ "type":"const" },"lw":1, "ls":"black","ld":[20,4,2,4] }
-  ],
-  "shapes": [
-    { "type":"fix","p":"B" },
-    { "type":"flt","p":"A" },
-    { "type":"bar","p1":"A","p2":"C" },
-    { "type":"slider","p":"B","wref":"c"}
-  ]
-}
-</mec-2>
-<h4>Modell 1: Kinematisches Modell</h4>
-</figure>
+<iframe width=100% height=520 frameborder='no' src='https://goessner.github.io/webkinematik/Grundfaelle/Fall 1/Grundfall_1-Schubschleife.html'></iframe>

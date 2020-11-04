@@ -16,8 +16,9 @@ Aufgabenstellung:
 Analysieren Sie den Mechanismus und stellen Sie ihn anschließend mit g2 interaktiv im Browser dar.
 
 <figure>
+<img src="../Bilder/Grundfall2_3.png">
 
-<img src="./Bilder/bild 18.png">
+#### Abb. 6.2: Gegebener Mechanismus
 
 </figure>
 
