@@ -11,7 +11,7 @@
 ---
 
 <aside>
-<g-2 width="250" height="190" x0="30" y0="30" cartesian>
+<g-2 width="250" height="210" x0="30" y0="30" cartesian>
 { 
 "main": [
     {"c":"avec","a":{"x":10,"y":0,"r":30,"dw":1.5,"ls":"green","label":{"str":"&varphi;", "off":-2.5 }}},
