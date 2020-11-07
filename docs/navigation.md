@@ -73,5 +73,14 @@
     </ol>
     </details></li>
 </ol>
+
+<ol start="7">
+    <li><details><summary markdown="span">BEISPIELE</summary>
+    <ol>
+        <li><a href="{base}/07_Beispiele.md/Beispiel.html">Beispiele</a></li>
+    </ol>
+    </details></li>
+</ol>
+
 </nav>
 

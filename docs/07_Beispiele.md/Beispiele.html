@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Analyse und Lösung einfacher Mechanismen mittels des ersten Grundfalls der ebenen Vektoralgebra und den fundamentalen Webtechnologien">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Webkinematik,Webentwicklung,Getriebekinematik,Mechanismentechnik,Bewegungsübertragung,Kraftübertragung,Vektoralgebra,g2,mec2">
+<title>BEISPIELE</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -94,30 +94,23 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>BEISPIELE</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Webkinematik, Webentwicklung, Getriebekinematik, Mechanismentechnik, Bewegungsübertragung, Kraftübertragung, Vektoralgebra, g2, mec2</h5>
 </header>
-<h4 id="g2ext-erweiterung">g2.ext Erweiterung</h4>
-<p>g2.ext Erweitert g2 um einige Funktionalitäten.
-Insbesondere werden diese Funktionalitäten durch weitere Erweiterungen für g2 genutzt, sodass es eine Bedingung für die Nutzung anderer Erweiterungen darstellt.</p>
-<p>g2.ext liefert außerdem eigene Funktionen.</p>
-<p>.spline()
-<em><code>spline({pts,closed,x,y,w}) pts: array, closed: boolean, x, y, w: number</code></em>
-Zeichnet einen Spline über ein Array von Punkten in der selben Form wie .ply().
-Ressourcen um mehr darüber zu Erfahren wie Splines gezeichent werden, sollte man sich
-<a href="https://de.wikipedia.org/wiki/Kubisch_Hermitescher_Spline">Kubisch Hermetischen Splines</a> und <a href="https://de.wikipedia.org/wiki/B%C3%A9zierkurve">Bézierkurven</a> ansehen.</p>
-<p>.label()
-<em><code>label({str, [loc], [off]})   str: string, [loc]: float oder string, [off]: float</code></em>
-Diese Methode erzeugt eine Beschriftung str deren Position sich auf das Element bezieht, das vor ihr in der Befehlskette liegt. Für eine korrekte Ausrichtung der Labels ist die Nutzung von <code>cartesian()</code> obligatorisch. Die Parameter <code>[loc]</code> und <code>[off]</code> sind abhängig vom Elementtyp auf den <code>label()</code> angewendet wird. Eine Verschiebung des Labels nach rechts oder links geschieht über justierung der <code>off</code> Eigenschaft.</p>
-<p>.mark()
-<em><code>mark({mrk,[loc]}) mrk: str, [loc]: number, string || loc[]</code></em>
-mark() funktioniert wie label() jedoch hat man die Wahl zwischen dot und tick für das mrk.</p>
-<p>Für loc hat man die Option die Parameter als Array zu übergeben.</p>
-<iframe width=100% height=300 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_mark.html'></iframe>
+<h2 id="beispiele">Beispiele</h2>
+<br>
+<h3 id="beispielapp-bressekreise">Beispielapp: Bressekreise</h3>
+<p><video src="https://goessner.github.io/webkinematik/Beispiele/Bressekreise.mp4" controls preload='metadata' width="800" height="auto"> Ihr Browser unterstützt keine eingebetteten Videos. Sie können es <a href="https://goessner.github.io/webkinematik/Beispiele/Bressekreise.mp4">herunterladen</a> und mit einem Videoplayer ansehen! </video>
+<br></p>
+<h3 id="beispielapp-satz-von-roberts">Beispielapp: Satz von Roberts</h3>
+<p><video src="https://goessner.github.io/webkinematik/Beispiele/Roberts.mp4" controls preload='metadata' width="800" height="auto"> Ihr Browser unterstützt keine eingebetteten Videos. Sie können es <a href="https://goessner.github.io/webkinematik/Beispiele/Roberts.mp4">herunterladen</a> und mit einem Videoplayer ansehen! </video>
+<br></p>
+<h3 id="beispielapp-seilmechanismus">Beispielapp: Seilmechanismus</h3>
+<p><video src="https://goessner.github.io/webkinematik/Beispiele/Seilmechanismus.mp4" controls preload='metadata' width="800" height="auto"> Ihr Browser unterstützt keine eingebetteten Videos. Sie können es <a href="https://goessner.github.io/webkinematik/Beispiele/Seilmechanismus.mp4">herunterladen</a> und mit einem Videoplayer ansehen! </video></p>
 
 </article>
 </main>
