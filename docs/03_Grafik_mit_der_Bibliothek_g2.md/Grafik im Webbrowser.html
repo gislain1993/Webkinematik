@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Zeichnen im Webbrowser">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Grundlagen,JavaScript,Programmierung,g2,Canvas,Pfade">
+<title>Einführung in g2</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -94,17 +94,17 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>Einführung in g2</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Grundlagen, JavaScript, Programmierung, g2, Canvas, Pfade</h5>
 </header>
-<h4 id="grafik-im-webbrowser">Grafik im Webbrowser</h4>
-<p>Es ist häufig schwierig, sich das Verhalten von kinematischen Systemen während ihrer Bewegung genauer vorstellen zu können. Um diesem Problem entgegenzuwirken, kann man sich den entsprechenden Mechanismus mit ein wenig Programmierkenntnissen im Browser darstellen lassen. Dazu werden Koordinaten von Punkten dieser Systeme mit JavaScript berechnet und diese anschließend im Browser gezeichnet. Doch bevor wir uns mit bewegten Mechanismen beschäftigen, fangen wir erst einmal mit statischen Grafiken an. Man kann Grafiken in einem HTML-Dokument natürlich ganz einfach mit dem <img> Tag einbinden. Diese sind dann jedoch weder manipulierbar noch, worauf wir später hinauswollen, animierbar. In HTML 5 wurde dazu das <canvas> Element eingeführt. Canvas (deutsch: Leinwand) stellt im Browser einen festgelegten Zeichenbereich zur Verfügung in dem man mittels JavaScript Befehlen &quot;live&quot; zeichnen kann. Das Ganze schaut man sich am besten an ein paar Beispielen an.</p>
-<h5 id="canvas"><strong>Canvas</strong></h5>
-<p>Als erstes benötigt man ein HTML-Dokument mit Wurzelstruktur. Wer Visual Studio Code benutzt, tippt einfach in eine leere HTML-Datei ! ein und drückt die Tabulator Taste. Alternativ kann man auch folgendes Template runterladen.</p>
+<h2 id="31-grafik-im-webbrowser">3.1 Grafik im Webbrowser</h2>
+<p>Es ist häufig schwierig, sich das Verhalten von kinematischen Systemen während ihrer Bewegung genauer vorstellen zu können. Um diesem Problem entgegenzuwirken, kann man sich den entsprechenden Mechanismus mit ein wenig Programmierkenntnissen im Browser darstellen lassen. Dazu werden Koordinaten von Punkten dieser Systeme mit JavaScript berechnet und diese anschließend im Browser gezeichnet. Doch bevor wir uns mit bewegten Mechanismen beschäftigen, fangen wir erst einmal mit statischen Grafiken an. Man kann Grafiken in einem HTML-Dokument natürlich ganz einfach mit dem <code>&lt;img&gt;</code> Tag einbinden. Diese sind dann jedoch weder manipulierbar noch, worauf wir später hinauswollen, animierbar. In HTML 5 wurde dazu das <code>&lt;canvas&gt;</code> Element eingeführt. Canvas (deutsch: Leinwand) stellt im Browser einen festgelegten Zeichenbereich zur Verfügung in dem man mittels JavaScript Befehlen &quot;live&quot; zeichnen kann. Das Ganze schaut man sich am besten an ein paar Beispielen an.</p>
+<h3 id="311-canvas">3.1.1 Canvas</h3>
+<p>Als erstes benötigt man ein HTML-Dokument mit Wurzelstruktur. Wer Visual Studio Code benutzt, tippt einfach in eine leere HTML-Datei <code>!</code> ein und drückt die Tabulator Taste. Alternativ kann man auch folgendes Template kopieren.</p>
 <pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -115,107 +115,105 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </div></code></pre>
-<p>Wir erstellen nun im Körper ein Canvas Element durch die Syntax</p>
-<p><canvas id="c" width="200" height="200" style="border-width:1px;border-style:solid"></canvas></p>
-<p>Der Styling Parameter ist optional und kann auch weggelassen werden oder alternativ im Dokumentenkopf bzw. extern stehen.
-width und height geben die Breite und die Höhe des Zeichenbereiches in Pixel an. Die Id wird benötigt um das Element in JavaScript sauber anzusprechen.</p>
-<p>Dazu erstellt man nun im Körper ein Script-Tag und legt eine globale Variable an, an die das Canvas-Element gebunden wird:</p>
-<p>`let cnv = document.getElementById('c');'</p>
-<p>Um zeichnen zu können benötigt man jedoch nicht das Canvas Element, sondern dessen Render-Context. Canvas stellt hier zwei verschiedene zur Verfügung. 'webgl' für räumliche und '2d' für ebene Grafiken. Wir beschränken uns hier auf den 2d-Context, der nun wie folgt verknüpft wird:</p>
-<p><code>let ctx = cnv.getContext('2d');</code></p>
-<p>Man kann Canvas und Context natürlich auch zusammen auf eine Variable legen, manchmal ist es jedoch praktisch, wenn man über cnv auf die Attribute des Canvas zugreifen kann.</p>
-<p>Die HTML-Datei sieht nun so aus:</p>
-<pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"200"</span> height=<span class="hljs-string">"200"</span> style=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;&lt;/canvas&gt;
-    &lt;script&gt;
- 
-let cnv = document.getElementById('c'),  
-    ctx = cnv.getContext('<span class="hljs-number">2</span>d');
- 
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<p>Wir erstellen nun im Körper ein Canvas Element durch die Syntax:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
 </div></code></pre>
-<p>Zeichenbefehle kommen nun unter die globalen Variablen in das Script. Man muss dafür für jeden Befehl den Context des Canvas ansprechen, also z.B.
-<code>ctx.&lt;Zeichenbefehl&gt;;</code></p>
-<p>Für die meisten Geometrien muss man bei Canvas Pfade bemühen. Der Ursprung befindet sich, im Gegensatz zu kartesischen Koordinatensystemen, immer oben links in der Zeichenfläche, mit der x-Achse nach rechts und der y-Achse nach unten zeigend. Möchte man nun eine einfache Linie mittels eines Pfades zeichnen, geschieht dies durch eine Reihe von Befehlen die sich analog zur Handbewegung beim Zeichnen auf Papier verhalten. Zuerst führt seinen Stift an die Position an der die Linie beginnen soll, dann setzt man Spitze auf das Papier, zieht die Linie zum Endpunkt und hebt den Stift ab. Bei Canvas kommt lediglich noch ein Befehl zum Ausführen des ganzen hinzu. Folgende Befehle werden für eine Linie benötigt:</p>
-<pre><code class="code-line language-JSON"><div>ctx.beginPath();  // Start im Koordinatenursprung
-ctx.moveTo({x:<span class="hljs-number">50</span>, y:<span class="hljs-number">50</span>});  // fuehre Zeichenstift zum Anfangspunkt
-ctx.lineTo({x:<span class="hljs-number">150</span>, y:<span class="hljs-number">150</span>});  // definiere Linie von letzter Position zu diesem Punkt
-ctx.closePath();  // beende den Pfad
-ctx.stroke();  // zeichne den eben erstellten Pfad
+<p>Das <code>style</code> Attribut ist optional und kann auch weggelassen werden oder alternativ im Dokumentenkopf bzw. extern stehen. Die Attribute <code>width</code> und <code>height</code> geben Breite und Höhe des Zeichenbereiches in Pixel an. Die <code>id</code> wird benötigt um das Element in JavaScript sauber anzusprechen. Dazu erstellt man nun im Körper ein Script-Tag und legt eine globale Variable an, an die das Canvas-Element gebunden wird:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </div></code></pre>
-<p>editierbare Livedemo:</p>
-<p><code>&lt;iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_cnv-line.html'&gt;&lt;/iframe&gt;</code></p>
+<p>Um zeichnen zu können, benötigt man jedoch nicht das Canvas-Element, sondern dessen Render-Context. Canvas stellt hier zwei verschiedene zur Verfügung. Zum einen 'webgl' für räumliche und zum anderen '2d' für ebene Grafiken. Wir beschränken uns hier auf den 2d-Context, der nun wie folgt verknüpft wird:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>);
+<span class="hljs-keyword">let</span> ctx = cnv.getContext(<span class="hljs-string">'2d'</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<p>Man kann Canvas und Context natürlich auch zusammen auf eine Variable legen, manchmal ist es jedoch praktisch, wenn man über <code>cnv</code> auf die Attribute des Canvas zugreifen kann.</p>
+<p>Die HTML-Datei sieht nun wie folgt aus:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),  
+        ctx = cnv.getContext(<span class="hljs-string">'2d'</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>Zeichenbefehle kommen nun unter die globalen Variablen in das Script. Man muss dafür für jeden Befehl den Context des Canvas ansprechen, also zum Beispiel <code>ctx.&lt;Zeichenbefehl&gt;;</code>.</p>
+<p>Für die meisten Geometrien werden unter Canvas sogenannte Pfade bemüht. Der Ursprung befindet sich, im Gegensatz zu kartesischen Koordinatensystemen, immer oben links in der Zeichenfläche, mit der x-Achse nach rechts und der y-Achse nach unten zeigend. Möchte man nun eine einfache Linie mittels eines Pfades zeichnen, geschieht dies durch eine Reihe von Befehlen die sich analog zur Handbewegung beim Zeichnen auf Papier verhalten. Beispielsweise</p>
+<ul>
+<li>führe Stift an die Position an der die Linie beginnen soll,</li>
+<li>setze die Spitze auf das Papier,</li>
+<li>ziehe die Linie zum Endpunkt und hebe den Stift ab.</li>
+</ul>
+<p>Bei Canvas kommt lediglich noch ein Befehl zum Ausführen des ganzen hinzu. Folgende Befehle werden für eine Linie benötigt:</p>
+<pre><code class="code-line language-JavaScript"><div>ctx.beginPath();  <span class="hljs-comment">// Start im Koordinatenursprung</span>
+ctx.moveTo({<span class="hljs-attr">x</span>:<span class="hljs-number">50</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">50</span>});  <span class="hljs-comment">// fuehre Zeichenstift zum Anfangspunkt</span>
+ctx.lineTo({<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">150</span>});  <span class="hljs-comment">// definiere Linie von letzter Position zu diesem Punkt</span>
+ctx.closePath();  <span class="hljs-comment">// beende den Pfad</span>
+ctx.stroke();  <span class="hljs-comment">// zeichne den eben erstellten Pfad</span>
+</div></code></pre>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
+<iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_cnv-line.html'></iframe>
 <blockquote>
 <p>Wer sich tiefer mit purem Canvas befassen möchte, dem seien folgende Quellen empfohlen:</p>
-</blockquote>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">MDN Canvas Tutorial</a></li>
 <li><a href="https://simon.html5.org/dump/html5-canvas-cheat-sheet.html">Canvas Cheat Sheet</a></li>
 <li><a href="https://wiki.selfhtml.org/wiki/JavaScript/Canvas">selfhtml Canvas</a></li>
 <li><a href="https://www.w3.org/TR/2dcontext/">World Wide Web Consortium - 2d-canvas</a>.</li>
 </ul>
-<h5 id="g2"><strong>g2</strong></h5>
-<p>Wie man sich nun vielleicht vorstellen kann, wird auf diese Weise selbst für ein so einfaches Objekt wie zum Beispiel ein Festlagersymbol recht viel Code benötigt. Daher wurde die <a href="https://github.com/goessner/g2">g2 Bibliothek</a>
-mit ihrer Erweiterung g2.mec geschaffen. Diese JavaScript Bibliotheken legen sich über Canvas, bündeln Befehle und stellen eine API bereit, die wesentlich benutzerfreundlicher ist, ohne dabei große Performanceeinbußen zu erzeugen.</p>
-<p><a href="https://github.com/goessner/g2">g2</a>
-In der g2 Bibliothek findet man viele Befehle die es für die Manipulation von HTML-Canvas gibt, sowie einige Makros wie zum Beispiel ein Raster für den Hintergrund.</p>
-<p><a href="https://github.com/goessner/g2/wiki">g2.ext</a>
-g2.ext stellt Funktionserweiterung von g2 dar. Zurzeit findet man hier Funktionen, die auf bestehenden g2 Objekte ausgeführt werden können. Zudem gibt es eine hier Methode für Splines.</p>
-<p><a href="https://github.com/goessner/g2/wiki">g2.mec</a>
-Bei g2.mec handelt es sich um eine Erweiterung von g2 die besonders interessant für Maschinenbauer und Physiker ist. Hier finden sich Befehle, die speziell für die Erstellung von Mechanismen implementiert wurden. So findet man in dieser Bibliothek beispielsweise einfache Befehle zur Darstellung von Lagern und Balken.</p>
-<p><a href="https://github.com/goessner/g2/wiki">g2.chart</a>
-g2.chart ist eine Erweiterung zum Darstellen von Diagrammen auf einem Canvas mittels g2.</p>
+</blockquote>
+<h3 id="312-javascript-g2-bibliothek">3.1.2 JavaScript g2 Bibliothek</h3>
+<p>Wie man sich nun vielleicht vorstellen kann, wird auf diese Weise selbst für ein so einfaches Objekt wie zum Beispiel ein Festlagersymbol recht viel Code benötigt. Daher wurde die <a href="https://github.com/goessner/g2">g2 Bibliothek</a> mit ihrer Erweiterung g2.mec geschaffen. Diese JavaScript Bibliotheken legen sich über Canvas, bündeln Befehle und stellen eine API bereit, die wesentlich benutzerfreundlicher ist, ohne dabei große Performanceeinbußen zu erzeugen.</p>
+<p>In der <a href="https://github.com/goessner/g2"><strong>g2 Bibliothek</strong></a> findet man viele Befehle die es für die Manipulation von HTML-Canvas gibt, sowie einige Makros wie zum Beispiel ein Raster für den Hintergrund.</p>
+<p><a href="https://github.com/goessner/g2/wiki"><strong>g2.ext</strong></a> stellt Funktionserweiterung von g2 dar. Zurzeit findet man hier Funktionen, die auf bestehenden g2 Objekte ausgeführt werden können. Zudem gibt es eine hier Methode für Splines.</p>
+<p>Bei <a href="https://github.com/goessner/g2/wiki"><strong>g2.mec</strong></a> handelt es sich um eine Erweiterung von g2 die besonders interessant für Maschinenbauer und Physiker ist. Hier finden sich Befehle, die speziell für die Erstellung von Mechanismen implementiert wurden. So findet man in dieser Bibliothek beispielsweise einfache Befehle zur Darstellung von Lagern und Balken.</p>
+<p><a href="https://github.com/goessner/g2/wiki"><strong>g2.chart</strong></a> ist eine Erweiterung zum Darstellen von Diagrammen auf einem Canvas mittels g2.</p>
 <p>Ein Script wird entweder im Kopf oder am Ende des Körpers des HTML Dokumentes importiert. Wir werden sie immer am Ende des Körpers einfügen, da die Seite so schneller geladen wird. Bei kleinen Bibliotheken wie den hier benutzten macht sich diese Vorgehensweise zwar kaum bemerkbar, gilt aber heutzutage allgemein als Konvention und guter Stil.
 Um g2 zu nutzen muss man die Bibliothek extern in seine HTML-Datei einbinden. Das geht entweder von einer lokalen Quelle, wie einer HDD, oder über ein CDN (Content Distribution Network). Werden Scripte lokal eingebunden, laden sie wesentlich schneller, müssen allerdings immer mitgegeben werden, wenn man z.B. die HTML-Datei verschickt. Bei Einbindung über ein CDN muss hingegen immer eine Internetverbindung bestehen da der Browser die JS-Dateien beim Öffnen der HTML Datei aus dem Internet in den Cache lädt.</p>
-<p>Wir werden hier die CDN Variante nutzen. Folgender Link (zu finden hier: g2) liefert immer die aktuelle, vollständige Version von g2, in der alle Erweiterungen bereits integriert sind.
+<p>Wir werden hier die CDN Variante nutzen. Folgender Link (zu finden hier: <a href="https://github.com/goessner/g2#gitcdn">g2</a>) liefert immer die aktuelle, vollständige Version von g2, in der alle Erweiterungen bereits integriert sind.
 Der Einfachheit halber empfiehlt es sich folgendes HTML-Template zu nutzen und bei Bedarf zu erweitern:</p>
-<pre><code class="code-line language-JSON"><div>&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset='utf<span class="hljs-number">-8</span>'&gt;
-    &lt;title&gt;Titel&lt;/title&gt;      
-&lt;/head&gt;
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Titel<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>      
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
  
-&lt;body&gt;
-    &lt;h<span class="hljs-number">2</span>&gt;Titel&lt;/h<span class="hljs-number">2</span>&gt;             
-    &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"300"</span> height=<span class="hljs-string">"300"</span> style=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;&lt;/canvas&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Titel<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>             
+   <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+       <span class="hljs-comment">/* ... Ihr code */</span>
+   </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
  
-   &lt;script src=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;&lt;/script&gt;  
- 
-    &lt;script&gt;
- 
- 
- 
-    &lt;/script&gt;
- 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
-<p>Mit g2 lassen sich auch, wie mit puren Canvas-Methoden, Pfade nutzen. Der folgende Code erzeugt die selbe Linie wie weiter oben:</p>
-<pre><code class="code-line language-JSON"><div>g<span class="hljs-number">2</span>().p()        // ctx.beginPath();
-    .m({x:<span class="hljs-number">50</span>,y:<span class="hljs-number">50</span>})   // ctx.moveTo();
-    .l({x:<span class="hljs-number">150</span>,y:<span class="hljs-number">150</span>}) // ctx.lineTo();
-    .z()        // ctx.closePath();
-    .stroke()   // ctx.stroke();
-    .exe(ctx);
-    ````
-Wie man sieht braucht man mit g<span class="hljs-number">2</span> sogar einen Befehl mehr als vorher. Das liegt an daran, dass g<span class="hljs-number">2</span> erst alle Befehle sammelt, bevor sie dann mit der Methode `exe(&lt;Canvascontext&gt;)` in den Context gerendert werden. Man brauch außerdem auch nicht bei jedem Befehl auf den Context verweisen, sondern kann durch den Punktoperator Befehl an Befehl aneinanderreihen und die Kette dann mit einem Semikolon schließen. Es ist also eine einzelne Anweisung wogegen die pure Canvasvariante aus fünf Anweisungen besteht.
-
-Dazu kommt, dass g<span class="hljs-number">2</span> einen Linienbefehl zur Verfügung stellt und bei Nutzung von diesem reduziert sich der obige Code auf
-
-```JSON
-g<span class="hljs-number">2</span>().lin({x1:<span class="hljs-number">50</span>,y1:<span class="hljs-number">50</span>,x2:<span class="hljs-number">150</span>,y2:<span class="hljs-number">150</span>})
+<p>Mit g2 lassen sich auch Pfade wie mit puren Canvas-Methoden nutzen. Der folgende Code erzeugt analog eine Linie wie bereits zuvor geschildert:</p>
+<pre><code class="code-line language-JavaScript"><div>g2().p()        <span class="hljs-comment">// ctx.beginPath();</span>
+    .m({<span class="hljs-attr">x</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">50</span>})   <span class="hljs-comment">// ctx.moveTo();</span>
+    .l({<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>}) <span class="hljs-comment">// ctx.lineTo();</span>
+    .z()        <span class="hljs-comment">// ctx.closePath();</span>
+    .stroke()   <span class="hljs-comment">// ctx.stroke();</span>
     .exe(ctx);
 </div></code></pre>
-<p>editierbare Livedemo:</p>
+<p>Es ist ersichtlich, dass mittels g2 sogar ein Befehl mehr als vorher benötigt wird. Grund hierfür ist, dass g2 erst alle Befehle sammelt, bevor jene mit der Methode <code>exe(&lt;Canvascontext&gt;)</code> in den Context gerendert werden. Man brauch außerdem auch nicht bei jedem Befehl auf den Context verweisen, sondern kann durch den Punktoperator Befehl an Befehl aneinanderreihen und die Kette dann mit einem Semikolon schließen. Es ist also eine einzelne Anweisung wogegen die pure Canvasvariante aus fünf Anweisungen besteht.</p>
+<p>Im Gegensatz dazu stellt g2 einen Linienbefehl zur Verfügung, wodurch der Code für den Nutzer sich um mehrere Zeilen reduziert.</p>
+<pre><code class="code-line language-JavaScript"><div>g2().lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">y1</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">x2</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y2</span>:<span class="hljs-number">150</span>})
+    .exe(ctx);
+</div></code></pre>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
 <iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-line.html'></iframe>
 
 </article>

@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Methoden der g2 Bibliothek">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Grundlagen,JavaScript,Programmierung,g2,Canvas,Pfade">
+<title>Einführung in g2</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -94,61 +94,57 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>Einführung in g2</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Grundlagen, JavaScript, Programmierung, g2, Canvas, Pfade</h5>
 </header>
-<h4 id="g2-methoden">g2 Methoden</h4>
-<p>Es folgt nun eine Übersicht einiger häufig benötigter g2 Methoden, die allerdings keinen Anspruch auf Vollständigkeit erhebt. Jedem sei ausdrücklich ein Blick in die hervorragende <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md">API-Dokumentation</a> von g2 empfohlen, in der alle Befehle erklärt sind und mit der sich die meisten Fragen schnell beantworten lassen. Außerdem gibt es im g2 Repository noch ein englischsprachiges <a href="https://github.com/goessner/g2/wiki">Wiki</a> in dem der Umgang mit g2 erläutert wird und außerdem ein <a href="https://github.com/goessner/g2/raw/master/docs/api/sheet.pdf">Cheat Sheet</a> (PDF), der eine kleine Übersicht über g2 Befehle gibt.
-Wir gehen beim Zeichnen mit g2 stets so vor, dass wir uns in dem globalen Variablen ein g2-Objekt als Variable anlegen. Auf diese Weise kann man mehrere, voneinander unabhängige Befehlswarteschlangen erstellen. Die Objekte bekommen entweder bezeichnende Namen wie z.B. <code>crank</code> oder aber einfach den Identifier <code>g</code>. Anschließend füllen wir diese Objekte mittels des <a href="https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Punktoperator">Punktoperators</a> . mit Befehlen und rendern sie schließlich durch die Methode <code>exe()</code> in den Context. Ein vollständiges HTML-Dokument, das die Linie aus dem vorherigen Beispiel rendert, sieht so aus:</p>
-<pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
-    &lt;title&gt;g<span class="hljs-number">2</span>-Linie&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"200"</span> height=<span class="hljs-string">"200"</span> style=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;&lt;/canvas&gt;
+<h2 id="32-methoden-der-g2-bibliothek">3.2 Methoden der g2 Bibliothek</h2>
+<p>Es folgt nun eine Übersicht einiger häufig benötigter g2 Methoden, die allerdings keinen Anspruch auf Vollständigkeit erhebt. Jedem sei ausdrücklich ein Blick in die hervorragende <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md">API-Dokumentation</a> von g2 empfohlen, in der alle Befehle erklärt sind und mit der sich die meisten Fragen schnell beantworten lassen. Außerdem gibt es im g2 Repository noch ein englischsprachiges <a href="https://github.com/goessner/g2/wiki">Wiki</a>, das den Umgang mit g2 erläutert und ein <a href="https://github.com/goessner/g2/raw/master/docs/api/sheet.pdf">CheatSheet</a> (PDF), welches eine schnelle Übersicht an g2 Befehle präsentiert.</p>
+<p>Wir gehen beim Zeichnen mit g2 stets so vor, dass wir uns ein g2-Objekt als globale Variable anlegen. Auf diese Weise kann man mehrere, voneinander unabhängige Befehlswarteschlangen erstellen. Die Objekte bekommen entweder bezeichnende Namen wie z.B. <code>crank</code> oder aber einfach den Identifier <code>g</code>. Anschließend füllen wir diese Objekte mittels des <a href="https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Punktoperator">Punktoperators</a> <code>.</code> mit Befehlen und rendern diese schließlich mit der Methode <code>exe()</code> in den Context. Ein vollständiges HTML-Dokument, das die Linie aus dem vorherigen Beispiel rendert, sieht so aus:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>g2-Linie<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
  
-    &lt;script src=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;&lt;/script&gt;
- 
-    &lt;script&gt;
- 
-let cnv = document.getElementById(<span class="hljs-string">"c"</span>),
-    ctx = cnv.getContext(<span class="hljs-string">"2d"</span>),
-    g = g<span class="hljs-number">2</span>();
- 
-g.lin({x1:<span class="hljs-number">50</span>,y1:<span class="hljs-number">50</span>,x2:<span class="hljs-number">150</span>,y2:<span class="hljs-number">150</span>})
- .exe(ctx);
- 
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"c"</span>),
+      ctx = cnv.getContext(<span class="hljs-string">"2d"</span>),
+      g = g2();
+      g.lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">y1</span>:<span class="hljs-number">50</span>,<span class="hljs-attr">x2</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y2</span>:<span class="hljs-number">150</span>})
+      .exe(ctx);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
-<h5 id="g2-befehle"><strong>g2 Befehle</strong></h5>
-<p>view()</p>
-<p><em><code>view({scl,x,y,cartesian}) scl: number, x, y: number, cartesian: boolean</code></em>
-Diese Methode ist in der Lage den Koordinaten Ursprung um <em>x</em> in x-Richtung und <em>y</em> in y-Richtung zu Bewegen, was nützlich sein kann um z.B. einen Gestelltpunkt im Ursprung haben will, aber nicht zwingend in der Ecke des Canvas.
-Die Property <code>scl</code> steht für scale und kann die Größe der Objekte ändern.
-Die Property <code>cartesian</code> schaltet auf das kartesische Koordinatensystem um, bei dem sich der Ursprung unten links befindet, die x-Achse nach rechts und die y-Achse nach oben zeigt. Dies ist einerseits intuitiver, andererseits für einige Methoden aber auch notwendige Voraussetung und sollte daher verwendet werden.</p>
-<p>del()</p>
-<p><em><code>del()</code></em> löscht alle Befehle die sich vor seinem Aufruf in der Warteschlange des Objekts befunden haben. Bei statischer Grafik ist diese Methode eher uninteressant. Bei Animationen hingegen wird dasselbe Objekt hingegen immer wieder gerendert und man möchte nicht immer die alten Positionen wieder mitrendern.</p>
-<p>clr()</p>
-<p><em><code>clr()</code></em> leert den Zeichenbereich des Canvas. Auch diese Methode kommt meist nur bei bewegten Bildern zum Einsatz. Bei der Livedemo von der vorherigen Seite wird sie aufgerufen, wenn man auf den Button &quot;reset&quot; klickt oder einen Wert ändert. Wäre dies nicht so, würde man jedes Mal eine Linie mehr sehen.</p>
-<p>exe()</p>
-<p><em><code>exe(&lt;Canvascontext&gt;)</code></em> rendert alle Befehle in den ihm als Parameter übergebenen Context.
-Also document.getElementById(&quot;<CanvasId>&quot;).getContext(&quot;2d&quot;) bzw. bei uns meist die entsprechende Variable ctx.</p>
-<p>grid()</p>
-<p><em><code>grid({color, size})    color: string, size:number</code></em>
-Erzeugt ein Gitternetz wie bei kariertem Papier. Die Properties color und size ändern Farbe und Linienabstand (Standard 20px).
-use()  <a name="use"></a></p>
-<p><em><code>use({grp, x, y, w, scl})    grp: object oder string, x, y, w, scl: number</code></em>
-Durch diese Methode können g2-Objekte bzw. Befehlsketten, die an anderer Stelle vordefiniert wurden, wiederbenutzt werden. Die Objekte können entweder in derselben Datei vorher erstellt worden sein (g ist dann ein Objekt oder ein String wenn es als <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md#g2use--object">g2.symbol</a>
-erstellt wurde).
-<code>use</code> kann folgende Properties enthalten:</p>
+<h3 id="321-grundlegende-befehle">3.2.1 Grundlegende Befehle</h3>
+<p><strong>.view()</strong><br>
+<code>view({scl,x,y,cartesian})</code> mit scl: number, x, y: number, cartesian: boolean</p>
+<p>Diese Methode ist in der Lage den Koordinatenursprung um <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span></eq> in x-Richtung und <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span></eq> in y-Richtung zu bewegen, was nützlich sein kann um z.B. den Ursprung hin zu einem Gestelltpunkt zu verschieben. Zur Erinnerung: Der Ursprung des Canvas-Elementes befindet sich standardmäßig links oben.
+Die Eigenschaft <code>scl</code> steht für <em>scale</em> und kann die Größe der Objekte ändern.
+Die Eigenschaft <code>cartesian</code> schaltet auf das kartesische Koordinatensystem um, bei dem sich der Ursprung unten links befindet, die x-Achse nach rechts und die y-Achse nach oben ausgerichtet. Dies ist einerseits intuitiver und andererseits für einige Methoden eine notwendige Voraussetzung und sollte daher verwendet werden.</p>
+<p><strong>.del()</strong><br>
+<code>del()</code> löscht alle Befehle die sich vor seinem Aufruf in der Warteschlange des Objekts befunden haben. Bei statischer Grafik ist diese Methode eher uninteressant. Bei Animationen hingegen wird dasselbe Objekt hingegen immer wieder gerendert und man möchte nicht immer die alten Positionen wieder mitrendern.</p>
+<p><strong>.clr()</strong><br>
+<code>clr()</code> leert den Zeichenbereich des Canvas. Auch diese Methode kommt meist nur bei bewegten Bildern zum Einsatz. Bei der Livedemo von der vorherigen Seite wird sie aufgerufen, wenn man auf den Resetbutton klickt oder einen Wert ändert. Wäre dies nicht so, würde man jedes Mal eine Linie mehr sehen.</p>
+<p><strong>.exe()</strong><br>
+<code>exe(&lt;Canvascontext&gt;)</code> rendert alle Befehle in den ihm als Parameter übergebenen Context. Also <code>document.getElementById(&quot;&lt;CanvasId&gt;&quot;).getContext(&quot;2d&quot;)</code> bzw. bei uns meist die entsprechende Variable <code>ctx</code>.</p>
+<p><strong>.grid()</strong><br>
+<code>grid({color, size})</code> mit color: string, size: number</p>
+<p>Erzeugt ein Gitternetz wie bei kariertem Papier. Die Eigenschaften <code>color</code> und <code>size</code> ändern Farbe und Linienabstand (Standard <code>20px</code>).</p>
+<p><strong>.use()</strong> <span id="use"><br>
+<code>use({grp, x, y, w, scl})</code> mit grp: object oder string, x, y, w, scl: number</p>
+<p>Durch diese Methode können g2-Objekte bzw. Befehlsketten, die an anderer Stelle vordefiniert wurden, wiederbenutzt werden. Die Objekte können entweder in derselben Datei vorher erstellt worden sein (g ist dann ein Objekt oder ein String wenn es als <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md#g2use--object">g2.symbol</a>
+erstellt wurde).</p>
+<p><code>use</code> kann folgende Eigenschaften enthalten:</p>
 <ul>
 <li>grp: object oder string - Das g2 Object, dass wiederverwendet werden soll.</li>
 <li>x: <code>number</code> - Translation in x-Richtung</li>
@@ -156,161 +152,162 @@ erstellt wurde).
 <li>w: <code>number</code> - Rotation [Radiant]</li>
 <li>scl: <code>number</code> - Skalierung</li>
 </ul>
-<p>beg()</p>
-<p><em><code>beg({x,y,w,scl,matrix,styles})x, y, w, scl: number, matrix: SVG-Matrix, styles: various</code></em>
-Leitet einen Unterbereich (ähnlich {...} bei Funktionen ) in der g2-Warteschlange ein, der durch end() wieder geschlossen wird. Die als Properties übergebenen Transformationen und Styles gelten nur in diesem Bereich. beg() kann <a href="#use">dieselben Properties</a> wie schon bei use() enthalten.</p>
-<p>end()</p>
-<p>Beendet den durch <code>beg()</code> eingeleiteten Unterbereich und stellt den vorherigen Status wieder her.
-txt()</p>
-<p><em><code>txt({str, x, y, w})   s: string, x, y, w: number</code></em>
-fügt einen String s mit dem Drehwinkel w am Punkt (<code>x</code>|<code>y</code>).
-Pfade</p>
+<p><strong>.beg()</strong><br>
+<code>beg({x,y,w,scl,matrix,styles})</code> mit x, y, w, scl: number, matrix: SVG-Matrix, styles: various</p>
+<p>Leitet einen Unterbereich (ähnlich {...} bei Funktionen ) in der g2-Warteschlange ein, der durch end() wieder geschlossen wird. Die als <em>properties</em> übergebenen Transformationen und <em>styles</em> gelten nur in diesem Bereich. <code>beg()</code> kann <a href="#use">dieselben Eigenschaften</a> wie schon bei <code>use()</code> enthalten.</p>
+<p><strong>.end()</strong><br>
+Beendet den durch <code>beg()</code> eingeleiteten Unterbereich und stellt den vorherigen Status wieder her.</p>
+<p><strong>.txt()</strong><br>
+<code>txt({str, x, y, w})</code> mit s: string, x, y, w: number</p>
+<p>Fügt einen String <code>str</code> mit dem Drehwinkel <code>w</code> am Punkt (<code>x</code>|<code>y</code>).</p>
+<h3 id="322-pfad-befehle">3.2.2 Pfad Befehle</h3>
 <p>g2 stellt einige Pfad Befehle bereit, die wir teilweise schon auf der vorherigen Seite gesehen haben. Hier folgt nun eine kombinierte Übersicht:</p>
-<p>p()
-startet einen neuen Pfad und verwirft vorherige Pfadbefehle</p>
-<p><em><code>m({x,y})    x, y: number</code></em>
+<p><strong>.p()</strong><br>
+Startet einen neuen Pfad und verwirft vorherige Pfadbefehle.</p>
+<p><strong>.m()</strong><br>
+<code>m({x,y})</code> mit x, y: number<br>
 Bewegt den virtuellen Stift an den Punkt (x|y).</p>
-<p><em><code>l({x,y})    x, y: number</code></em>
-zieht eine Linie vom letzten Punkt zum neuen Punkt (x|y)</p>
-<p><em><code>q({x1,y1,x,y})    x1, y1, x, y: number</code></em>
-Zeichnet eine quadratische Kurve von vorherigen Punkt zum neuen Punkt (x|y).  (x1|y1) ist dabei der Kontrollpunkt.</p>
+<p><strong>.l()</strong><br>
+<code>l({x,y})</code> mit x, y: number<br>
+Zieht eine Linie vom letzten Punkt zum neuen Punkt (x|y).</p>
+<p><strong>.q()</strong><br>
+<code>q({x1,y1,x,y})</code> mit x1, y1, x, y: number<br>
+Zeichnet eine quadratische Kurve von vorherigen Punkt zum neuen Punkt (x|y). (x1|y1) ist dabei der Kontrollpunkt.</p>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
 <iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-q.html'></iframe>
-<p>Zum besseren Verständnis sieht man auf dem folgenden Bild die Punkte einzelnen Punkte des obigen Beispiels einmal sichtbar gemacht.</p>
-<figure>
-<img src="./Bilder/bild 17.png">
-</figure>
-<p>c({x1,y1,x2,y2,x,y})    x1,y1,x2,y2,x,y: number
+<aside>
+<img src="../Bilder/bild 17.png">
+<h4 id="abb-31-quadratic-bezier-curve"><strong>Abb. 3.1:</strong> Quadratic bezier curve</h4>
+</aside>
+<p>Zum besseren Verständnis sind in Abbildung 3.1 zusätzlich die einzelnen Punkte des editierbaren Beispiels eingezeichnet.</p>
+<p><strong>.c()</strong><br>
+<code>c({x1,y1,x2,y2,x,y})</code> mit x1,y1,x2,y2,x,y: number<br>
 Zeichnet eine kubische Bézierkurve. Das funktioniert wie die quadratische Variante q(), es gibt lediglich einen Kontrollpunkt (x2|y2) mehr.</p>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
 <iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-c.html'></iframe>
-a({dw,x,y})    dw, x, y: number
-Zeichnet ein Bogensegment von letzten Punkt zum neuen Punkt (x|y),  dw [Radiant] entspricht der Krümmung φ.
+<p><strong>.a()</strong><br>
+<code>a({dw,x,y})</code> mit dw, x, y: number<br>
+Zeichnet ein Bogensegment von letzten Punkt zum neuen Punkt (x|y), dw [Radiant] entspricht der Krümmung <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">φ</span></span></span></span></eq>.</p>
 <figure>
-<img src="./Bilder/bild 18.png">
+<img src="../Bilder/bild 18.png">
+<h4 id="abb-32-bogensegmente-unterschiedlicher-krc3bcmmung"><strong>Abb. 3.2:</strong> Bogensegmente unterschiedlicher Krümmung</h4>
 </figure>
-<p>Um die Pfade zu schließen haben wir bisher immer stroke() benutzt. Es gibt jedoch noch zwei weitere Möglichkeiten und bisher nicht angesprochene optionale Parameter. Mit d kann den folgenden Methoden ein String mit SVG Daten übergeben werden, der dann gerendert wird.</p>
-<p>stroke({d})    d: string
+<p>Pfade wurden bisher immer mit <code>stroke()</code> geschlossen. Es gibt jedoch noch zwei weitere Möglichkeiten und bisher nicht angesprochene optionale Parameter. Mit <code>d</code> kann den folgenden Methoden ein String mit SVG Daten übergeben werden, der dann gerendert wird.</p>
+<p><strong>.stroke()</strong><br>
+<code>stroke({d})</code> mit d: string<br>
 Zieht einen Strich entlang des vorher definierten Pfads.</p>
-<p>fill({d})    d: string
+<p><strong>.fill()</strong><br>
+<code>fill({d})</code> mit d: string<br>
 Füllt den vorher definierten Pfad.</p>
-<p>drw({d})   d:  string
-Kombiniert stroke() und fill() indem beides ausgeführt wird.</p>
-<p>Unter Nutzung von drw() und eines Style-Objektes sieht die kubische Bézierkurve von oben schon interessanter aus:</p>
+<p><strong>.drw()</strong><br>
+<code>drw({d})</code> mit d: string<br>
+Kombiniert <code>stroke()</code> und <code>fill()</code> indem beides ausgeführt wird.</p>
+<p>Unter Nutzung von <code>drw()</code> und eines Style-Objektes sieht die kubische Bézierkurve von oben schon interessanter aus:</p>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
 <iframe width=100% height=360 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-drw.html'></iframe>
-<p>lin()
-*<code>lin({x1, y1, x2, y2})    x1,y1,x2,y2: number*</code>
+<p><strong>.lin()</strong><br>
+<code>lin({x1, y1, x2, y2})</code> mit x1,y1,x2,y2: number<br>
 Diese Methode zeichnet eine Linie von Punkt (x1|y1) zum Punkt (x2|y2).</p>
-<p>rec()
-<em><code>rec({x, y, b, h})    x,y,b,h: number</code></em>
-Zeichnet ein Rechteck. (x|y) stellt dabei den Punkt der linken oberen Ecke dar. b ist die Breite und h die Höhe des Rechtecks.</p>
-<p>arc()
-<em><code>arc({x, y, r, w, dw})    x,y,r,w,dw: number</code></em></p>
-<p>Zeichnet ein Bogensegment. (x|y) ist der Mittelpunkt des Bogens, r der Radius, w der Startwinkelversatz zur x-Achse und dw die Winkelspanne.</p>
-<figure>
-<img src="./Bilder/bild 19.png">
-</figure>
-<p>Dieses Bild bezieht sich auf das Standard Canvas-Koordinatensystem, ohne cartesian-flag. Die angedeutete Richtung der Winkel ist dann, trotz Drehung im Uhrzeigersinn, mathematisch positiv!</p>
-<p>ply()
-<code>ply({pts, closed, x, y, w})    pts: array, closed: boolean, x, y, w: number</code>
-Zeichnet eine Polylinie über ein Array von Punkten in der Form <code>[x1,y1,x2,y2,...,xn,yn]</code>. Ist closed <code>true</code>, wird der Polygonzug geschlossen, bei <code>false</code> bleibt er offen. x, y, w geben die Position und die Rotation an.</p>
-<p>img()
-<code>img({uri, [x], [y], [w], [b], [h], [xoff], [yoff], [dx], [dy]})</code>    Parameter siehe API-Dokumentation
-Rendert ein Bild auf das Canvas. Die Parameter entsprechen bis auf die Benennung größtenteils denen der Canvasmethode drawImage(), sodass die dortigen Erläuterungen auch für g2.img() gelten.</p>
-<p>Das Firefox Logo in der nachfogenden Livedemo hat im Original die Maße 500x500 px. Nutzt man img() nur mit dem uri Parameter, wird das Logo so gerendert wie in der verblassten Form im Hintergrund zu sehen ist. Möchte man aber zum Beispiel den Kopf vom Fuchs in der unteren rechten Ecke des Canvas darstellen, geht dies via
-<code>.img({uri:'../img/ff-logo.png',x:250, y:250, w:Math.PI/2, b:250, h:250, xoff:45, yoff:50, dx:210, dy:210})</code></p>
-<p>Dieses Bild bezieht sich auf das Standard Canvas-Koordinatensystem, ohne cartesian-flag. Die angedeutete Richtung der Winkel ist dann, trotz Drehung im Uhrzeigersinn, mathematisch positiv!
-ply()</p>
-<p>ply({pts, closed, x, y, w})    pts: array, closed: boolean, x, y, w: number
-Zeichnet eine Polylinie über ein Array von Punkten in der Form [x1,y1,x2,y2,...,xn,yn]. Ist closed true, wird der Polygonzug geschlossen, bei false bleibt er offen. x, y, w geben die Position und die Rotation an.
-img()</p>
-<p>img({uri, [x], [y], [w], [b], [h], [xoff], [yoff], [dx], [dy]})    Parameter siehe <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md#g2img--object">API-Dokumentation</a>
-Rendert ein Bild auf das Canvas. Die Parameter entsprechen bis auf die Benennung größtenteils denen der Canvasmethode <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">drawImage()</a>, sodass die dortigen Erläuterungen auch für g2.img() gelten.</p>
-<p>Das Firefox Logo in der nachfogenden Livedemo hat im Original die Maße 500x500 px. Nutzt man img() nur mit dem uri Parameter, wird das Logo so gerendert wie in der verblassten Form im Hintergrund zu sehen ist. Möchte man aber zum Beispiel den Kopf vom Fuchs in der unteren rechten Ecke des Canvas darstellen, geht dies via
-<code>.img({uri:'../img/ff-logo.png',x:250, y:250, w:Math.PI/2, b:250, h:250, xoff:45, yoff:50, dx:210, dy:210})</code></p>
+<p><strong>.rec()</strong><br>
+<code>rec({x, y, b, h})</code> mit x,y,b,h: number<br>
+Zeichnet ein Rechteck. (x|y) stellt dabei den Punkt der linken oberen Ecke dar. <code>b</code> ist die Breite und <code>h</code> die Höhe des Rechtecks.</p>
+<p><strong>.arc()</strong><br>
+<code>arc({x, y, r, w, dw})</code> mit x,y,r,w,dw: number<br>
+Zeichnet ein Bogensegment. (x|y) ist der Mittelpunkt des Bogens, <code>r</code> der Radius, <code>w</code> der Startwinkelversatz zur x-Achse und <code>dw</code> die Winkelspanne.</p>
+<aside>
+<img src="../Bilder/bild 19.png">
+<h4 id="abb-33-zeichnen-eines-bogensegments-mit-g2arc"><strong>Abb. 3.3:</strong> Zeichnen eines Bogensegments mit g2.arc()</h4>
+</aside>
+<p>Abbildung 3.3 bezieht sich auf das Standard Canvas-Koordinatensystem, ohne cartesian-flag. Die angedeutete Richtung der Winkel ist dann, trotz Drehung im Uhrzeigersinn, mathematisch positiv!</p>
+<p><strong>.ply()</strong><br>
+<code>ply({pts, closed, x, y, w})</code> mit pts: array, closed: boolean, x, y, w: number<br>
+Zeichnet eine Polylinie über ein Array von Punkten in der Form <code>[x1,y1,x2,y2,...,xn,yn]</code>. Ist closed <code>true</code>, wird der Polygonzug geschlossen, bei <code>false</code> bleibt er offen. <code>x</code>, <code>y</code>, <code>w</code> geben die Position und die Rotation an.</p>
+<p><strong>.img()</strong><br>
+<code>img({uri, [x], [y], [w], [b], [h], [xoff], [yoff], [dx], [dy]})</code> – Parameter siehe API-Dokumentation<br>
+Rendert ein Bild auf das Canvas. Die Parameter entsprechen bis auf die Benennung größtenteils denen der Canvasmethode <code>drawImage()</code>, sodass die dortigen Erläuterungen auch für <code>g2.img()</code> gelten.</p>
+<p>Das Firefox Logo in der nachfolgenden <em>Livedemo</em> hat im Original die Maße 500x500 px. Nutzt man <code>img()</code> nur mit dem uri Parameter, wird das Logo so gerendert wie in der verblassten Form im Hintergrund zu sehen ist. Möchte man aber zum Beispiel den Kopf vom Fuchs in der unteren rechten Ecke des Canvas darstellen, geht dies via</p>
+<p><code>.img({uri:'../img/ff-logo.png',x:250, y:250, w:Math.PI/2, b:250, h:250, xoff:45, yoff:50, dx:210, dy:210})</code></p>
 <ul>
-<li>
-<p><code>x</code>,<code>y</code> (Canvas-Koordinaten) verschiebt den Punkt des Canvas, an dem die obere linke Ecke des Bild eingefügt wird. (hier in die Mitte)</p>
-</li>
-<li>
-<p><code>w</code> (in Radiant) transformiert die Orientierung des Bildes um seinen Urprung mathematisch positiv entsprechend des Canvas Koordinatensystems</p>
-</li>
-<li>
-<p><code>b,h</code> (Canvas-Koordinaten) gibt an, wieviel Platz das Bild auf dem Canvas einnehmen wird und skaliert es entsprechend (hier ein auf ein Viertel)</p>
-</li>
-<li>
-<p><code>xoff</code>,<code>yoff</code> (Bild-Koordinaten, unskaliert) verschiebt die obere linke Ecke des Rechtecks, mit dem das Originalild ausgeschnitten werden soll (entspricht in der Canvas-API drawImage() den Parametern dx,dy)</p>
-</li>
-<li>
-<p><code>dx</code>,<code>dy</code> (Bild-Koordinaten, unskaliert) gibt die Breite und Höhe des Rechtecks an, das den Ausschnitt von Originalbild erzeugt</p>
-</li>
+<li><code>x</code>,<code>y</code> (Canvas-Koordinaten) verschiebt den Punkt des Canvas, an dem die obere linke Ecke des Bild eingefügt wird. (hier in die Mitte)</li>
+<li><code>w</code> (in Radiant) transformiert die Orientierung des Bildes um seinen Ursprung mathematisch positiv entsprechend des Canvas Koordinatensystems</li>
+<li><code>b,h</code> (Canvas-Koordinaten) gibt an, wieviel Platz das Bild auf dem Canvas einnehmen wird und skaliert es entsprechend (hier ein auf ein Viertel)</li>
+<li><code>xoff</code>,<code>yoff</code> (Bild-Koordinaten, unskaliert) verschiebt die obere linke Ecke des Rechtecks, mit dem das Originalbild ausgeschnitten werden soll (entspricht in der Canvas-API <code>drawImage()</code> den Parametern <code>dx</code>,<code>dy</code>)</li>
+<li><code>dx</code>,<code>dy</code> (Bild-Koordinaten, unskaliert) gibt die Breite und Höhe des Rechtecks an, das den Ausschnitt von Originalbild erzeugt</li>
 </ul>
-<p>Um das Ergebnis zu sehen, kopieren Sie den angegeben Beispielcode in die nachfolgende Livedemo.</p>
+<p>Um das Ergebnis zu sehen, kopieren Sie den angegeben Beispielcode in die nachfolgende <em>Livedemo</em>.</p>
+<h5 id="editierbares-beispiel">Editierbares Beispiel:</h5>
 <iframe width=100% height=600 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-img.html'></iframe>
 <blockquote>
-<p><strong>Tipp</strong>
-Durch geschickte Verwendung der .img() Transformationsparameter x, y, w lassen sich die Glieder eines animierten Mechanismus durch Bilder darstellen.</p>
-</blockquote>
+<h4 id="tipp"><strong>Tipp</strong></h4>
+<p>Durch geschickte Verwendung der <code>.img()</code> Transformationsparameter <code>x</code>, <code>y</code>, <code>w</code> lassen sich die Glieder eines animierten Mechanismus durch Bilder darstellen.</p>
 <p>Auf diese Weise wurde auch die folgende Animation erstellt:</p>
 <img src="https://goessner.github.io/webkinematik/img/pumpjack.gif" height="500px" width="auto">
-<blockquote>
-<p>Es gibt noch weitere g2-Befehle für die sich ein Blick in die <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md#g2img--object">API-Dokumentation</a>
-und das <a href="https://github.com/goessner/g2/wiki">Wiki</a>
-lohnt.</p>
+<p>Es gibt noch weitere g2-Befehle für die sich ein Blick in die <a href="https://github.com/goessner/g2/blob/master/docs/api/g2.core.md#g2img--object">API-Dokumentation</a> und das <a href="https://github.com/goessner/g2/wiki">Wiki</a> lohnt.</p>
 </blockquote>
-<h5 id="g2---playground"><strong>g2 - Playground</strong></h5>
-<p>Diese Livedemo rendert ein Fachwerk und benutzt dabei ausschließlich g2-Befehle. Im Quelltext wurden zusätzlich zu den im Eingabebereich sichtbaren g2-Befehlen, g2-Objekte vordefiniert die mittels der <a href="#use">use-Methode</a> genutzt werden können. Es stehen folgende Objekte zur Verfügung:
-Als g2-Symbol ein</p>
-<p><strong>Pfeil</strong> `'arrow': string``</p>
-<pre><code class="code-line language-JSON"><div>g<span class="hljs-number">2</span>.symbol.arrow = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">50</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">3</span>, <span class="hljs-number">5</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">-3</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>], closed: <span class="hljs-literal">true</span>, ls:<span class="hljs-string">"crimson"</span> ,fs:<span class="hljs-string">"crimson"</span>, lw:<span class="hljs-number">3</span>});
+<h3 id="323-g2-playground">3.2.3 g2 Playground</h3>
+<p>Diese <em>Livedemo</em> rendert ein Fachwerk und benutzt dabei ausschließlich g2-Befehle. Im Quelltext wurden zusätzlich zu den im Eingabebereich sichtbaren g2-Befehlen, g2-Objekte vordefiniert die mittels der <a href="#use">use-Methode</a> genutzt werden können. Es stehen folgende Objekte zur Verfügung:</p>
+<p>Als g2-Symbol ein:</p>
+<blockquote>
+<p><strong>Pfeil:</strong> <code>'arrow': string</code></p>
+<pre><code class="code-line language-JavaScript"><div>g2.symbol.arrow = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">50</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">3</span>, <span class="hljs-number">5</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">-3</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>], <span class="hljs-attr">closed</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"crimson"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"crimson"</span>, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>});
 </div></code></pre>
-<p>Als Objekte jeweils ein</p>
-<p><strong>Gelenkpunkt</strong> `nod: object``</p>
-<pre><code class="code-line language-JSON"><div>let nod = g<span class="hljs-number">2</span>().cir({x:<span class="hljs-number">0</span>, y:<span class="hljs-number">0</span>, r:<span class="hljs-number">5</span>, ls:<span class="hljs-string">"#4f4f4f"</span> ,fs:<span class="hljs-string">"#d0d0d0"</span>});
+</blockquote>
+<p>Als Objekte jeweils ein:</p>
+<blockquote>
+<p><strong>Gelenkpunkt:</strong> <code>nod: object</code></p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">let</span> nod = g2().cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">r</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>});
 </div></code></pre>
-<p><strong>Festlager nodfix:</strong> `object``</p>
-<pre><code class="code-line language-JSON"><div>let nodfix = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>], closed:<span class="hljs-literal">false</span>, ls:<span class="hljs-string">"#4f4f4f"</span> ,fs:<span class="hljs-string">"#c7c7c7"</span>}).cir({x:<span class="hljs-number">0</span>, y:<span class="hljs-number">0</span>, r:<span class="hljs-number">5</span>, ls:<span class="hljs-string">"#4f4f4f"</span> ,fs:<span class="hljs-string">"#d0d0d0"</span>})
+</blockquote>
+<blockquote>
+<p><strong>Festlager:</strong> <code>nodfix: object</code></p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">let</span> nodfix = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>], <span class="hljs-attr">closed</span>:<span class="hljs-literal">false</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#c7c7c7"</span>}).cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">r</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>})
 </div></code></pre>
-<p><strong>Loslager nodflt:</strong> `object``</p>
-<pre><code class="code-line language-JSON"><div>let nodflt = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>], closed:<span class="hljs-literal">true</span>, ls:<span class="hljs-string">"#4f4f4f"</span> ,fs:<span class="hljs-string">"#c7c7c7"</span>}).lin({x1:<span class="hljs-number">-11</span>, y1:<span class="hljs-number">-20</span>, x2:<span class="hljs-number">11</span>, y2:<span class="hljs-number">-20</span>, ls:<span class="hljs-string">"#747474"</span>, lw:<span class="hljs-number">5</span>}).cir({x:<span class="hljs-number">0</span>, y:<span class="hljs-number">0</span>, r:<span class="hljs-number">5</span>, ls:<span class="hljs-string">"#4f4f4f"</span> ,fs:<span class="hljs-string">"#d0d0d0"</span>});
+</blockquote>
+<blockquote>
+<p><strong>Loslager:</strong> <code>nodflt: object</code></p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-keyword">let</span> nodflt = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>], <span class="hljs-attr">closed</span>:<span class="hljs-literal">true</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#c7c7c7"</span>}).lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">-11</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">-20</span>, <span class="hljs-attr">x2</span>:<span class="hljs-number">11</span>, <span class="hljs-attr">y2</span>:<span class="hljs-number">-20</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#747474"</span>, <span class="hljs-attr">lw</span>:<span class="hljs-number">5</span>}).cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">r</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>});
 </div></code></pre>
-<p>Ein zum obigen Beispiel äquivalenter, vollständiger Quelltext sieht folgendermaßen aus:</p>
-<pre><code class="code-line language-JSON"><div>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=<span class="hljs-string">"utf-8"</span>/&gt;
-&lt;/head&gt;
+</blockquote>
+<p><br>Sie können die Demo nach Belieben erweitern oder andere g2-Befehle ausprobieren.</p>
+<iframe width=100% height=800 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_g2-multi.html'></iframe>
+<p><br>Ein zum obigen Beispiel äquivalenter, vollständiger Quelltext sieht folgendermaßen aus:</p>
+<pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
  
-&lt;body&gt;
-  &lt;canvas id=<span class="hljs-string">"c"</span> width=<span class="hljs-string">"801"</span> height=<span class="hljs-string">"501"</span> style=<span class="hljs-string">"border: 1px solid #4D4E53;border-radius: 2px;"</span>&gt;&lt;/canvas&gt;
-  &lt;script src=<span class="hljs-string">"https://gitcdn.cyz/&gt;po/goessner/g2/master/src/g2.js"</span>&gt;&lt;/script&gt;
-  &lt;script&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"801"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"501"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: 1px solid #4D4E53;border-radius: 2px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.cyz/&gt;po/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"c"</span>).getContext(<span class="hljs-string">"2d"</span>),
+      g = g2(),
+      nod = g2().cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>}),
+      nodfix = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>],<span class="hljs-attr">closed</span>:<span class="hljs-literal">false</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#c7c7c7"</span>}).cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>}),
+      nodflt = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>],<span class="hljs-attr">closed</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#c7c7c7"</span>}).lin({<span class="hljs-attr">x</span>:<span class="hljs-number">-11</span>,<span class="hljs-attr">y1</span>:<span class="hljs-number">-20</span>,<span class="hljs-attr">x2</span>:<span class="hljs-number">11</span>,<span class="hljs-attr">y2</span>:<span class="hljs-number">-20</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#747474"</span>, <span class="hljs-attr">lw</span>:<span class="hljs-number">5</span>}).cir({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">r</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"#4f4f4f"</span>,<span class="hljs-attr">fs</span>:<span class="hljs-string">"#d0d0d0"</span>}),
+      style = {<span class="hljs-attr">ls</span>:<span class="hljs-string">'#747474'</span>,<span class="hljs-attr">lw</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">lj</span>:<span class="hljs-string">'round'</span>};
  
-const ctx = document.getElementById(<span class="hljs-string">"c"</span>).getContext(<span class="hljs-string">"2d"</span>),
-    g = g<span class="hljs-number">2</span>(),
-    nod = g<span class="hljs-number">2</span>().cir({x:<span class="hljs-number">0</span>,y:<span class="hljs-number">0</span>,r:<span class="hljs-number">5</span>,ls:<span class="hljs-string">"#4f4f4f"</span>,fs:<span class="hljs-string">"#d0d0d0"</span>}),
-    nodfix = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>],closed:<span class="hljs-literal">false</span>,ls:<span class="hljs-string">"#4f4f4f"</span>,fs:<span class="hljs-string">"#c7c7c7"</span>}).cir({x:<span class="hljs-number">0</span>,y:<span class="hljs-number">0</span>,r:<span class="hljs-number">5</span>,ls:<span class="hljs-string">"#4f4f4f"</span>,fs:<span class="hljs-string">"#d0d0d0"</span>}),
-    nodflt = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">-10</span>,<span class="hljs-number">-15</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">10</span>,<span class="hljs-number">-15</span>],closed:<span class="hljs-literal">true</span>,ls:<span class="hljs-string">"#4f4f4f"</span>,fs:<span class="hljs-string">"#c7c7c7"</span>}).lin({x:<span class="hljs-number">-11</span>,y1:<span class="hljs-number">-20</span>,x2:<span class="hljs-number">11</span>,y2:<span class="hljs-number">-20</span>,ls:<span class="hljs-string">"#747474"</span>, lw:<span class="hljs-number">5</span>}).cir({x:<span class="hljs-number">0</span>,y:<span class="hljs-number">0</span>,r:<span class="hljs-number">5</span>,ls:<span class="hljs-string">"#4f4f4f"</span>,fs:<span class="hljs-string">"#d0d0d0"</span>}),
-    style = {ls:'#<span class="hljs-number">747474</span>',lw:<span class="hljs-number">5</span>,lj:'round'};
+      g2.symbol.arrow = g2().ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">50</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">3</span>, <span class="hljs-number">5</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">-3</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>], <span class="hljs-attr">closed</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">ls</span>:<span class="hljs-string">"crimson"</span> ,<span class="hljs-attr">fs</span>:<span class="hljs-string">"crimson"</span>, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>});
  
-g<span class="hljs-number">2</span>.symbol.arrow = g<span class="hljs-number">2</span>().ply({pts:[<span class="hljs-number">50</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">3</span>, <span class="hljs-number">5</span>,<span class="hljs-number">0</span>, <span class="hljs-number">10</span>,<span class="hljs-number">-3</span>, <span class="hljs-number">10</span>,<span class="hljs-number">0</span>], closed:<span class="hljs-literal">true</span>,ls:<span class="hljs-string">"crimson"</span> ,fs:<span class="hljs-string">"crimson"</span>, lw:<span class="hljs-number">3</span>});
- 
-g.view({x:<span class="hljs-number">240</span>, y: <span class="hljs-number">200</span>, cartesian: <span class="hljs-literal">true</span>}).grid()
- .ply({pts:[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>],closed:<span class="hljs-literal">true</span>,...style})
- .ply({pts:[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>],closed:<span class="hljs-literal">false</span>,...style})
- .use({grp:<span class="hljs-string">"arrow"</span>,x:<span class="hljs-number">200</span>,y:<span class="hljs-number">100</span>})
- .use({grp:<span class="hljs-string">"arrow"</span>,x:<span class="hljs-number">100</span>,y:<span class="hljs-number">100</span>,w:Math.PI/<span class="hljs-number">2</span>})
- .use({grp:<span class="hljs-string">"arrow"</span>,x:<span class="hljs-number">300</span>,y:<span class="hljs-number">-50</span>,w:Math.PI/<span class="hljs-number">2</span>})
- .use({grp:nod,x:<span class="hljs-number">100</span>, y:<span class="hljs-number">0</span>})
- .use({grp:nod,x:<span class="hljs-number">200</span>, y:<span class="hljs-number">0</span>})
- .use({grp:nod,x:<span class="hljs-number">300</span>, y:<span class="hljs-number">0</span>})
- .use({grp:nod,x:<span class="hljs-number">100</span>, y:<span class="hljs-number">100</span>})
- .use({grp:nod,x:<span class="hljs-number">200</span>, y:<span class="hljs-number">100</span>})
- .use({grp:nodfix,x:<span class="hljs-number">0</span>, y:<span class="hljs-number">0</span>}).txt({str:<span class="hljs-string">"A"</span>,x:<span class="hljs-number">-20</span>,y:<span class="hljs-number">0</span>})
- .use({grp:nodflt,x:<span class="hljs-number">0</span>,y:<span class="hljs-number">100</span>,w:-Math.PI/<span class="hljs-number">2</span>}).txt({str:<span class="hljs-string">"B"</span>,x:<span class="hljs-number">0</span>,y:<span class="hljs-number">120</span>})
- .exe(ctx)
- 
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+      g.view({<span class="hljs-attr">x</span>:<span class="hljs-number">240</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">200</span>, <span class="hljs-attr">cartesian</span>: <span class="hljs-literal">true</span>}).grid()
+       .ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">300</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>],<span class="hljs-attr">closed</span>:<span class="hljs-literal">true</span>,...style})
+       .ply({<span class="hljs-attr">pts</span>:[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>,<span class="hljs-number">200</span>,<span class="hljs-number">0</span>],<span class="hljs-attr">closed</span>:<span class="hljs-literal">false</span>,...style})
+       .use({<span class="hljs-attr">grp</span>:<span class="hljs-string">"arrow"</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">200</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">100</span>})
+       .use({<span class="hljs-attr">grp</span>:<span class="hljs-string">"arrow"</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">100</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">100</span>,<span class="hljs-attr">w</span>:<span class="hljs-built_in">Math</span>.PI/<span class="hljs-number">2</span>})
+       .use({<span class="hljs-attr">grp</span>:<span class="hljs-string">"arrow"</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">300</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">-50</span>,<span class="hljs-attr">w</span>:<span class="hljs-built_in">Math</span>.PI/<span class="hljs-number">2</span>})
+       .use({<span class="hljs-attr">grp</span>:nod,<span class="hljs-attr">x</span>:<span class="hljs-number">100</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>})
+       .use({<span class="hljs-attr">grp</span>:nod,<span class="hljs-attr">x</span>:<span class="hljs-number">200</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>})
+       .use({<span class="hljs-attr">grp</span>:nod,<span class="hljs-attr">x</span>:<span class="hljs-number">300</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>})
+       .use({<span class="hljs-attr">grp</span>:nod,<span class="hljs-attr">x</span>:<span class="hljs-number">100</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">100</span>})
+       .use({<span class="hljs-attr">grp</span>:nod,<span class="hljs-attr">x</span>:<span class="hljs-number">200</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">100</span>})
+       .use({<span class="hljs-attr">grp</span>:nodfix,<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y</span>:<span class="hljs-number">0</span>}).txt({<span class="hljs-attr">str</span>:<span class="hljs-string">"A"</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">-20</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>})
+       .use({<span class="hljs-attr">grp</span>:nodflt,<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">100</span>,<span class="hljs-attr">w</span>:-<span class="hljs-built_in">Math</span>.PI/<span class="hljs-number">2</span>}).txt({<span class="hljs-attr">str</span>:<span class="hljs-string">"B"</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">120</span>})
+       .exe(ctx)
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
 
 </article>
