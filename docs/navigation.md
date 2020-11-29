@@ -77,7 +77,7 @@
 <ol start="7">
     <li><details><summary markdown="span">BEISPIELE</summary>
     <ol>
-        <li><a href="{base}/07_Beispiele.md/Beispiel.html">Beispiele</a></li>
+        <li><a href="{base}/07_Beispiele.md/Beispiele.html">Beispiele</a></li>
     </ol>
     </details></li>
 </ol>
