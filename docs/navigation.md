@@ -32,8 +32,11 @@
     <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
     <ol>
         <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
-        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
-        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">Methoden der g2 Bibliothek</a></li>
+        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">Erweiterung g2.ext</a></li>
+        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2mecErweiterung.html">Erweiterung g2.mec</a></li>
+        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/g2 ChartErweiterung.html">Erweiterung g2.chart</a></li>
+        <li><a href="{base}/03_Grafik_mit_der_Bibliothek_g2.md/Übungen.html">Übungen</a></li>
     </ol>
     </details></li>
 </ol>
@@ -73,15 +76,6 @@
     </ol>
     </details></li>
 </ol>
-
-<ol start="7">
-    <li><details><summary markdown="span">BEISPIELE</summary>
-    <ol>
-        <li><a href="{base}/07_Beispiele.md/Beispiele.html">Beispiele</a></li>
-    </ol>
-    </details></li>
-</ol>
-
 
 </nav>
 

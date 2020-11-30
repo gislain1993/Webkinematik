@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Erweiterung der g2 Bibliothek">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Grundlagen,JavaScript,Programmierung,g2,Canvas,Pfade">
+<title>Einführung in g2</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -44,8 +44,11 @@
     <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
     <ol>
         <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
-        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
-        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">Methoden der g2 Bibliothek</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">Erweiterung g2.ext</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2mecErweiterung.html">Erweiterung g2.mec</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 ChartErweiterung.html">Erweiterung g2.chart</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Übungen.html">Übungen</a></li>
     </ol>
     </details></li>
 </ol>
@@ -82,43 +85,37 @@
     </ol>
     </details></li>
 </ol>
-<ol start="7">
-    <li><details><summary markdown="span">BEISPIELE</summary>
-    <ol>
-        <li><a href="../07_Beispiele.md/Beispiele.html">Beispiele</a></li>
-    </ol>
-    </details></li>
-</ol>
 </nav>
 
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>Einführung in g2</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Grundlagen, JavaScript, Programmierung, g2, Canvas, Pfade</h5>
 </header>
-<h4 id="g2ext-erweiterung">g2.ext Erweiterung</h4>
-<p>g2.ext Erweitert g2 um einige Funktionalitäten.
-Insbesondere werden diese Funktionalitäten durch weitere Erweiterungen für g2 genutzt, sodass es eine Bedingung für die Nutzung anderer Erweiterungen darstellt.</p>
+<h2 id="33-erweiterung-g2ext">3.3 Erweiterung g2.ext</h2>
+<p>g2.ext erweitert g2 um einige Funktionalitäten. Insbesondere werden diese Funktionalitäten durch weitere Erweiterungen für g2 genutzt, sodass es eine Bedingung für die Nutzung anderer Erweiterungen darstellt.</p>
 <p>g2.ext liefert außerdem eigene Funktionen.</p>
-<p>.spline()
-<em><code>spline({pts,closed,x,y,w}) pts: array, closed: boolean, x, y, w: number</code></em>
-Zeichnet einen Spline über ein Array von Punkten in der selben Form wie .ply().
-Ressourcen um mehr darüber zu Erfahren wie Splines gezeichent werden, sollte man sich
-<a href="https://de.wikipedia.org/wiki/Kubisch_Hermitescher_Spline">Kubisch Hermetischen Splines</a> und <a href="https://de.wikipedia.org/wiki/B%C3%A9zierkurve">Bézierkurven</a> ansehen.</p>
-<p>.label()
-<em><code>label({str, [loc], [off]})   str: string, [loc]: float oder string, [off]: float</code></em>
-Diese Methode erzeugt eine Beschriftung str deren Position sich auf das Element bezieht, das vor ihr in der Befehlskette liegt. Für eine korrekte Ausrichtung der Labels ist die Nutzung von <code>cartesian()</code> obligatorisch. Die Parameter <code>[loc]</code> und <code>[off]</code> sind abhängig vom Elementtyp auf den <code>label()</code> angewendet wird. Eine Verschiebung des Labels nach rechts oder links geschieht über justierung der <code>off</code> Eigenschaft.</p>
-<p>.mark()
-<em><code>mark({mrk,[loc]}) mrk: str, [loc]: number, string || loc[]</code></em>
-mark() funktioniert wie label() jedoch hat man die Wahl zwischen dot und tick für das mrk.</p>
-<p>Für loc hat man die Option die Parameter als Array zu übergeben.</p>
+<p><strong>.spline()</strong><br>
+<code>spline({pts,closed,x,y,w})</code> mit pts: array, closed: boolean, x, y, w: number</p>
+<p>Zeichnet einen Spline über ein Array von Punkten in der selben Form wie <code>.ply()</code>. Einige Ressourcen zu Splines:</p>
+<ul>
+<li><a href="https://de.wikipedia.org/wiki/Kubisch_Hermitescher_Spline">Kubisch Hermetischen Splines</a></li>
+<li><a href="https://de.wikipedia.org/wiki/B%C3%A9zierkurve">Bézierkurven</a></li>
+</ul>
+<p><strong>.label()</strong><br>
+<code>label({str, [loc], [off]})</code> mit str: string, [loc]: float oder string, [off]: float</p>
+<p>Diese Methode erzeugt eine Beschriftung <code>str</code> deren Position sich auf das Element bezieht, das vor ihr in der Befehlskette liegt. Für eine korrekte Ausrichtung der Labels ist die Nutzung von <code>cartesian()</code> obligatorisch. Die Parameter <code>[loc]</code> und <code>[off]</code> sind abhängig vom Elementtyp auf den <code>label()</code> angewendet wird. Eine Verschiebung des Labels nach rechts oder links geschieht über justierung der <code>off</code> Eigenschaft.</p>
+<p><strong>.mark()</strong><br>
+<code>mark({mrk,[loc]})</code> mit mrk: str, [loc]: number, string || loc[]</p>
+<p><code>.mark()</code> funktioniert wie <code>.label()</code>, jedoch hat man die Wahl zwischen <code>dot</code> und <code>tick</code> für das <code>mrk</code>.</p>
+<p>Für <code>loc</code> hat man die Option die Parameter als Array zu übergeben.</p>
+<h5 id="editierbares-livebeispiel">Editierbares Livebeispiel:</h5>
 <iframe width=100% height=300 frameborder='no' src='https://goessner.github.io/webkinematik/Livedemos/cm-livedemo_mec_mark.html'></iframe>
-
 </article>
 </main>
 <script src="../js/g2.html.js"></script>

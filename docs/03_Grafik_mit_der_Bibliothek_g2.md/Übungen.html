@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Übungen zum Umgang mit g2">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Grundlagen,JavaScript,Programmierung,g2,Canvas,Pfade">
+<title>Einführung in g2</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -44,8 +44,11 @@
     <li><details><summary markdown="span">Grafik mit der Bibliotek g2</summary>
     <ol>
         <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Grafik im Webbrowser.html">Grafik im Webbrowser</a></li>
-        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">g2 Methoden</a></li>
-        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">g2.ext Erweiterung</a></li> 
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 Methode.html">Methoden der g2 Bibliothek</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2ExtErweiterung.html">Erweiterung g2.ext</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2mecErweiterung.html">Erweiterung g2.mec</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/g2 ChartErweiterung.html">Erweiterung g2.chart</a></li>
+        <li><a href="../03_Grafik_mit_der_Bibliothek_g2.md/Übungen.html">Übungen</a></li>
     </ol>
     </details></li>
 </ol>
@@ -82,26 +85,19 @@
     </ol>
     </details></li>
 </ol>
-<ol start="7">
-    <li><details><summary markdown="span">BEISPIELE</summary>
-    <ol>
-        <li><a href="../07_Beispiele.md/Beispiele.html">Beispiele</a></li>
-    </ol>
-    </details></li>
-</ol>
 </nav>
 
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
+<h1>Einführung in g2</h1>
 
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Grundlagen, JavaScript, Programmierung, g2, Canvas, Pfade</h5>
 </header>
-<h4 id="%C3%BCbungen">Übungen</h4>
+<h2 id="36-%C3%BCbungen">3.6 Übungen</h2>
 <p>g2</p>
 <p><strong>Aufgabe 3.1</strong></p>
 <p>Stellen Sie folgende Mechanismen aus dem Lehrbuch &quot;Mechanismentechnik&quot; grafisch im Browser dar:</p>
@@ -113,16 +109,14 @@
 </ul>
 <p>g2-chart</p>
 <p><strong>Aufgabe 3.2</strong></p>
-<p>Sie haben in der Übungsaufgabe 2.2 im Kapitel 2 &quot;Webtechnologien&quot; als Lösung einen Datensatz in Form eines Arrays erhalten, der die x-/y-Koordinaten einer Ellipse enthält.
-Erstellen Sie nun eine HTML-Datei in die Sie die g2 (inkl. g2.chart) Bibliothek einbinden. Kopieren Sie nun Ihr vollständiges Script der Aufgabe 2.2 in ein Script-Tag dieser HTML Datei. Stellen Sie anschließend Ihren Datensatz mit g2 und g2-chart auf einem Canvas grafisch dar.</p>
+<p>Sie haben in der Übungsaufgabe 2.2 im Kapitel 2 &quot;Webtechnologien&quot; als Lösung einen Datensatz in Form eines Arrays erhalten, der die x-/y-Koordinaten einer Ellipse enthält. Erstellen Sie nun eine HTML-Datei in die Sie die g2 (inkl. g2.chart) Bibliothek einbinden. Kopieren Sie nun Ihr vollständiges Script der Aufgabe 2.2 in ein Script-Tag dieser HTML Datei. Stellen Sie anschließend Ihren Datensatz mit g2 und g2-chart auf einem Canvas grafisch dar.</p>
 <figure>
-<img src="./Bilder/bild 20.png">
+<img src="../Bilder/bild 20.png">
+<h4 id="abb-34-ellipse"><strong>Abb. 3.4:</strong> Ellipse</h4>
 </figure>
 <p><strong>Aufgabe 3.3</strong></p>
-<p>Wir betrachten Aufgabe 10.8 &quot;Doppelschieber&quot; auf Seite 191 des Lehrbuches &quot;Mechanismentechnik&quot;.
-Die bereinigte erste Ableitung der Potentialfunktion des Doppelschiebers lautet:</p>
-<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mi>φ</mi><mo stretchy="false">(</mo><mn>1</mn><mtext>−</mtext><mn>2</mn><mi>c</mi><mi>o</mi><mi>s</mi><mi>φ</mi><mo stretchy="false">)</mo><mtext> </mtext><mo>=</mo><mtext> </mtext><mn>0</mn></mrow><annotation encoding="application/x-tex">sin \varphi (1−2cos\varphi)~=~0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">φ</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">−</span><span class="mord">2</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">s</span><span class="mord mathnormal">φ</span><span class="mclose">)</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></span></eqn></section><p>In der Lösung sind 0° und 60° als Gleichgewichtslagen angegeben.
-Überpüfen Sie dies grafisch indem Sie die Funktion mit g2-chart plotten und anschließend die Nullstellen ablesen.</p>
+<p>Wir betrachten Aufgabe 10.8 &quot;Doppelschieber&quot; auf Seite 191 des Lehrbuches &quot;Mechanismentechnik&quot;. Die bereinigte erste Ableitung der Potentialfunktion des Doppelschiebers lautet:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mi>i</mi><mi>n</mi><mi>φ</mi><mo stretchy="false">(</mo><mn>1</mn><mtext>−</mtext><mn>2</mn><mi>c</mi><mi>o</mi><mi>s</mi><mi>φ</mi><mo stretchy="false">)</mo><mtext> </mtext><mo>=</mo><mtext> </mtext><mn>0</mn></mrow><annotation encoding="application/x-tex">sin \varphi (1−2cos\varphi)~=~0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">φ</span><span class="mopen">(</span><span class="mord">1</span><span class="mord">−</span><span class="mord">2</span><span class="mord mathnormal">c</span><span class="mord mathnormal">o</span><span class="mord mathnormal">s</span><span class="mord mathnormal">φ</span><span class="mclose">)</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace nobreak"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span></span></eqn></section><p>In der Lösung sind <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi mathvariant="normal">°</mi></mrow><annotation encoding="application/x-tex">0°</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">°</span></span></span></span></eq> und <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>60</mn><mi mathvariant="normal">°</mi></mrow><annotation encoding="application/x-tex">60°</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mord">°</span></span></span></span></eq> als Gleichgewichtslagen angegeben. Überprüfen Sie dies grafisch indem Sie die Funktion mit g2-chart plotten und anschließend die Nullstellen ablesen.</p>
 
 </article>
 </main>
