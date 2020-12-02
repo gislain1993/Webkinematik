@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Animation der Beschleunigung eines Rades im Webbrowser">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Animation,Grundlagen,JavaScript,Programmierung,g2,Canvas,Mechanismentechnik,Bewegungsübertragung,Kraftübertragung,g2">
+<title>Das Rad</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -90,40 +90,43 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
-
+<h1>Das Rad</h1>
+<h3>Übung</h3>
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Animation, Grundlagen, JavaScript, Programmierung, g2, Canvas, Mechanismentechnik, Bewegungsübertragung, Kraftübertragung, g2</h5>
 </header>
-<h4 id="%C3%BCbung-rad">Übung-Rad</h4>
-<p>Bilden Sie die Animation mit g2 nach
-<img src="https://goessner.github.io/webkinematik/Animation/Rad.gif" alt="Datei nicht gefunden" sizes="(max-height: 250px)"></p>
-<p>indem Sie den Quelltext vervollständigen</p>
+<h2 id="43-rad--%C3%BCbung">4.3 Rad — Übung</h2>
+<p>Bilden Sie die Animation 4.2 mit g2 nach indem Sie den gegebenen Quelltext vervollständigen.</p>
+<p><strong>Hinweise:</strong></p>
+<ul>
+<li>Gehen Sie wie bei der zeitabhängigen Kurbel vor und nutzen Sie das Weg-Zeit-Gesetz.</li>
+<li>Achten Sie darauf die Einheiten anzugleichen!</li>
+<li>Die Animation startet neu, sobald <code>t0 = time</code> zugewiesen wird. Dies soll geschehen wenn das Rad aus dem Canvas herausgerollt ist. Die Breite des Canvas können Sie entweder als Zahl eingeben oder allgemein über <code>document.getElementById('*CanvasID*').width</code> auslesen.</li>
+</ul>
+<figure>
+<img src="https://goessner.github.io/webkinematik/Animation/Rad.gif" alt="Datei nicht gefunden" sizes="(max-height: 250px)">
+<h4 id="animation-42-rollendes-rad"><strong>Animation 4.2:</strong> Rollendes Rad</h4>
+</figure>
 <pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">'utf-8'</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Rad<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>      
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
- 
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Rad<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>             
     <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"c"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"900"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border-width:1px;border-style:solid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
- 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
  
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
  
 <span class="hljs-keyword">let</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
     ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
- 
     pi = <span class="hljs-built_in">Math</span>.PI
- 
     a = <span class="hljs-number">0.5</span>,    <span class="hljs-comment">// Beschleunigung [m/s^2]</span>
     <span class="hljs-comment">// ...</span>
- 
     ;
  
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params">t</span>) </span>{
@@ -133,28 +136,14 @@
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">time</span>) </span>{
     <span class="hljs-keyword">if</span> (!t0 <span class="hljs-comment">/* ... */</span>)  
         t0 = time;
- 
     <span class="hljs-comment">// ...</span>
 }
  
 <span class="hljs-comment">// ...</span>
- 
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </div></code></pre>
-<p><strong>Hinweise:</strong></p>
-<ul>
-<li>
-<p>Gehen Sie wie bei der zeitabhängigen Kurbel vor und nutzen Sie das Weg-Zeit-Gesetz.</p>
-</li>
-<li>
-<p>Achten Sie darauf die Einheiten anzugleichen!</p>
-</li>
-<li>
-<p>Die Animation startet neu, sobald <code>t0 = time</code> zugewiesen wird. Dies soll geschehen wenn das Rad aus dem Canvas herausgerollt ist. Die Breite des Canvas können Sie entweder als Zahl eingeben oder allgemein über <code>document.getElementById('*CanvasID*').width</code> auslesen.</p>
-</li>
-</ul>
 
 </article>
 </main>

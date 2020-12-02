@@ -39,6 +39,6 @@ Sie haben in der Übungsaufgabe 2.2 im Kapitel 2 "Webtechnologien" als Lösung e
 
 Wir betrachten Aufgabe 10.8 "Doppelschieber" auf Seite 191 des Lehrbuches "Mechanismentechnik". Die bereinigte erste Ableitung der Potentialfunktion des Doppelschiebers lautet:
 
-$$sin \varphi (1−2cos\varphi)~=~0$$
+$$\sin\varphi(1−2\cos\varphi) = 0$$
 
 In der Lösung sind $0°$ und $60°$ als Gleichgewichtslagen angegeben. Überprüfen Sie dies grafisch indem Sie die Funktion mit g2-chart plotten und anschließend die Nullstellen ablesen.
