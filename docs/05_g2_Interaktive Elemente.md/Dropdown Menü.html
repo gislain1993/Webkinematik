@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Steuerung und Manipulation von Animationen und Grafiken im Webbrowser">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Animation,Interaktivität,Grundlagen,JavaScript,HTML,Input,Programmierung,g2,Canvas">
+<title>Einführung in die Interaktivität</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -65,7 +65,6 @@
 <ol start="5">
     <li><details><summary markdown="span">g2 Interaktive Elemente</summary>
     <ol>
-        <li><a href="../05_g2_Interaktive Elemente.md/Einführung Interaktivität.html">Einführung Interaktivität</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Button.html">Button</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Dropdown Menü.html">Dropdown Menü</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Checkbox.html">Checkbox</a></li>
@@ -90,20 +89,21 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
-
+<h1>Einführung in die Interaktivität</h1>
+<h3>Dropdown Menü</h3>
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Animation, Interaktivität, Grundlagen, JavaScript, HTML, Input, Programmierung, g2, Canvas</h5>
 </header>
-<h4 id="dropdown-men%C3%BC">Dropdown Menü</h4>
-<p>Als nächstes soll in unserem Beispiel eine Möglichkeit implementiert werden um die Winkelgeschwindigkeit zu ändern. Dies werden wir mittels eines Dropdown Menüs realisieren.</p>
+<aside style="min-width:45%">
 <iframe width=100% height=470 frameborder='no' src='https://goessner.github.io/webkinematik/Interaktivitaet/2 Kurbel - dropdown.html'></iframe>
-<p>Die Idee ist, die bisherige Winkelgeschwindigkeit als Standard zu definieren und einen Multiplikator einzuführen um sie zu skalieren. Gleichzeitig soll die neue Periodendauer berechnet und ausgegeben werden.
-Dropdown Menüs bzw. Auswahllisten erstellt man in HTML über das <select> Element. Select-Elemente haben ein paar interessante optionale Parameter. Der Parameter multiple sorgt dafür, dass mehrere Optionen in der Liste gleichzeitig ausgewählt werden können und size definiert wie viele Elemente der Auswahlliste gleichzeitig sichtbar sein sollen. Gibt man keine optionalen Parameter an erhält man statt einer scrollbaren Liste, ein Auswahlmenü, dass beim Klick darauf expandiert und seine Werte zur Auswahl zur Verfügung stellt.</p>
-<p>Die einzelnen Werte des Select-Elements fügt man diesem über <option> Tags hinzu. Diese erhalten in unserem Beispiel nur einen value Parameter, welcher dem Geschwindigkeitsmultiplikator entspricht. Eine dieser Options bekommt zusätzlich noch einen selected Parameter da standardmäßig das 1x-Fache der definierten Winkelgeschwindigkeit eingestellt sein soll. Wer mehr über select und option erfahren möchte findet unter den Links weiterführende Informationen.</p>
-<p>Wir fügen nun folgenden Code unter den <button> Tag des Beispiels mit Start/Stop-Funktion hinzu:</p>
+</aside>
+<h2 id="53-dropdown-men%C3%BC">5.3 Dropdown Menü</h2>
+<p>Als nächstes soll in unserem Beispiel eine Möglichkeit implementiert werden um die Winkelgeschwindigkeit zu ändern. Dies werden wir mittels eines Dropdown Menüs realisieren. Die Idee ist, die bisherige Winkelgeschwindigkeit als Standard zu definieren und einen Multiplikator einzuführen um sie zu skalieren. Gleichzeitig soll die neue Periodendauer berechnet und ausgegeben werden.</p>
+<p>Dropdown Menüs bzw. Auswahllisten erstellt man in HTML über das <code>&lt;select&gt;</code> Element. Select-Elemente haben ein paar interessante optionale Parameter. Der Parameter <code>multiple</code> sorgt dafür, dass mehrere Optionen in der Liste gleichzeitig ausgewählt werden können und <code>size</code> definiert wie viele Elemente der Auswahlliste gleichzeitig sichtbar sein sollen. Gibt man keine optionalen Parameter an, erhält man statt einer &quot;scrollbaren&quot; Liste, ein Auswahlmenü, das beim Klick darauf expandiert und seine Werte zur Auswahl zur Verfügung stellt.</p>
+<p>Die einzelnen Auswahloptionen werden dem Select-Elements über ein oder mehrere <code>&lt;option&gt;</code>-Tags hinzugefügt. Diese erhalten in unserem Beispiel nur einen <code>value</code> Parameter, welcher dem Geschwindigkeitsmultiplikator entspricht. Eine dieser Options bekommt zusätzlich noch einen <code>selected</code> Parameter, da standardmäßig das 1x-Fache der definierten Winkelgeschwindigkeit eingestellt sein soll. Wer mehr über <a href="https://wiki.selfhtml.org/wiki/HTML/Formulare/Auswahllisten"><code>select</code></a> und <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element/option"><code>option</code></a> erfahren möchte findet unter den Links weiterführende Informationen.</p>
+<p>Wir fügen nun folgenden Code unter den <code>&lt;button&gt;</code> Tag des Beispiels mit Start/Stop-Funktion hinzu:</p>
 <pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"speed"</span>&gt;</span>Geschwindigkeit:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"speed"</span>&gt;</span>
@@ -113,39 +113,37 @@ Dropdown Menüs bzw. Auswahllisten erstellt man in HTML über das <select> Eleme
     <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"4"</span>&gt;</span>4x<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 </div></code></pre>
-<p>Wir haben nun also die Möglichkeit zwischen der 0,5-, 1-, 2- und 4-Fachen Standardwinkelgeschwindigkeit zu wählen. Es passiert allerdings noch nichts, weil das ganze ja über JavaScript verarbeitet werden muss. Darum kümmern wir uns jetzt.
-Zuerst benötigen wir eine Variable in die die ausgewählte Select-Option geschrieben werden soll. Wir nennen diese <code>speedmod</code> und initialisieren sie bei den globalen Variablen auf <code>1</code>. Die Skalierung der Winkelgeschwindigkeit erfolgt über die Skalierung des Inkrements. Wir ändern also die entsprechende Zeile in der <code>position()</code> Funktion zu:</p>
-<pre><code class="code-line language-HTML"><div>...
-// inkrementiert phi
-phi += speedmod*pi/180;
+<p>Wir haben nun also die Möglichkeit zwischen der 0,5-, 1-, 2- und 4-Fachen Standardwinkelgeschwindigkeit zu wählen. Es passiert allerdings noch nichts, weil das ganze ja über JavaScript verarbeitet werden muss. Darum kümmern wir uns jetzt.</p>
+<p>Zuerst benötigen wir eine Variable in die die ausgewählte Select-Option geschrieben werden soll. Wir nennen diese <code>speedmod</code> und initialisieren sie als globale Variable mit dem Wert <code>1</code>. Die Skalierung der Winkelgeschwindigkeit erfolgt über die Skalierung des Inkrement. Wir ändern also die entsprechende Zeile in der <code>position()</code> Funktion zu:</p>
+<pre><code class="code-line language-JavaScript"><div>...
+<span class="hljs-comment">// inkrementiert phi</span>
+phi += speedmod*pi/<span class="hljs-number">180</span>;
 ...
 </div></code></pre>
-<p>Wie bereits beim Button fügen wir auch hier auf dieselbe Weise einen Eventlistener hinzu. Der einzige Unterschied ist, dass die hier definierte Funktion erst dann aufgerufen werden soll wenn eine Änderung eintritt. Dazu benutzen wir das Change-Event. Es wird nun also wieder eine Abkürzung zum entsprechendem HTML-Element in den globalen Variablen angelegt</p>
+<p>Wie bereits beim Button fügen wir auch hier auf dieselbe Weise einen Eventlistener hinzu. Der einzige Unterschied ist, dass die hier definierte Funktion erst dann aufgerufen werden soll, wenn eine Änderung eintritt. Dazu benutzen wir das Change-Event. Es wird nun also wieder eine Abkürzung zum entsprechendem HTML-Element in den globalen Variablen angelegt:</p>
 <p><code>speed = document.getElementById('speed')</code></p>
-<p>und anschließend am Ende des Scripts ein Eventhandler an dieses gebunden, der bei Änderung des Wertes die (noch zu erstellende) Funktion <code>changeSpeed()</code> aufruft:
-<code>speed.addEventListener(&quot;change&quot;,changeSpeed);</code></p>
-<p>Als nächstes erstellen wir die Funktion changeSpeed(), die folgendermaßen aussieht:</p>
-<pre><code class="code-line language-HTML"><div>function changeSpeed() {
-    // weist dem speedmodifier den Wert der ausgewaehlten Option zu
+<p>und anschließend am Ende des Scripts ein Eventhandler an dieses gebunden, der bei Änderung des Wertes die (noch zu erstellende) Funktion <code>changeSpeed()</code> aufruft:</p>
+<p><code>speed.addEventListener(&quot;change&quot;,changeSpeed);</code></p>
+<p>Als nächstes erstellen wir die Funktion <code>changeSpeed()</code>, die folgendermaßen aussieht:</p>
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeSpeed</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// weist dem speedmodifier den Wert der ausgewaehlten Option zu</span>
     speedmod = +speed.options[speed.selectedIndex].value;
 }
 </div></code></pre>
-<p><code>speed</code> ist das Select-Element. Dieses enthält als Child ein Array <code>options</code> welches wiederum alle unserer erstellten Option-Elemente enthält. <code>speed.selectedIndex</code> gibt den Index des ersten (bei Auswahllisten können mehrere Werte gewählt werden) ausgewählten Option-Elements aus dem options-Array zurück. An den eigentlichen Wert gelangt man dann durch das Anhängen von <code>.value</code>. Weil das Value allerdings ein <code>string</code> ist,  schreiben wir noch ein <code>+</code> vor den Wert um ihn in einen number Typ zu wandeln bevor er der Variable <code>speedmod</code> zugewiesen wird.
-Weitere nützliche Properties und Methoden des Select-Elementes können <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement">hier</a> nachgelesen werden.
-Das Ändern der Geschwindigkeit funktioniert jetzt, es fehlt allerdings noch die gewünschte Ausgabe und Aktualisierung der Umlaufdauer.
-Dazu fügen wir ein Output-Element unter dem Select hinzu, das den String <code>T: 6s</code> (dies entspricht der Dauer eines Umlaufs bei Standardwinkelgeschwindigkeit) enthält:</p>
+<p><code>speed</code> ist das Select-Element. Dieses enthält als Kindelement ein Array <code>options</code> welches wiederum alle unserer erstellten Option-Elemente enthält. <code>speed.selectedIndex</code> gibt den Index des ersten (bei Auswahllisten können mehrere Werte gewählt werden) ausgewählten Option-Elements aus dem options-Array zurück. An den eigentlichen Wert gelangt man dann durch das Anhängen von <code>.value</code>. Weil das Value allerdings ein <code>string</code> ist, schreiben wir noch ein <code>+</code> vor den Wert, um ihn in einen <code>number</code> Typ zu wandeln bevor er der Variable <code>speedmod</code> zugewiesen wird.</p>
+<p>Weitere nützliche Eigenschaften und Methoden des Select-Elementes können <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement">hier</a> nachgelesen werden.</p>
+<p>Das Ändern der Geschwindigkeit funktioniert jetzt, es fehlt allerdings noch die gewünschte Ausgabe und Aktualisierung der Umlaufdauer. Dazu fügen wir ein Output-Element unter dem Select hinzu, das den String <code>T: 6s</code> (dies entspricht der Dauer eines Umlaufs bei Standardwinkelgeschwindigkeit) enthält:</p>
 <pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Periodendauer"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"speed"</span>&gt;</span>T: 6s<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
 </div></code></pre>
-<p>Der Inhalt dieses Outputs soll nun jedes Mal aktualisiert werden, wenn der Wert von <code>speedmod</code> sich ändert. Das geschieht immer dann, wenn das Change-Event des speed-Listeners feuert. Wir können also die Änderung des Outputs in der <code>changeSpeed()</code> Funktion vornehmen.</p>
-<p>Dazu legen wir über die Id wieder eine Abkürzung zum Element an:</p>
-<p>Periodendauer = document.getElementById('Periodendauer')</p>
+<p>Der Inhalt dieser Ausgabe soll nun jedes Mal aktualisiert werden, wenn der Wert von <code>speedmod</code> sich ändert. Das geschieht immer dann, wenn das Change-Event des speed-Listeners feuert. Wir können also die Änderung des <em>outputs</em> in der <code>changeSpeed()</code> Funktion vornehmen. Dazu legen wir über die Id wieder eine Abkürzung zum Element an:</p>
+<p><code>periodendauer = document.getElementById('Periodendauer')</code></p>
 <p>und fügen in <code>changeSpeed()</code> folgenden Code hinzu:</p>
-<pre><code class="code-line language-HTML"><div>// aktualisiert den Output
-Periodendauer.innerHTML = "T: " + 6/speedmod + "s";
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-comment">// aktualisiert den Output</span>
+periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
 </div></code></pre>
-<p>Wir ändern damit den Wert des <code>innerHTML</code>, also das was zwischen dem öffnenden und schließenden Tag des Outputs steht zu <code>&quot;T: &quot; + 6/speedmod + &quot;s&quot;</code>. Dies ist eine Verkettung (durch +) von strings und einem <code>number</code> Typ, welcher der aktuellen Umlaufdauer in Abhängigkeit des Multiplikators <code>speedmod</code> entspricht.</p>
-<p><strong>Ergebnis:</strong></p>
+<p>Wir ändern damit den Wert des <code>innerHTML</code>, also das was zwischen dem öffnenden und schließenden Tag des <em>outputs</em> steht zu <code>&quot;T: &quot; + 6/speedmod + &quot;s&quot;</code>. Dies ist eine Verkettung (durch +) von strings und einem <code>number</code> Typ, welcher der aktuellen Umlaufdauer in Abhängigkeit des Multiplikators <code>speedmod</code> entspricht.</p>
+<h3 id="531-ergebnis">5.3.1 Ergebnis</h3>
 <p>Der Quellcode sollte nun folgendermaßen aussehen:</p>
 <pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -170,32 +168,25 @@ Periodendauer.innerHTML = "T: " + 6/speedmod + "s";
     <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Periodendauer"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"speed"</span>&gt;</span>T: 6s<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
  
- 
- 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://gitcdn.xyz/repo/goessner/g2/master/src/g2.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
  
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
- 
 <span class="hljs-keyword">const</span> cnv = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'c'</span>),
     ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
     b = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'b'</span>),
     speed = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'speed'</span>),
-    Periodendauer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'Periodendauer'</span>),
- 
+    periodendauer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'Periodendauer'</span>),
     pi = <span class="hljs-built_in">Math</span>.PI,
     l = <span class="hljs-number">100</span>,  <span class="hljs-comment">// Laenge der Kurbel</span>
- 
     mec = {
         <span class="hljs-keyword">get</span> ephi() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:<span class="hljs-built_in">Math</span>.cos(phi), <span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sin(phi)}; },
         <span class="hljs-keyword">get</span> A() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:l*mec.ephi.x, <span class="hljs-attr">y</span>:l*mec.ephi.y}; }
     },
- 
-    Kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
- 
+    kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
     <span class="hljs-comment">// baut und initialisiert statische Umgebung</span>
     world = g2().clr()
                 .view({<span class="hljs-attr">cartesian</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>})
-                .use({<span class="hljs-attr">grp</span>:Kurbel})
+                .use({<span class="hljs-attr">grp</span>:kurbel})
                 .nodfix({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>});
  
 <span class="hljs-keyword">let</span> phi = <span class="hljs-number">0</span>, <span class="hljs-comment">// Laufvariable</span>
@@ -205,7 +196,7 @@ Periodendauer.innerHTML = "T: " + 6/speedmod + "s";
  
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// baut dynamische Kurbel auf</span>
-    Kurbel.del()
+    kurbel.del()
           .lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">x2</span>:mec.A.x, <span class="hljs-attr">y2</span>:mec.A.y, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>})
           .nod({...mec.A});
  
@@ -234,9 +225,8 @@ Periodendauer.innerHTML = "T: " + 6/speedmod + "s";
     <span class="hljs-comment">// weist dem speedmodifier den Wert der ausgewaehlten Option zu</span>
     speedmod = +speed.options[speed.selectedIndex].value;
     <span class="hljs-comment">// aktualisiert den Output</span>
-    Periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
+    periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
 }
- 
  
 <span class="hljs-comment">/*
  *  Initialisierung
@@ -245,10 +235,8 @@ Periodendauer.innerHTML = "T: " + 6/speedmod + "s";
 <span class="hljs-comment">// Eventlistener hinzufuegen</span>
 b.addEventListener(<span class="hljs-string">"click"</span>,startstop);
 speed.addEventListener(<span class="hljs-string">"change"</span>,changeSpeed);
- 
 <span class="hljs-comment">// Animation starten</span>
 render();
- 
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>

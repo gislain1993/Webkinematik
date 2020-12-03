@@ -55,7 +55,6 @@
 <ol start="5">
     <li><details><summary markdown="span">g2 Interaktive Elemente</summary>
     <ol>
-        <li><a href="{base}/05_g2_Interaktive Elemente.md/Einführung Interaktivität.html">Einführung Interaktivität</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Button.html">Button</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Dropdown Menü.html">Dropdown Menü</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Checkbox.html">Checkbox</a></li>

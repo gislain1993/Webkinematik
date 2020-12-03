@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
-<meta name="description" content="Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik">
+<meta name="description" content="Steuerung und Manipulation von Animationen und Grafiken im Webbrowser">
 
 <meta name="date" content="Wed Jan 01 2020 00:00:00 GMT+0100 (Central European Standard Time)">
-<meta name="keywords" content="mechanismentechnik,Bewegungs- und Kraftübertragung,g2">
-<title>Dokumentation von Webkinematik</title>
+<meta name="keywords" content="Web,Animation,Interaktivität,Grundlagen,JavaScript,HTML,Input,Programmierung,g2,Canvas">
+<title>Einführung in die Interaktivität</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/tomorrow-night-bright.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">
@@ -65,7 +65,6 @@
 <ol start="5">
     <li><details><summary markdown="span">g2 Interaktive Elemente</summary>
     <ol>
-        <li><a href="../05_g2_Interaktive Elemente.md/Einführung Interaktivität.html">Einführung Interaktivität</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Button.html">Button</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Dropdown Menü.html">Dropdown Menü</a></li>
         <li><a href="../05_g2_Interaktive Elemente.md/Checkbox.html">Checkbox</a></li>
@@ -90,31 +89,24 @@
 <article>
 
 <header>
-<h1>Dokumentation von Webkinematik</h1>
-
+<h1>Einführung in die Interaktivität</h1>
+<h3>Slider</h3>
 
 
 <h5>Oktober 2020</h5>
-<h5><b>Keywords:</b> mechanismentechnik, Bewegungs- und Kraftübertragung, g2</h5>
+<h5><b>Keywords:</b> Web, Animation, Interaktivität, Grundlagen, JavaScript, HTML, Input, Programmierung, g2, Canvas</h5>
 </header>
-<h4 id="slider12">Slider1/2</h4>
-<p>Das zweite Input-Element, das wir uns etwas genauer anschauen wollen, ist vom Typ <code>&quot;range&quot;</code>. Durch die Erstellung eines Range-Inputs erhalten wir einen Schieberegler (Slider) über den wir einen Wert auf einem beliebigen Intervall mit einem frei wählbaren Inkrement verstellen können.</p>
-<p>Es soll nun in unserem Beispiel die Kurbellänge <code>l</code> über einen Slider verstellbar gestaltet werden.</p>
+<aside style="min-width:45%">
 <iframe width=100% height=560 frameborder='no' src='https://goessner.github.io/webkinematik/Interaktivitaet/4 Kurbel - ani slider.html'></iframe>
-<p>Input-Elemente vom Typ <code>&quot;range&quot;</code> besitzen vier spezielle optionale Attribute.</p>
+</aside>
+<h2 id="55-slider---teil">5.5 Slider - Teil 1</h2>
+<p>Das zweite Input-Element, das wir uns etwas genauer anschauen wollen, ist vom Typ <code>&quot;range&quot;</code>. Durch die Erstellung eines Range-Inputs erhalten wir einen Schieberegler (Slider) über den wir einen Wert auf einem beliebigen Intervall mit einem frei wählbaren Inkrement verstellen können. Es soll nun in unserem Beispiel die Kurbellänge <code>l</code> über einen Slider verstellbar gestaltet werden.</p>
+<p>Input-Elemente vom Typ <code>&quot;range&quot;</code> besitzen vier spezielle optionale Attribute:</p>
 <ul>
-<li>
-<p><code>min</code>: Legt die untere Grenze des Sliders fest (standardmäßig = <code>0</code>)</p>
-</li>
-<li>
-<p><code>max</code>: Legt die obere Grenze des Sliders fest (standardmäßig = <code>100</code>)</p>
-</li>
-<li>
-<p><code>step</code>: Legt das Inkrement fest, mit dem der Sliderwert verstellt werden kann (standardmäßig 1). Meist werden Gleitkomma- oder Ganzzahlen verwendet, es kann allerdings auch <code>&quot;any&quot;</code> angegeben werden. Dann kann der Slider von Hand immer noch mit einem Inkrement von 1 verstellt werden, lässt aber auch Zwischenwerte zu die keine Ganzzahlen sind. Das ist zum Beispiel praktisch, wenn man Werte im Script berechnet die man nicht runden will bevor anschließend der entsprechende Zustand eingestellt wird.</p>
-</li>
-<li>
-<p><code>value</code>: Ist der Wert auf den der Slider beim initialisieren gestellt wird. (standardmäßig <code>min + (max-min)/2</code>)</p>
-</li>
+<li><code>min</code>: Legt die untere Grenze des Schiebereglers fest (standardmäßig = <code>0</code>)</li>
+<li><code>max</code>: Legt die obere Grenze des Schiebereglers fest (standardmäßig = <code>100</code>)</li>
+<li><code>step</code>: Legt das Inkrement fest, mit dem der Wert des Schiebereglers verstellt werden kann (standardmäßig = <code>1</code>). Meist werden Gleitkomma- oder Ganzzahlen verwendet, es kann allerdings auch <code>&quot;any&quot;</code> angegeben werden. Dann kann der Slider von Hand immer noch mit einem Inkrement von 1 verstellt werden, lässt aber auch Zwischenwerte zu die keine Ganzzahlen sind. Das ist zum Beispiel praktisch, wenn man Werte im Script berechnet die man nicht runden will bevor anschließend der entsprechende Zustand eingestellt wird.</li>
+<li><code>value</code>: Ist der Wert auf den der Schieberegler beim initialisieren gestellt wird. (standardmäßig <code>min + (max-min)/2</code>)</li>
 </ul>
 <p>Wir fügen nun in unserem HTML-Dokument folgenden Code unter dem Label für die Drehrichtung hinzu:</p>
 <pre><code class="code-line language-HTML"><div><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
@@ -123,20 +115,20 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lout"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lslider"</span> &gt;</span>100<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>mm
 <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 </div></code></pre>
-<p>Dadurch wird ein Slider erstellt, der seinen Wert auf einem Bereich von 20 bis 150 in Schritten von 1 ändern kann. Beim initialisieren soll er den Wert 100 haben, weil dieser dem Wert vom l im Script entspricht. Über das Style-Attribut wurden hier zusätzlich noch Position und Breite angepasst.
-Nach dem Anlegen von Abkürzungen für Slider und Output in den Script-Variablen,</p>
-<p><code>lslider = document.getElementById('lslider'), lout = document.getElementById('lout')</code></p>
+<p>Dadurch wird ein <em>slider</em> erstellt, der seinen Wert im Bereich von 20 bis 150 in Schritten von 1 ändern kann. Beim Initialisieren soll er den Wert 100 haben, weil dieser dem Wert vom <code>l</code> im Script entspricht. Über das Style-Attribut wurden hier zusätzlich noch Position und Breite angepasst. Nach dem Anlegen von Abkürzungen für <em>slider</em> und <em>output</em> in den Script-Variablen:</p>
+<p><code>lslider = document.getElementById('lslider')</code><br>
+<code>lout = document.getElementById('lout')</code></p>
 <p>wird auf die inzwischen bekannte Weise ein Eventhandler hinzugefügt:</p>
 <p><code>lslider.addEventListener(&quot;input&quot;,setl);</code></p>
-<p>Bei Slidern ist es so, dass bei einem Input-Event die Listener-Funktion jedes Mal aufgerufen wird, wenn man den Slider auf seinem Verstellbereich bewegt. Das heißt, steht er initial auf 100 und der Benutzer klickt ihn an, zieht in nach 120 und lässt ihn dann los, wurde setl() 20 Mal aufgerufen. Benutzt man stattdessen ein Change-Event und führt die gleiche Bewegung aus, wird setl() nur einmal aufgerufen, beim loslassen des Sliders. Je mehr Berechnungen implizit an diesem Slider hängen desto schlechter wird die Performance der Web-App und so muss man abwägen ob man wirklich ein Input-Event benötigt. In diesem Beispiel stellt es jedoch kein Problem dar.</p>
+<p>Bei Schiebereglern ist es so, dass bei einem Input-Event die Listener-Funktion jedes Mal aufgerufen wird, wenn dieser auf seinem Verstellbereich bewegt wird. Das heißt, steht er initial auf 100 und der Benutzer klickt ihn an, zieht in nach 120 und lässt ihn dann los, wurde <code>setl()</code> 20 Mal aufgerufen. Benutzt man stattdessen ein Change-Event und führt die gleiche Bewegung aus, wird <code>setl()</code> nur einmal aufgerufen, beim loslassen des <em>sliders</em>. Je mehr Berechnungen implizit an diesem <em>slider</em> hängen, desto schlechter wird die Performance der Web-App und so muss man abwägen ob man wirklich ein Input-Event benötigt. In diesem Beispiel stellt es jedoch kein Problem dar.</p>
 <p>Nun kümmern wir uns um die noch fehlende Funktion <code>setl()</code>. Diese gestaltet sich wie folgt:</p>
-<pre><code class="code-line language-HTML"><div>function setl() {
+<pre><code class="code-line language-JavaScript"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setl</span>(<span class="hljs-params"></span>) </span>{
         l = lslider.value;
         lout.innerHTML = lslider.value;
 }
 </div></code></pre>
-<p>Der globalen Variable l wird der zu number konvertierte Wert des Sliders zugewiesen und anschließend wird auf dieselbe Weise der Text innerhalb des zugehörigen Outputs aktualisiert.</p>
-<p><strong>Ergebnis:</strong></p>
+<p>Der globalen Variable <code>l</code> wird der zu <code>number</code> konvertierte Wert des <em>sliders</em> zugewiesen und anschließend wird auf dieselbe Weise der Text innerhalb des zugehörigen <em>outputs</em> aktualisiert.</p>
+<h3 id="551-ergebnis">5.5.1 Ergebnis</h3>
 <p>Das HTML-Dokument sollte nun folgendermaßen aussehen:</p>
 <pre><code class="code-line language-HTML"><div><span class="hljs-meta">&lt;!doctype html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -177,27 +169,22 @@ Nach dem Anlegen von Abkürzungen für Slider und Output in den Script-Variablen
     ctx = cnv.getContext(<span class="hljs-string">'2d'</span>),
     b = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'b'</span>),
     speed = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'speed'</span>),
-    Periodendauer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'Periodendauer'</span>),
-    Drehrichtung = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'direction'</span>),
+    periodendauer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'Periodendauer'</span>),
+    drehrichtung = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'direction'</span>),
     lslider = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lslider'</span>),
     lout = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'lout'</span>),
- 
     pi = <span class="hljs-built_in">Math</span>.PI,
     l = <span class="hljs-number">100</span>,  <span class="hljs-comment">// Laenge der Kurbel</span>
- 
     mec = {
         <span class="hljs-keyword">get</span> ephi() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:<span class="hljs-built_in">Math</span>.cos(phi), <span class="hljs-attr">y</span>:<span class="hljs-built_in">Math</span>.sin(phi)}; },
         <span class="hljs-keyword">get</span> A() { <span class="hljs-keyword">return</span> {<span class="hljs-attr">x</span>:l*mec.ephi.x, <span class="hljs-attr">y</span>:l*mec.ephi.y}; }
     },
- 
-    Kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
- 
+    kurbel = g2(),  <span class="hljs-comment">// definiert Kurbel als g2() Objekt</span>
     <span class="hljs-comment">// baut und initialisiert statische Umgebung</span>
     world = g2().clr()
                 .view({<span class="hljs-attr">cartesian</span>:<span class="hljs-literal">true</span>,<span class="hljs-attr">x</span>:<span class="hljs-number">150</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">150</span>})
-                .use({<span class="hljs-attr">grp</span>:Kurbel})
+                .use({<span class="hljs-attr">grp</span>:kurbel})
                 .nodfix({<span class="hljs-attr">x</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">0</span>});
- 
  
 <span class="hljs-keyword">let</span> phi = <span class="hljs-number">0</span>, <span class="hljs-comment">// Laufvariable</span>
     speedmod = <span class="hljs-number">1</span>,  <span class="hljs-comment">// Faktor der die Geschwindigkeit modifiziert</span>
@@ -205,13 +192,13 @@ Nach dem Anlegen von Abkürzungen für Slider und Output in den Script-Variablen
  
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">position</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// baut dynamische Kurbel auf</span>
-    Kurbel.del()
+    kurbel.del()
           .lin({<span class="hljs-attr">x1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">y1</span>:<span class="hljs-number">0</span>, <span class="hljs-attr">x2</span>:mec.A.x, <span class="hljs-attr">y2</span>:mec.A.y, <span class="hljs-attr">lw</span>:<span class="hljs-number">3</span>})
           .nod({...mec.A});
  
     <span class="hljs-comment">// inkrementiert phi</span>
     <span class="hljs-keyword">if</span> (run) {
-        <span class="hljs-keyword">if</span> (Drehrichtung.checked) {
+        <span class="hljs-keyword">if</span> (drehrichtung.checked) {
             phi -= speedmod*pi/<span class="hljs-number">180</span>;
         } <span class="hljs-keyword">else</span> {
             phi += speedmod*pi/<span class="hljs-number">180</span>;
@@ -238,14 +225,13 @@ Nach dem Anlegen von Abkürzungen für Slider und Output in den Script-Variablen
     <span class="hljs-comment">// weist dem speedmodifier den Wert der ausgewaehlten Option zu</span>
     speedmod = speed.options[speed.selectedIndex].value;
     <span class="hljs-comment">// aktualisiert den Output</span>
-    Periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
+    periodendauer.innerHTML = <span class="hljs-string">"T: "</span> + <span class="hljs-number">6</span>/speedmod + <span class="hljs-string">"s"</span>;
 }
  
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setl</span>(<span class="hljs-params"></span>) </span>{
         l = +lslider.value;
         lout.innerHTML = lslider.value;
 }
- 
  
 <span class="hljs-comment">/*
  *  Initialisierung
@@ -255,10 +241,8 @@ Nach dem Anlegen von Abkürzungen für Slider und Output in den Script-Variablen
 b.addEventListener(<span class="hljs-string">"click"</span>,startstop);
 speed.addEventListener(<span class="hljs-string">"change"</span>,changeSpeed);
 lslider.addEventListener(<span class="hljs-string">"input"</span>,setl);
- 
 <span class="hljs-comment">// Animation starten</span>
 render();
- 
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
