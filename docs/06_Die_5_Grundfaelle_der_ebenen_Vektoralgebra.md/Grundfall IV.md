@@ -9,7 +9,7 @@
 "math": true
 ---
 
-## Grundfall IV
+## 6.3 Grundfall IV
 
 <aside>
 <g-2 width="320" height="210" x0="30" y0="30" cartesian>
@@ -31,17 +31,17 @@
 }
 </g-2>
 
-#### Abb. 6.3: Gegebener Mechanismus
+#### **Abb. 6.3:** Gegebener Mechanismus
 
 </aside>
 
-### Aufgabenstellung
+### 6.3.1 Aufgabenstellung
 
 Prüfen Sie den vorliegenden Mechanismus auf Freiheitsgrad, Anzahl seiner Maschen und Umlauffähigkeit. Analysieren Sie den Mechanismus anschließend und stellen Sie ihn mit g2 interaktiv im Browser so dar, dass er nur in montierbaren Positionen gerendert wird.
 
-Geg.: $a=120$, $b=200$, $c=150$, $d=250$, $0°<φ<360°$
+**Geg.:** $\quad a=120$, $b=200$, $c=150$, $d=250$, $0°<φ<360°$
 
-### Freiheitsgrad und Maschenzahl
+### 6.3.2 Freiheitsgrad und Maschenzahl
 
 > Der **Freiheitsgrad nach Grübler** lässt sich über folgende Gleichung bestimmen:
 >
@@ -59,7 +59,7 @@ Geg.: $a=120$, $b=200$, $c=150$, $d=250$, $0°<φ<360°$
 
 Für den gegebenen Mechanismus gilt $n=4$, $b_1=4$, $b_2=0$ und somit $F=1$ und $M=1$. Es handelt sich um ein zwangsläufiges Getriebe mit nur einer Masche.
 
-### Umlauffähigkeit:
+### 6.3.3 Umlauffähigkeit:
 
 > Die **Umlauffähigkeit** eines Viergelenks ist definiert durch
 > $$l_{max}+l_{min}<\sum_{Rest}l_i$$
@@ -80,7 +80,7 @@ Es ist also nicht umlauffähig aber grundsätzlich montierbar, denn
 
 $$l_{max}<\sum_{Rest}l_i \Harr d<a+b+c \Harr 250<470$$
 
-### Analyse:
+### 6.3.4 Analyse:
 
 Aus der Maschengleichung lässt sich Grundfall IV identifizieren
 
@@ -90,11 +90,11 @@ mit
 
 $$\bm g = d\bm e_x−a\bm e_\varphi$$
 
-> #### Grundfall IV:
+> #### **Grundfall IV:**
 >
 > $$a\bm e_\alpha−b\bm e_\beta=\bm c$$
 >
-> #### Lösung:
+> #### **Lösung:**
 >
 > $$\bm e_\alpha=\frac{\lambda\bm c +\mu\bm{\tilde c}}{a}\quad und \quad \bm e_\beta = \frac{a\bm e_\alpha - \bm c}{b}$$
 >
@@ -126,7 +126,7 @@ $$\begin{aligned}
 
 Der Mechanismus ist damit vollständig bestimmt.
 
-### Code
+### 6.3.5 Code
 
 Wir erstellen nach bekannten Schema eine neue HTML-Datei (bzw. ändern schlauerweise eine fertige wie z.B. die Kurbel mit 2 Slidern). Wir benötigen unter anderem ein 600x400px Canvas sowie einen Range-Input sowie Output für $\varphi$.
 
@@ -216,7 +216,7 @@ function setPhi() {
 }
 ```
 
-### Ergebnis
+### 6.3.6 Ergebnis
 
 Der fertige Quelltext sollte folgendermaßen aussehen:
 
@@ -246,11 +246,8 @@ const cnv = document.getElementById('c'),
     phislider = document.getElementById('phislider'),
     phiout = document.getElementById('phiout')
     grad = document.getElementById('grad'),
- 
     pi = Math.PI,
- 
     phi = 0, // Laufvariable
- 
     mec = {
         a:120,
         b:200,
@@ -328,10 +325,8 @@ function setPhi() {
  
 // Eventlistener hinzufuegen
 phislider.addEventListener("input",setPhi);
- 
 // Animation starten
 render();
- 
     </script>
 </body>
 </html>

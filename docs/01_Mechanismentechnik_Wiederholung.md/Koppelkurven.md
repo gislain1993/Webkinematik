@@ -41,7 +41,7 @@ Koppelkurven sind die Bahnen von Gliedpunkten[<sup>2</sup>](#2). Solche Punktbah
 }
 </g-2>
 
-#### Abb. 1.4: Koppelpunkt C des Viergelenks
+#### **Abb. 1.4:** Koppelpunkt C des Viergelenks
 
 </aside>
 
@@ -58,7 +58,7 @@ Die Koppelkurven von Viergelenkgetrieben sind *trizirkulare Kurven* 6. Ordnung, 
 <figure>
 <img src="../Bilder/Koppelkurven des Viergelenks.png">
 
-#### Abb. 1.5: Koppelkurven des Viergelenks [(vgl. Gössner 2017, S.106)](#goessner2017)
+#### **Abb. 1.5:** Koppelkurven des Viergelenks [(vgl. Gössner 2017, S.106)](#goessner2017)
 
 </figure>
 

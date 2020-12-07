@@ -31,21 +31,21 @@
 }
 </g-2>
 
-#### Abb. 6.1: Gegebener Mechanismus
+#### **Abb. 6.1:** Gegebener Mechanismus
 
 </aside>
 
-## Grundfall I
+## 6.1 Grundfall I
 
-### Aufgabenstellung
+### 6.1.1 Aufgabenstellung
 
 Analysieren Sie den dargestellten Mechanismus und stellen Sie diesen anschließend interaktiv mit der g2-Bibliothek im Browser dar.
 
-**Geg.:** $h = 150\ mm$, $l = 280\ mm$, $s=\left\{\begin{array}{ll} > -\ 220\ mm\\ < \quad 200\ mm \end{array}\right.$ 
+**Geg.:** $\quad h = 150\ mm$, $l = 280\ mm$, $s=\left\{\begin{array}{ll} > -\ 220\ mm\\ < \quad 200\ mm \end{array}\right.$ 
 
 <br><br>
 
-### Kinematisches Modell
+### 6.1.2 Kinematisches Modell
 
 <figure>
 <mec-2 width="500" height="350" x0="240" y0="50" cartesian nodelabels constraintinfo="vel">
@@ -76,7 +76,7 @@ Analysieren Sie den dargestellten Mechanismus und stellen Sie diesen anschließe
 <h4>Modell 1: Kinematisches Modell</h4>
 </figure>
 
-### Lösung
+### 6.1.3 Lösung
 
 Zur interaktiven Darstellung im Canvas-Element werden die Koordinaten der Gliedpunkt $A$, $B$ und $C$ in Abhängigkeit der Laufvariable $s$ des gegebenen Mechanismus benötigt.
 
@@ -252,10 +252,8 @@ function sets() {
  
 // Eventlistener hinzufuegen
 sslider.addEventListener("input",sets);
- 
 // Animation starten
 render();
- 
     </script>
 </body>
 </html>

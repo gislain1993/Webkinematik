@@ -32,7 +32,7 @@
 }
 </g-2>
 
-#### Abb. 1.9: Momentanpol eines Viergelenks
+#### **Abb. 1.9:** Momentanpol eines Viergelenks
 
 </aside>
 
@@ -51,7 +51,7 @@ Der auf dem Wendekreis dem Momentanpol $P$ gegenüberliegende Körperpunkt wird 
 <figure>
 <img src="../Bilder/Lage des Wendepols.png">
 
-#### Abb. 1.10: Lage des Wendepols W eines Viergelenks
+#### **Abb. 1.10:** Lage des Wendepols W eines Viergelenks
 
 </figure>
 
@@ -68,7 +68,7 @@ Der auf dem Tangentialkreis dem Momentanpol $P$ gegenüberliegende Körperpunkt 
 <figure>
 <img src="../Bilder/Lage des Tangentialpols.png">
 
-#### Abb. 1.11: Lage des Tangentialpols T eines Viergelenks
+#### **Abb. 1.11:** Lage des Tangentialpols T eines Viergelenks
 
 </figure>
 
@@ -79,7 +79,7 @@ Im Beschleunigungspol eines Körpers erlischt die Beschleunigung, er liegt im Sc
 <figure>
 <img src="../Bilder/Lage des Beschleunigungspol.png">
 
-#### Abb. 1.12: Lage des Beschleunigungspols Q eines Viergelenks
+#### **Abb. 1.12:** Lage des Beschleunigungspols Q eines Viergelenks
 
 </figure>
 
@@ -100,7 +100,7 @@ Der Ball'sche Punkt oder auch Undulationspunkt ist im zweiten Schnittpunkt des W
 <figure>
 <img src="../Bilder/Ball'sher Punkt.png">
 
-#### Abb. 1.13: Ball'scher Punkt
+#### **Abb. 1.13:** Ball'scher Punkt
 
 </figure>
 

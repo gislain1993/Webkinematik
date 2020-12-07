@@ -23,7 +23,7 @@ Die Maschenzahl ebener Getriebe gehorcht der Beziehung $m = b_1 + b_2 - n +1$ un
 <figure>
 <img src="../Bilder/Maschen von Getriebe.png">
 
-#### Abb. 1.1: Maschen von Getriebe und kinematischer Kette [(vgl. Gössner 2017, S.89)](#goessner2017)
+#### **Abb. 1.1:** Maschen von Getriebe und kinematischer Kette [(vgl. Gössner 2017, S.89)](#goessner2017)
 
 </figure>
 
@@ -32,7 +32,7 @@ Wenden wir die Maschengleichung auf das Viergelenkgetriebe in Bild 1.2 an, so er
 <figure>
 <img src="../Bilder/Schleife des Viergelenks.png">
 
-#### Abb. 1.2: Schleife des Viergelenks [(vgl. Gössner 2017, S.90)](#goessner2017)
+#### **Abb. 1.2:** Schleife des Viergelenks [(vgl. Gössner 2017, S.90)](#goessner2017)
 
 </figure>
 

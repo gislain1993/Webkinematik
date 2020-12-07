@@ -1,73 +1,70 @@
 ---
 "layout": "page",
 "lang": "de",
-"title": "Dokumentation von Webkinematik",
+"title": "Grundfälle der ebenen Vektoralgebra",
 "uses": [ { "uri": "navigation.md" } ],
 "date": "Oktober 2020",
-"description": "Notwendige Kentnisse zur Bearbeitung eines Projekts von Webkinematik",
-"tags": ["mechanismentechnik","Bewegungs- und Kraftübertragung","g2"],
+"description": "Analyse und Lösung einfacher Mechanismen mittels des ersten Grundfalls der ebenen Vektoralgebra und den fundamentalen Webtechnologien",
+"tags": ["Webkinematik","Webentwicklung","Getriebekinematik","Mechanismentechnik","Bewegungsübertragung","Kraftübertragung","Vektoralgebra","g2","mec2"],
 "math": true
 ---
 
-#### Grundfall II/III
+## 6.2 Grundfall II/III
 
-Aufgabenstellung:
+### 6.2.1 Aufgabenstellung
 
 Analysieren Sie den Mechanismus und stellen Sie ihn anschließend mit g2 interaktiv im Browser dar.
 
 <figure>
 <img src="../Bilder/Grundfall2_3.png">
 
-#### Abb. 6.2: Gegebener Mechanismus
+#### **Abb. 6.2:** Gegebener Mechanismus
 
 </figure>
 
-gegeben:l=100mm,α=30°,−150<s1<190
+**Geg.:** $\quad l = 100mm$, $\alpha = 30°$, $s=\left\{\begin{array}{ll} > -\ 150\ mm\\ < \quad 190\ mm \end{array}\right.$ 
  
 **Lösung:**
 
 Um den Mechanismus interaktiv in ein Canvas zu rendern benötigen wir die Koordinaten der Punkte A und B in Abhängigkeit der Laufvariable s1.
 
-*Mathematik:*
+### 6.2.2 Mathematik
 
 Aufstellen der Maschengleichung und Sortieren nach Bekannten und Unbekannten liefert Grundfall II:
 
-$s_1\bold e_1+l\bold e_\varphi−s_2\bold e_2=0|⋅(−1)$
-<=>
-$s_2 \bold e_2−l\bold e_\varphi = \bold g$
+$$s_1\bm e_1 + l\bm e_\varphi − s_2\bm e_2 = \bm 0\quad |\cdot(−1)\quad\Harr\quad \underline{s_2}\bm e_2 − l\underline{\bm e_\varphi} = \bm g$$
 
 mit
 
-$$\bold g~=~s_1 \bold e_1=s_1\bold e_x= \binom {s_1}{0}$$
+$$\bm g = s_1\bm e_1 = s_1\bm e_x = \binom{s_1}{0}$$
 
-> Nimmt man bei dem selben Mechanismus z.B. den Winkel φ
-als bekannt und s1/s2 als unbekannt an, lässt sich Grundfall III identifizieren. Die Lösung von diesem erfolgt analog.
+> Nimmt man bei dem selben Mechanismus z.B. den Winkel $\varphi$
+als bekannt und $s_1$ oder $s_2$ als unbekannt an, lässt sich Grundfall III identifizieren. Die Lösung von diesem erfolgt analog.
 
-$\bold e_2$ ist uns durch das gegebene α implizit bekannt mit
+$\bm e_2$ ist uns durch das gegebene $\alpha$ implizit bekannt mit
 
-$$\bold e_2~=~ \binom {cos(\pi-\alpha)}{sin(\pi-\alpha)}$$
+$$\bm e_2 = \binom{\cos(\pi-\alpha)}{\sin(\pi-\alpha)}$$
 
-und da *l* mit 100mm gegeben ist, identifizieren wir Grundfall II mit *s_2* und $\bold e_φ$ als Unbekannten.
+und da $l$ mit $100mm$ gegeben ist, identifizieren wir Grundfall II mit $s_2$ und $\bm e_φ$ als Unbekannte.
 
->  **Grundfall I**
-$$a \bold e_\alpha - b\bold e_\beta~=~ \bold c$$
-**Lösungen**
-$$a~=~\bold c . \bold e_\alpha \pm \sqrt{b^2-(\bold c \cdot \tilde\bold e_\alpha)^2}$$
-$$\bold e_\beta ~=~ \frac {a\bold e_\alpha -\bold c}{b}$$
-Mit getauschten Variablen ergeben sich für unseren Mechanismus die Lösungen
-$$s_2~=~\bold g . \bold e_2 \pm \sqrt{l^2-(\bold c \cdot \tilde\bold e_\alpha)^2}$$
-$$\bold e_\varphi ~=~ \frac {s_2\bold e_2 -\bold g}{l}$$
+> #### **Grundfall II**
+> $$\underline{a}\bm e_\alpha - b\underline{\bm e_\beta} = \bm c$$
+> #### **Lösungen**
+> $$a = \bm c\cdot\bm e_\alpha\pm\sqrt{b^2 - (\bm c\cdot\tilde\bm e_\alpha)^2}\qquad und\qquad \bm e_\beta = \frac{a\bm e_\alpha - \bm c}{b}$$
 
-Daraus folgt wiederum der Winkel φ
+Mit getauschten Variablen ergeben sich für unseren Mechanismus die Lösungen:
 
-$$\varphi~=~atan2[\frac{1}{l}(s_2.2_{2y}), \frac{1}{l}(s_2.e_{2x}-s_1)]$$
+$$s_2 = \bm g\cdot\bm e_2 \pm\sqrt{l^2 - (\bm c\cdot\tilde\bm e_2)^2}\qquad und\qquad\bm e_\varphi = \frac{s_2\bm e_2 - \bm g}{l}$$
 
-**Code:**
+Daraus folgt wiederum der Winkel $\varphi$
 
-Da alle notwendigen Analysen nun getätigt wurden kann mit der Umsetzung in HTML und JavaScript begonnen werden.
-Wir erstellen ein 450x300px Canvas, einen Range-Input für s1 sowie die üblichen globalen JS Variablen inklusive folgendem mec-Objekt:
+$$\varphi = \arctan_2\left[\frac{1}{l}(s_2\cdot e_{2y})\ ,\ \frac{1}{l}(s_2\cdot e_{2x} - s_1)\right]$$
 
-```HTML
+### 6.2.3 Code
+
+Da alle notwendigen Analysen nun getätigt wurden kann mit der Umsetzung in HTML und JavaScript begonnen werden. Wir erstellen ein 450x300px Canvas, einen Range-Input für `s1` sowie die üblichen globalen JS Variablen inklusive folgendem mec-Objekt:
+
+```JavaScript
 mec = {
         l: 100,
         alpha: 30*pi/180,
@@ -85,13 +82,13 @@ mec = {
         get A() { return {x:s1, y:0}; },
         get B() { var s2 = this.s2; return {x:s2*this.e2.x, y:s2*this.e2.y}; }
     },
-    ````
-Die Getter für `phi` und `ephi` werden von uns eigentlich nicht gebraucht da wir an den Punkt B auch über den Vektor $\bold s_2$
- kommen. Dennoch erstellen wir auch diese Properties weil wir sie beim world-Objekt verwenden können.
+```
+
+Die Getter für `phi` und `ephi` werden von uns eigentlich nicht gebraucht da wir an den Punkt $B$ auch über den Vektor $\bm s_2$ kommen. Dennoch erstellen wir auch diese *properties* weil wir sie beim world-Objekt verwenden können.
 
 Das world-Objekt sieht hier folgendermaßen aus:
 
-```HTML
+```JavaScript
 // baut und initialisiert statische Umgebung
 world = g2().clr()
             .view({cartesian,x: 220,y: 150}) // Nullpunkt verschoben   
@@ -101,16 +98,15 @@ world = g2().clr()
                       x2:-300*mec.ephi.x, y2:-300*mec.ephi.y)  // geht nur weil Initialzustand phi == alpha
             .end()
             .use({grp:g})
-````
+```
 
 Hier werden nun zum ersten Mal die `beg()` und `end()` Methoden von g2 eingesetzt. Durch diese kann man Statusänderungen auf Objekte, die zwischen diesen Tags stehen beschränken. Man kann Translationen, Rotationen oder aber einfach nur [Styling](https://github.com/goessner/g2/tree/master/api#g2+style) angeben. Mehr dazu findet man wie immer in der [API-Dokumentation](https://github.com/goessner/g2/tree/master/api#g2+beg).
 
 Bei diesem world-Objekt findet man neben Linienfarbe und Breite auch ein Argument das die gezeichneten Linien unterbricht, sodass daraus Strichpunktlinien werden. Der Aufbau dieses Arrays ist wie folgt: [Strichlänge1, Abstand1, Strichlänge2, Abstand2].
 
-Man wird sich jetzt vielleicht fragen warum hier in einem Objekt, das ausschließlich statische Umgebung enthält, eine Linie über Punkte gezeichnet wird, die von einer Veränderlichen (phi(s1)) abhängen. Das geht weil die Getter die im world-Objekt referenziert sind, nur einmal beim Initialisieren abgefragt werden. In diesem Zustand (wir initialisieren s1 zu 0) sind bei uns phi und alpha, und somit auch ephi und e2 gleich.
-Nachdem dann die `position()`-Funktion erstellt wurde
+Man wird sich jetzt vielleicht fragen warum hier in einem Objekt, das ausschließlich statische Umgebung enthält, eine Linie über Punkte gezeichnet wird, die von einer Veränderlichen (phi(s1)) abhängen. Das geht weil die Getter die im world-Objekt referenziert sind, nur einmal beim Initialisieren abgefragt werden. In diesem Zustand (wir initialisieren `s1` zu `0`) sind bei uns `phi` und `alpha`, und somit auch `ephi` und `e2` gleich. Nachdem dann die `position()`-Funktion erstellt wurde
 
-```HTML
+```JavaScript
 function position() {
     g.del()
      .slider({x:mec.A.x, y:mec.A.y}, 0, {fs:"@nodfill"})
@@ -119,11 +115,11 @@ function position() {
      .use("nod",{x:mec.A.x, y:mec.A.y})
      .use("nod",{x:mec.B.x, y:mec.B.y})
 }
-````
+```
 
 folgt der restliche Quellcode analog zu den vorherigen Beispielen.
 
-**Ergebnis:**
+### 6.2.4 Ergebnis
 
 Der fertige Quellcode sollte dann folgendermaßen aussehen:
 
@@ -154,9 +150,7 @@ Der fertige Quellcode sollte dann folgendermaßen aussehen:
             ctx = cnv.getContext('2d'),
             s1slider = document.getElementById('s1slider'),
             s1out = document.getElementById('s1out'),
- 
             pi = Math.PI,
- 
             mec = {
                 l: 100,
                 alpha: 30*pi/180,
@@ -218,13 +212,11 @@ Der fertige Quellcode sollte dann folgendermaßen aussehen:
  
         // Eventlistener hinzufuegen
         s1slider.addEventListener("input",sets1);
- 
         // Animation starten
         render();
- 
     </script>
 </body>
 </html>
-````
+```
 
 <iframe width=100% height=420 frameborder='no' src='https://goessner.github.io/webkinematik/Grundfaelle/Fall 2/Grundfall_2-Kreuzschieber.html '></iframe>

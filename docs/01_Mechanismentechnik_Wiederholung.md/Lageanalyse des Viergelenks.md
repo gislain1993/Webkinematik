@@ -38,7 +38,7 @@
 }
 </g-2>
 
-#### Abb. 1.3: Geometrie des Viergelenks
+#### **Abb. 1.3:** Geometrie des Viergelenks
 
 </aside>
 

@@ -9,9 +9,9 @@
 "math": true
 ---
 
-## Grundfall V
+## 6.4 Grundfall V
 
-### Aufgabenstellung
+### 6.4.1 Aufgabenstellung
 
 Analysieren Sie den Mechanismus und stellen Sie ihn mit g2 interaktiv im Browser dar. Überlegen Sie dazu in welcher Lage $s_{max}$ erreicht wird und bestimmen Sie dieses.
 
@@ -20,13 +20,13 @@ Tipp: Wenn Sie durch überlegen nicht auf die entsprechende Stellung kommen, wä
 <figure>
 <img src="../Bilder/Grundfall5.png">
 
-#### Abb. 6.4: Gegebener Mechanismus
+#### **Abb. 6.4:** Gegebener Mechanismus
 
 </figure>
 
-Geg.: $a=50mm$, $d=3a$, $e=\frac{3}{2}a$, $0°<φ<360°$
+**Geg.:** $\quad a=50mm$, $d=3a$, $e=\frac{3}{2}a$, $0°<φ<360°$
 
-### Mathematik
+### 6.4.2 Mathematik
 
 Um den Mechanismus interaktiv in ein Canvas zu rendern, benötigen wir die Koordinaten der Punkte $A$, $B$ und $C$
 C in Abhängigkeit der Laufvariable $\varphi$.
@@ -40,12 +40,9 @@ mit
 $$\bm g = d\bm e_x - a\bm e_\varphi = \begin{pmatrix}
 d - a\cos\varphi\\-a\sin\varphi\end{pmatrix}$$
 
-> #### Grundfall V:
->
+> #### **Grundfall V:**
 > $$a\underline{\bm e_\alpha} - \underline{b\bm{\tilde e}_\alpha} = \bm c$$ 
->
-> Lösung:
->
+> #### **Lösung:**
 > $$b = \pm\sqrt{c^2 - a^2}\quad und\quad \bm e_\alpha = \frac{a\bm c + b\bm{\tilde c}}{c^2}$$
 
 Mit getauschten Variablen ergibt sich für unseren Mechanismus
@@ -65,7 +62,7 @@ Der größte Abstand zwischen den Punkten $A$ und $B$ also $s_{max}$ tritt bei $
 <figure>
 <img src="../Bilder/smax.png">
 
-#### Abb. 6.5: Ermittlung von $s_{max}$
+#### **Abb. 6.5:** Ermittlung von $s_{max}$
 
 </figure>
 
@@ -75,7 +72,7 @@ $$(a+d)^2=s_{max}^2 + e^2 \quad\Harr\quad s_{max}=\sqrt{(a+d)^2-e^2}$$
 
 Der Mechanismus ist nun vollständig bestimmt.
 
-### Code
+### 6.4.3 Code
 
 Wir legen wie immer eine neue HTML-Datei an, die unter anderem ein 400x300px Canvas sowie einen Range-Input inkl. Output für $\varphi$ enthält.
 
@@ -136,7 +133,7 @@ function position() {
 }
 ```
 
-### Ergebnis
+### 6.4.4 Ergebnis
 
 Der fertige Quelltext sollte folgendermaßen aussehen:
 
@@ -165,11 +162,9 @@ const cnv = document.getElementById('c'),
     ctx = cnv.getContext('2d'),
     phislider = document.getElementById('phislider'),
     phiout = document.getElementById('phiout'),
- 
     pi = Math.PI,
     a = 50, d = 3*a, e = 3/2*a,
     smax = Math.sqrt((a + d)*(a + d) - e*e),
- 
     mec = {
         get ephi() { return {x:Math.cos(phi), y:Math.sin(phi)}; },
         get g()   { return {x:d - a*Math.cos(phi), y:-a*Math.sin(phi)}; },
@@ -232,10 +227,8 @@ function setPhi() {
  
 // Eventlistener hinzufuegen
 phislider.addEventListener("input",setPhi);
- 
 // Animation starten
 render();
- 
     </script>
 </body>
 </html>

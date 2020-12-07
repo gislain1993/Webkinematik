@@ -17,7 +17,7 @@ Wenn Drehgelenke angetrieben werden, ist die Drehzahl des angetriebenen Glieds a
 <figure>
 <img src="../Bilder/Planetenradstufe.png">
 
-#### Abb. 1.8: Planetenradstufe
+#### **Abb. 1.8:** Planetenradstufe
 
 </figure>
 

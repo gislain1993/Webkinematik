@@ -27,7 +27,7 @@ $$\bm v_B = \omega_1 \bm{\tilde r}_1$$
 <figure>
 <img src="../Bilder/Geschw_Viergelenk.png">
 
-#### Abb. 1.6: Geschwindigkeiten des Viergelenks
+#### **Abb. 1.6:** Geschwindigkeiten des Viergelenks
 
 </figure>
 

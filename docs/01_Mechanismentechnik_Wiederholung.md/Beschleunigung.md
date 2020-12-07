@@ -23,7 +23,7 @@ Die Vorgehenweise sei wiederum an einer Kurbelschwinge demonstriert.
 <figure>
 <img src="../Bilder/Beschl_Viergelenk.png">
 
-#### Abb. 1.7: Beschleunigung des Viergelenks
+#### **Abb. 1.7:** Beschleunigung des Viergelenks
 
 </figure>
 
