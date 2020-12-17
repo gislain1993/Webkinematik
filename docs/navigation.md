@@ -58,8 +58,8 @@
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Button.html">Button</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Dropdown Menü.html">Dropdown Menü</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/Checkbox.html">Checkbox</a></li>
-        <li><a href="{base}/05_g2_Interaktive Elemente.md/Slider 1:2.html">Slider 1/2</a></li>
-        <li><a href="{base}/05_g2_Interaktive Elemente.md/Slider 2:2.html">Slider 2/2</a></li>
+        <li><a href="{base}/05_g2_Interaktive Elemente.md/Slider 1-2.html">Slider 1/2</a></li>
+        <li><a href="{base}/05_g2_Interaktive Elemente.md/Slider 2-2.html">Slider 2/2</a></li>
         <li><a href="{base}/05_g2_Interaktive Elemente.md/GUI Bibliotheken.html">GUI Bibliotheken</a></li>
     </ol>
     </details></li>
